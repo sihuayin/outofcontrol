@@ -1,10 +1,14 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, globalShortcut, Menu } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+// const { crashReporter } = require('electron');
+const os = require('os')
+const platform = os.platform()
 
+const isMac = platform === 'darwin'
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
@@ -15,14 +19,27 @@ protocol.registerSchemesAsPrivileged([
 ])
 
 function createWindow() {
+
+  // 崩溃报告的上传
+  // crashReporter.start({
+  //   productName: 'eEducation-demo',
+  //   companyName: 'agora-web-electron',
+  //   submitURL: process.env.REACT_APP_CRASH_REPORT_URL,
+  //   uploadToServer: true,
+  //   extra: {
+  //     version: '5.3.2'
+  //   }
+  // });
+
   // Create the browser window.
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    show: false,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
+      nodeIntegration: true
     }
   })
 
@@ -39,7 +56,59 @@ function createWindow() {
   win.on('closed', () => {
     win = null
   })
+
+  win.once('ready-to-show', () => {
+    win.show()
+  })
+
+  const template = [
+    ...(isMac ? [{
+      label: app.name,
+      submenu: [
+        { type: 'separator' },
+        { role: 'services' },
+        { role: 'hide' },
+        { type: 'separator' },
+        { role: 'quit' }
+      ]
+    }] : []),
+    {
+      label: "File",
+      submenu: [
+        isMac ? { role: 'close' } : { role: 'quit'}
+      ]
+    },
+    {
+      label: 'View',
+      submenu: [
+        { role: 'reload' },
+        { role: 'toggledevtools' },
+        { role: 'togglefullscreen' }
+      ]
+    }
+  ]
+
+  const menu = Menu.buildFromTemplate(template)
+  if (platform === 'darwin') {
+    win.excludedFromShownWindowsMenu = true
+    Menu.setApplicationMenu(menu)
+  }
+
+  if (platform === 'win32') {
+    // const menu = Menu.buildFromTemplate(template)
+    // Menu.setApplicationMenu(menu)
+    win.setMenu(menu);
+  }
 }
+
+app.whenReady().then(() => {
+  // more details: https://www.electronjs.org/docs/tutorial/keyboard-shortcuts
+  globalShortcut.register('Control+Shift+X', () => {
+    // Open the DevTools.
+    const currentWindow = BrowserWindow.getFocusedWindow()
+    currentWindow.webContents.openDevTools();
+  })
+});
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
@@ -62,14 +131,14 @@ app.on('activate', () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', async () => {
-  if (isDevelopment && !process.env.IS_TEST) {
-    // Install Vue Devtools
-    try {
-      await installExtension(VUEJS_DEVTOOLS)
-    } catch (e) {
-      console.error('Vue Devtools failed to install:', e.toString())
-    }
-  }
+  // if (isDevelopment && !process.env.IS_TEST) {
+  //   // Install Vue Devtools
+  //   try {
+  //     await installExtension(VUEJS_DEVTOOLS)
+  //   } catch (e) {
+  //     console.error('Vue Devtools failed to install:', e.toString())
+  //   }
+  // }
   createWindow()
 })
 
