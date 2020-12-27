@@ -1,26 +1,58 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from './Home.vue'
-import Room from './Room.vue'
+
+import store from './store'
+
+import Home from './pages/Home.vue'
+import LoginPage from './pages/LoginPage'
+import Room from './pages/Room.vue'
 import App from './App.vue'
 import SDK from './libs/sdk'
+import auth from './libs/auth'
+import './libs/mock'
 import 'ant-design-vue/dist/antd.css';
-import { Layout, List, Avatar, Button } from 'ant-design-vue';
+import { Layout, List, Avatar, Button, Card, Row, Col, Calendar,Form, Input, Select, message, Badge } from 'ant-design-vue';
 Vue.use(Layout)
 Vue.use(List)
 Vue.use(Avatar)
 Vue.use(Button)
+Vue.use(Card)
+Vue.use(Row)
+Vue.use(Col)
+Vue.use(Calendar)
+Vue.use(Form)
+Vue.use(Input)
+Vue.use(Select)
+Vue.use(Badge)
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', name:'home', component: Home },
-  { path: '/root', name: 'room', component: Room }
+  { path: '/', name:'home', component: Home,  meta: { requiresAuth: true }},
+  { path: '/room/:id', name: 'room', component: Room },
+  { path: '/login', name: 'login', component: LoginPage }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: __dirname,
   routes // (缩写) 相当于 routes: routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    if (!auth.loggedIn()) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next() // 确保一定要调用 next()
+  }
 })
 
 let appid = '3895205a5985414ea176204fcb1f63a4'
@@ -34,8 +66,10 @@ try {
   Vue.prototype.$sdk = null
 }
 Vue.config.productionTip = false
+Vue.prototype.$message = message
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

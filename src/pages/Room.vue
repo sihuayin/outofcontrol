@@ -1,21 +1,43 @@
 <template>
-  <div id="app">
-    <div id="console"></div>
-    <div id="remote"></div>
-    <div id="local"></div>
-
-    <button @click="prepareShare">共享屏幕</button>
-    <button @click="goBack">返回</button>
-  </div>
+  <a-layout class="main">
+      <a-layout-header>
+        <button @click="goBack">返回</button>
+      </a-layout-header>
+      <a-layout-content>
+        <a-row type="flex">
+          <a-col :flex="1">
+            <button @click="prepareShare">共享屏幕</button>
+          </a-col>
+          <a-col :flex="3">
+            <div id="console"></div>
+            <div id="remote"></div>
+            <div id="local"></div>
+            <ShareWindow :items="items" />
+          </a-col>
+        </a-row>
+      </a-layout-content>
+      <a-layout-footer>Footer</a-layout-footer>
+    </a-layout>
 </template>
 
 <script>
-
+import ShareWindow from '../components/ShareWindow'
 // import path from 'path'
 // import os from 'os'
 
 export default {
   name: 'App',
+  components: {
+    ShareWindow
+  },
+  data () {
+    return {
+      items: []
+    }
+  },
+  created() {
+    console.log('route', this.$router)
+  },
   mounted () {
     this.$nextTick(() => {
       const consoleContainer = document.querySelector('#console')
@@ -59,6 +81,7 @@ export default {
     prepareShare () {
       this.$sdk.prepareScreenShare().then(arr => {
         console.log(arr)
+        this.items = arr
       })
     },
     goBack() {
@@ -69,12 +92,8 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.board-container {
+  flex: 1;
+  background-color: blanchedalmond;
 }
 </style>
