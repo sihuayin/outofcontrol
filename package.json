@@ -14,7 +14,8 @@
   },
   "main": "background.js",
   "dependencies": {
-    "agora-electron-sdk": "latest",
+    "agora-electron-sdk": "^3.1.2-rc231-build.981",
+    "agora-rtm-sdk": "^1.4.1-201",
     "ant-design-vue": "^1.7.2",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
@@ -29,7 +30,7 @@
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
-    "electron": "5.0.8",
+    "electron": "^7.1.14",
     "electron-devtools-installer": "^3.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
@@ -57,7 +58,8 @@
     "not dead"
   ],
   "agora_electron": {
-    "electron_version": "5.0.8",
-    "prebuilt": true
+    "electron_version": "7.1.2",
+    "prebuilt": true,
+    "platform": "win32"
   }
 }
