@@ -5,10 +5,10 @@
       </a-layout-header>
       <a-layout-content>
         <a-row type="flex">
-          <a-col :flex="1">
+          <a-col :flex="3">
             <button @click="prepareShare">共享屏幕</button>
           </a-col>
-          <a-col :flex="3">
+          <a-col :flex="1">
             <div id="console"></div>
             <div id="remote"></div>
             <div id="local"></div>
