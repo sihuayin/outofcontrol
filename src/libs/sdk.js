@@ -5,6 +5,14 @@ import { wait, CustomBtoa } from './util'
 class SDK {
   constructor(options) {
     this.appId = options.appId
+    this.logPath = options.logPath
+    this.role = 2
+    this.joined = false
+    this.videoMuted = false
+    this.audioMuted = false
+    this.localUid = 0
+    this.appId = options.appId
+    this.subscribedList = []
 
     this.client = new AgoraRtcEngine()
     let ret = this.client.initialize(this.appId)
@@ -23,6 +31,10 @@ class SDK {
     this.client.setVideoProfile(43, false);
     this.client.setClientRole(options.role === undefined ? 2: options.role)
 
+    if (this.logPath) {
+      console.log(`[electron-log-path] set logPath: ${this.logPath}`)
+      this.client.setLogFile(this.logPath)
+    }
     this.bus = new EventEmitter()
 
     this.init()
