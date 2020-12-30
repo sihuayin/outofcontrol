@@ -48,11 +48,11 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      const consoleContainer = document.querySelector('#console')
+      // const consoleContainer = document.querySelector('#console')
       let rtcEngine = this.$sdk
       // rtcEngine.initialize(appid)
       // // listen to events
-      rtcEngine.on('joined-channel', (channel, uid, elapsed) => {
+      // rtcEngine.on('joined-channel', (channel, uid, elapsed) => {
         // this.setVistor({
         //   id: uid
         // })
@@ -61,7 +61,7 @@ export default {
         //   let localVideoContainer = document.querySelector('#local')
         //   //setup render area for local user
         //   rtcEngine.client.setupLocalVideo(localVideoContainer)
-      })
+      // })
 
       // rtcEngine.on('error', (err, msg) => {
       //   console.log('console.log', err, msg)
@@ -74,7 +74,7 @@ export default {
 
       })
 
-      rtcEngine.on('user-unpublished', (uid) => {
+      rtcEngine.on('user-unpublished', () => {
           this.setVistor({
             id: 0
           })

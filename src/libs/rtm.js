@@ -4,10 +4,9 @@ import AgoraRTM from 'agora-rtm-sdk'
 // const logFilter = ENABLE_LOG ? AgoraRTM.LOG_FILTER_DEBUG : AgoraRTM.LOG_FILTER_OFF;
 const logFilter = AgoraRTM.LOG_FILTER_OFF
 
-class Rtm {
+export default class Rtm {
     constructor() {
         this._bus = new EventEmitter()
-        this.agoraRtm = new AgoraRTM()
         this.localUid = undefined
         this.logged = false
         this.connectionState = "DISCONNECTED"
@@ -33,7 +32,7 @@ class Rtm {
     }
 
     async login(config) {
-        const client = this.agoraRtm.createInstance(config.appId, { enableLogUpload: config.uploadLog, logFilter: logFilter})
+        const client = AgoraRTM.createInstance(config.appId, { enableLogUpload: config.uploadLog, logFilter: logFilter})
         client.on('ConnectionStateChanged', (newState, reason) => {
           this.prevConnectionState = this.connectionState
           this.connectionState = newState
@@ -43,14 +42,14 @@ class Rtm {
           this.fire("MessageFromPeer", {message, peerId, props})
         })
         await client.login({
-          uid: config.userUuid,
+          uid: config.uid,
           token: config.rtmToken
         })
         this._client = client
     }
 
     async init(config) {
-        const client = this.agoraRtm.createInstance(config.appId, { enableLogUpload: config.uploadLog, logFilter: logFilter})
+        const client = AgoraRTM.createInstance(config.appId, { enableLogUpload: config.uploadLog, logFilter: logFilter})
         let channel = null;
         console.log('[rtm]  wrapper init')
         try {
@@ -64,11 +63,14 @@ class Rtm {
             console.log("[rtm] [Wrapper] MessageFromPeer")
             this.fire("MessageFromPeer", {message, peerId, props})
           })
+          console.log('config', config)
           await client.login({uid: config.uid, token: config.token})
+          console.log('watch -> ', client)
           this._client = client
           this.channels[config.channelName] = channel
           this.logged = true
         } catch(err) {
+            console.log(err)
           if (client) {
             await client.logout()
           }
@@ -83,53 +85,46 @@ class Rtm {
     }
 
     async join(channel, bus, config) {
-        try {
-          channel.on('ChannelMessage', (message, memberId, messagePros) => {
-            console.log("[rtm] ChannelMessage", message)
-            bus
-            .emit('ChannelMessage', {
-              channelName: config.channelName,
-              message,
-              memberId,
-              messagePros,
-            })
-          })
-          channel.on('MemberJoined', (memberId) => {
-            bus
-            .emit('MemberJoined', {
-              channelName: config.channelName,
-              memberId,
-            })
-          })
-          channel.on('MemberLeft', (memberId) => {
-            bus.emit('MemberLeft', {
-              channelName: config.channelName,
-              memberId,
-            })
-          })
-          channel.on('MemberCountUpdated', (memberCount) => {
-            bus.emit('MemberCountUpdated', {
-              channelName: config.channelName,
-              memberCount: memberCount
-            })
-          })
-          await channel.join()
-          this.channels[config.channelName] = channel
-        } catch (err) {
-          throw err
-        }
+
+        channel.on('ChannelMessage', (message, memberId, messagePros) => {
+        console.log("[rtm] ChannelMessage", message)
+        bus
+        .emit('ChannelMessage', {
+            channelName: config.channelName,
+            message,
+            memberId,
+            messagePros,
+        })
+        })
+        channel.on('MemberJoined', (memberId) => {
+        bus
+        .emit('MemberJoined', {
+            channelName: config.channelName,
+            memberId,
+        })
+        })
+        channel.on('MemberLeft', (memberId) => {
+        bus.emit('MemberLeft', {
+            channelName: config.channelName,
+            memberId,
+        })
+        })
+        channel.on('MemberCountUpdated', (memberCount) => {
+        bus.emit('MemberCountUpdated', {
+            channelName: config.channelName,
+            memberCount: memberCount
+        })
+        })
+        await channel.join()
+        this.channels[config.channelName] = channel
       }
 
     async leave(config) {
-        try {
-            const channel = this.channels[config.channelName]
-            if (channel) {
-                await channel.leave()
-                channel.removeAllListeners()
-                delete this.channels[config.channelName]
-            }
-        } catch (err) {
-            throw err
+        const channel = this.channels[config.channelName]
+        if (channel) {
+            await channel.leave()
+            channel.removeAllListeners()
+            delete this.channels[config.channelName]
         }
     }
 
@@ -208,5 +203,3 @@ class Rtm {
     }
     
 }
-
-export const Rtm

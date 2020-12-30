@@ -55,7 +55,7 @@ router.beforeEach((to, from, next) => {
   }
 })
 
-let appid = 'e5fa72928cae43e0bfa46c196cb91c2d'
+let appid = 'f75ff0253dab479d8c760d4f141ef4d0'
 try {
   let rtcEngine = new SDK({
     appId: appid,

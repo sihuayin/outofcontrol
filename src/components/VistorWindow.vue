@@ -6,7 +6,7 @@
 export default {
     name: 'VistorWindow',
     props: {
-        uid: number
+        uid: Number
     },
     mounted() {
         const remoteVideoContainer = document.querySelector('#remote')

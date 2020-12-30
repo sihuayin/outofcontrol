@@ -16,6 +16,7 @@
 <script>
 import infiniteScroll from 'vue-infinite-scroll'
 import { mapState, mapActions } from 'vuex'
+import Rtm from '../libs/rtm'
 
 export default {
   name: 'Home',
@@ -35,8 +36,20 @@ export default {
       }]
     }
   },
-  mounted() {
+  async mounted() {
     this.getSpecialists()
+    this.rtm = new Rtm()
+    await this.rtm.init({
+      appId: 'f75ff0253dab479d8c760d4f141ef4d0',
+      uploadLog: './log',
+      uid: '' + Math.floor(new Date().getTime() / 1000),
+      channelName: 'demoChannel'
+    })
+
+    const [channel, bus] = this.rtm.createObserverChannel('demoChannel')
+    await this.rtm.join(channel, bus, {
+      channelName: 'demoChannel'
+    })
   },
   methods: {
     ...mapActions('specialist', [
