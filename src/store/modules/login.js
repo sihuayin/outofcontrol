@@ -26,6 +26,10 @@ const actions = {
       auth.login(data.data)
     }
     return data
+  },
+
+  doLogout () {
+    auth.logout()
   }
 }
 

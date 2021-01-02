@@ -31,3 +31,16 @@ export function CustomBtoa(input) {
   }
   return output;
 }
+
+export const readImage = (target) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = (e) => {
+      resolve(e.currentTarget.result)
+    }
+    reader.onerror = (e) => {
+      reject(e)
+    }
+    reader.readAsDataURL(new Blob([target.buffer], {type: "image/png"}))
+  })
+}

@@ -1,6 +1,9 @@
 import AgoraRtcEngine from 'agora-electron-sdk'
 import { EventEmitter } from 'events';
-import { wait, CustomBtoa } from './util'
+import { wait, readImage } from './util'
+import os from 'os'
+import path from 'path';
+import { SHARE_ID } from '../config/config'
 
 class SDK {
   constructor(options) {
@@ -344,22 +347,78 @@ class SDK {
       }
     }
   }
-
-  async prepareScreenShare() {
-    let items = this.client.getScreenWindowsInfo()
-    const noImageSize =items.filter((it) => !it.image).length
-    if (noImageSize) {
-      throw {code: 'ELECTRON_PERMISSION_DENIED'}
-    }
-    return items.map((it) => ({
-      ownerName: it.ownerName,
-      name: it.name,
-      windowId: it.windowId,
-      image: CustomBtoa(it.image),
-    }))
+  
+  async getShareWindows() {
+    let list = this.client.getScreenWindowsInfo();
+    return await Promise.all(list.map(item => readImage(item.image))).then(imageList => {
+      return list.map((item, index) => {
+        return {
+          ownerName: item.ownerName,
+          name: item.name,
+          windowId: item.windowId,
+          image: imageList[index],
+        }
+      })
+    })
   }
 
-  async startScreenShare(options) {
+  async prepareScreenShare(token, channelName, info) {
+    return new Promise((resolve, reject) => {
+      // if(this.sharingPrepared){
+      //   return resolve(this.state.localVideoSource)
+      // }
+      let timer = setTimeout(() => {
+        reject(new Error('Timeout'))
+      }, 10000)
+      let rtcEngine = this.client
+      rtcEngine.once('videosourcejoinedsuccess', uid => {
+        clearTimeout(timer)
+        // this.sharingPrepared = true
+        resolve(uid)
+      });
+      try {
+        rtcEngine.videoSourceInitialize(this.appId);
+        let logpath = path.resolve(os.homedir(), "./agorascreenshare.log")
+        rtcEngine.videoSourceSetLogFile(logpath)
+        rtcEngine.videoSourceSetChannelProfile(1);
+        rtcEngine.videoSourceEnableWebSdkInteroperability(true)
+        // to adjust render dimension to optimize performance
+        rtcEngine.setVideoRenderDimension(3, SHARE_ID, 1200, 680);
+
+        // rtcEngine.videoSourceSetEncryptionSecret("hello")
+        // rtcEngine.videoSourceSetEncryptionMode("aes-128-xts")
+        
+        // rtcEngine.videoSourceEnableEncryption(true, {encryptionMode: 1, encryptionKey: "hello"});
+        rtcEngine.videoSourceJoin(token, channelName, info, SHARE_ID);
+      } catch(err) {
+        clearTimeout(timer)
+        reject(err)
+      }
+    })
+  }
+
+  startScreenShare(windowId = 0) {
+    // if(!this.sharingPrepared) {
+    //   console.error('Sharing not prepared yet.')
+    //   return false
+    // };
+    return new Promise((resolve, reject) => {
+      let rtcEngine = this.client
+      try {
+        // rtcEngine.startScreenCapture2(windowId, captureFreq, rect, bitrate);
+        // there's a known limitation that, videosourcesetvideoprofile has to be called at least once
+        // note although it's called, it's not taking any effect, to control the screenshare dimension, use captureParam instead
+        rtcEngine.videoSourceSetVideoProfile(43, false);
+        rtcEngine.videoSourceStartScreenCaptureByWindow(windowId, {x: 0, y: 0, width: 0, height: 0}, {width: 0, height: 0, bitrate: 500, frameRate: 15, captureMouseCursor: false, windowFocus: false})
+        rtcEngine.startScreenCapturePreview();
+        resolve()
+      } catch(e) {
+        reject(e)
+      }
+    });
+  }
+
+  async startScreenShareBank(options) {
     const startScreenPromise = new Promise((resolve, reject) => {
       const config = options.config || {
         profile: 50,
@@ -388,8 +447,11 @@ class SDK {
         }
         const handleVideoSourceJoin = (uid) => {
           this.client.off('videoSourceJoinedSuccess', handleVideoSourceJoin)
-          console.info("startScreenShare#options uid, ", uid, "  options", options)
-          this.client.videoSourceStartScreenCaptureByWindow(options.windowId, config.rect, config.param)
+          console.info("startScreenShare#options uid, ", uid, "  options", options, config)
+          this.client.videoSourceSetVideoProfile(43, false);
+          // this.client.videoSourceStartScreenCaptureByWindow(parseInt(options.windowId), {x: 0, y: 0, width: 0, height: 0}, {width: 0, height: 0, bitrate: 500, frameRate: 15})
+          this.client.videoSourceStartScreenCaptureByScreen(options.displayId, {x: 0, y: 0, width: 0, height: 0}, {width: 0, height: 0, bitrate: 500, frameRate: 5})
+          // this.client.setupLocalVideoSource(dom)
           this.client.startScreenCapturePreview()
           resolve(uid)
         }

@@ -16,12 +16,12 @@ Mock.mock(/\/login/, 'post', function() {
     data: {
       'id': 1,
       'token': 'sxx',
-      'role': 'profice'
+      'role': 'yisheng'
     }
   }
 })
 
-Mock.mock(/\/specialist/, 'get', function() {
+Mock.mock(/\/specialists/, 'get', function() {
   return {
     success: true,
     message: '',
@@ -42,6 +42,29 @@ Mock.mock(/\/specialist/, 'get', function() {
         type: 'only',
         date: '2020-12-24'
       }]
+    }
+  }
+})
+
+Mock.mock(/\/specialist\/1\/join/, 'post', function() {
+  return {
+    success: true,
+    message: '',
+    data: {
+      members: [{
+        id: 1,
+        name: 'test',
+        role: 'zhuanjia'
+      }, {
+        id: 2,
+        name: 'ddd',
+        role: 'yisheng'
+      }],
+      room: {
+        id: 1,
+        type: 'one',
+        time: ''
+      }
     }
   }
 })

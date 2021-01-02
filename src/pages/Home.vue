@@ -1,6 +1,8 @@
 <template>
   <a-layout class="main">
-      <a-layout-header>Header</a-layout-header>
+      <a-layout-header>Header
+        <LogoutButton />
+      </a-layout-header>
       <a-layout-content>
         <a-calendar @panelChange="onPanelChange">
           <ul slot="dateCellRender" slot-scope="value" class="events">
@@ -10,19 +12,26 @@
           </ul>
         </a-calendar>
       </a-layout-content>
-      <a-layout-footer>Footer</a-layout-footer>
+      <a-layout-footer>Footer -> <span>specialist: {{specialist.name}}</span><span>vistor: {{vistor.name}}</span></a-layout-footer>
     </a-layout>
 </template>
 <script>
 import infiniteScroll from 'vue-infinite-scroll'
 import { mapState, mapActions } from 'vuex'
-import Rtm from '../libs/rtm'
+import joinMixin from '../mixins/joinMixin'
+import LogoutButton from '../components/LogoutButton'
 
 export default {
   name: 'Home',
+  components: {
+    LogoutButton
+  },
   directives: { infiniteScroll },
+  mixins: [joinMixin],
   computed: mapState({
-    specialists: state => state.specialist.list
+    specialists: state => state.specialist.list,
+    specialist: state => state.room.specialist,
+    vistor: state => state.room.vistor
   }),
   data() {
     return {
@@ -38,31 +47,12 @@ export default {
   },
   async mounted() {
     this.getSpecialists()
-    this.rtm = new Rtm()
-    await this.rtm.init({
-      appId: 'f75ff0253dab479d8c760d4f141ef4d0',
-      uploadLog: './log',
-      uid: '' + Math.floor(new Date().getTime() / 1000),
-      channelName: 'demoChannel'
-    })
-
-    const [channel, bus] = this.rtm.createObserverChannel('demoChannel')
-    await this.rtm.join(channel, bus, {
-      channelName: 'demoChannel'
-    })
   },
   methods: {
     ...mapActions('specialist', [
       'getSpecialists'
     ]),
-    handleInfiniteOnLoad() {},
-    goRoom() {
-      this.$router.push("/root")
-    },
-    goLive(id) {
-      this.$router.push(`/room/${id}`)
-    },
-    onPanelChange() {},
+
     getListData(value) {
       return this.specialists.filter((item) => item.date === value.format('YYYY-MM-DD'))
     }

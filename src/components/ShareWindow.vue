@@ -5,8 +5,13 @@
           <img
             slot="cover"
             alt="example"
-            :src="`data:image/png;base64,${i.image}`"
+            :src="i.image"
           />
+          <template slot="actions" class="ant-card-actions">
+             <a-button type="primary" @click="showPreview(i.windowId)">
+              选择
+            </a-button>
+          </template>
         </a-card>
       </a-col>
      
@@ -22,6 +27,11 @@ export default {
       default () {
         return []
       }
+    }
+  },
+  methods: {
+    showPreview(windowId) {
+      this.$emit('display', windowId)
     }
   }
 }

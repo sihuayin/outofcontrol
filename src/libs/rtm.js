@@ -144,7 +144,8 @@ export default class Rtm {
 
     async sendChannelMessage(channelName, message, options) {
         const channel = this.channels[channelName]
-        await channel.sendMessage(message, {enableHistoricalMessaging: options.enableHistoricalMessaging})
+        
+        await channel.sendMessage(this.client.createMessage(message), {enableHistoricalMessaging: options.enableHistoricalMessaging})
     }
 
     async sendPeerMessage(peerId, message, options) {
