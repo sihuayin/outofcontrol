@@ -1,5 +1,8 @@
 <template>
-    <div :id="'user_'+uid" class="video_container"></div>
+    <a-card :title="name" size="small">
+        <div :id="'user_'+uid" :class="this.role ? 'full_video_container' : 'video_container'"></div>
+    </a-card>
+    
 </template>
 
 <script>
@@ -9,7 +12,8 @@ export default {
     name: 'VistorWindow',
     props: {
         uid: Number,
-        role: String
+        role: String,
+        name: String
     },
     mounted() {
         const dom = document.querySelector(`#user_${this.uid}`)
@@ -36,7 +40,12 @@ export default {
 <style>
 .video_container{
     width: 300px;
-    height: 300px;
+    height: 230px;
+    overflow: hidden;
+}
+.full_video_container{
+    width: 550px;
+    height: 100%;
     overflow: hidden;
 }
 </style>

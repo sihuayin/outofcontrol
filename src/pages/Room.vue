@@ -1,31 +1,38 @@
 <template>
-  <a-layout class="main">
-      <a-layout-header>
-        <button @click="goBack">返回</button>
-      </a-layout-header>
+
+<a-layout class="main">
+      <SecondHeader />
       <a-layout-content>
-        <a-row type="flex">
-          <a-col :flex="3">
-            <button @click="prepareShare">共享屏幕</button>
-  
-          <VistorWindow v-if="shareDisplayId" :uid="shareDisplayId" role="localVideoSource"/>
+        <a-row type="flex" class="full-height">
+          <a-col flex="auto" class="full-height">
+
+            <a-card title="共享内容" class="full-height">
+              <a-button @click="prepareShare" slot="extra" type="primary" ghost v-if="!shareDisplayId">共享屏幕</a-button>
+              <a-button @click="stopShare" slot="extra" type="danger" ghost v-else>停止共享</a-button>
+              <VistorWindow v-if="shareDisplayId" :uid="shareDisplayId" role="localVideoSource"/>
+              <div v-else :style="{width: '100%', height: '100%'}"></div>
+            </a-card>
+            
           </a-col>
-          <a-col :flex="1">
-            <VistorWindow v-if="vistor.id && vistor.rtc" :uid="vistor.id" />
-            <VistorWindow v-if="specialist.id && specialist.rtc" :uid="specialist.id" />
+          <a-col flex="300px">
+            <VistorWindow v-if="specialist.id && specialist.rtc" :uid="specialist.id" :name="specialist.name" />
+            <VistorWindow v-if="vistor.id && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
+            
+            <a-card title="参与" size="small" v-if="canHandUp">
+              <a-button @click="handUp" type="primary" ghost><a-icon type="video-camera" />举手</a-button>
+            </a-card>
             <a-modal v-model="visible" title="共享屏幕" @ok="visible=false">
               <ShareWindow :items="items" @display="chooseDisplay" />
             </a-modal>
             
-            
           </a-col>
         </a-row>
       </a-layout-content>
-      <a-layout-footer>Footer</a-layout-footer>
     </a-layout>
 </template>
 
 <script>
+import SecondHeader from '../components/SecondHeader'
 import ShareWindow from '../components/ShareWindow'
 // import SharePanel from '../components/SharePanel'
 import VistorWindow from '../components/VistorWindow'
@@ -40,6 +47,7 @@ export default {
   name: 'App',
   components: {
     ShareWindow,
+    SecondHeader,
     VistorWindow
   },
   data () {
@@ -56,7 +64,11 @@ export default {
       specialist: state => state.room.specialist,
       roomInfo: state => state.room.roomInfo,
       shareDisplayId: state => state.room.shareDisplayId
-    })
+    }),
+    canHandUp() {
+      console.log('参与值对比', this.specialist, this.roomInfo)
+      return !this.vistor.id && this.roomInfo.type === 'some'
+    }
   },
   async mounted () {
     const channelName = 'channel' + this.roomInfo.id
@@ -69,7 +81,7 @@ export default {
       channelName
     })
 
-    const [channel, bus] = this.rtm.createObserverChannel('demoChannel')
+    const [channel, bus] = this.rtm.createObserverChannel(channelName)
     this.bus = bus
 
     bus.on('ChannelMessage', ({
@@ -89,7 +101,7 @@ export default {
       }
     })
     await this.rtm.join(channel, bus, {
-      channelName: 'demoChannel'
+      channelName
     })
 
 
@@ -102,7 +114,7 @@ export default {
         role: 'yisheng'
       }
     }
-    await this.rtm.sendChannelMessage('demoChannel', {
+    await this.rtm.sendChannelMessage(channelName, {
       messageType: 'TEXT',
       text: JSON.stringify(message)
     }, {})
@@ -183,10 +195,18 @@ export default {
         console.log('准备完成', uid, windowId)
         this.$sdk.startScreenShare(windowId)
         this.setDisplayInfo(uid)
+        this.visible = false
       })
       .catch(err => {
         console.log(err)
       })
+    },
+    stopShare() {
+      this.$sdk.stopScreenShare()
+      this.setDisplayInfo(0)
+    },
+    handUp() {
+
     }
   }
 }
@@ -196,5 +216,8 @@ export default {
 .board-container {
   flex: 1;
   background-color: blanchedalmond;
+}
+.full-height {
+  height: 100%;
 }
 </style>

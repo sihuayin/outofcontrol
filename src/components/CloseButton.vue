@@ -1,6 +1,6 @@
 <template>
   <a-button type="danger" @click="close">
-    <a-icon type="close-circle" />
+    <a-icon type="poweroff" />
     关闭
   </a-button>
 </template>

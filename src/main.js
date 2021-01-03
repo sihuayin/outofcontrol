@@ -12,6 +12,8 @@ import Vistor from './pages/Vistor.vue'
 import OneApply from './pages/OneApply'
 import VideoList from './pages/VideoList'
 import VideoInfo from './pages/VideoInfo'
+import DatingPage from './pages/DatingPage'
+import TestPage from './pages/TestPage'
 import App from './App.vue'
 import SDK from './libs/sdk'
 import auth from './libs/auth'
@@ -36,7 +38,12 @@ import {
   Icon,
   Modal,
   Space,
-  Upload
+  Upload,
+  Dropdown,
+  Menu,
+  Table,
+  Divider,
+  Tag
 } from 'ant-design-vue';
 
 Vue.use(Layout)
@@ -56,16 +63,23 @@ Vue.use(Icon)
 Vue.use(Modal)
 Vue.use(Space)
 Vue.use(Upload)
+Vue.use(Dropdown)
+Vue.use(Menu)
+Vue.use(Table)
+Vue.use(Divider)
+Vue.use(Tag)
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name:'loading', component: Loading,  meta: { requiresAuth: true }},
+  { path: '/test', name:'test', component: TestPage,  meta: { requiresAuth: true }},
   { path: '/vistor', name:'vistir', component: Vistor,  meta: { requiresAuth: true }},
   { path: '/home', name:'home', component: Home,  meta: { requiresAuth: true }},
   { path: '/room/:id', name: 'room', component: Room },
   { path: '/oneapply', name: 'oneapply', component: OneApply },
   { path: '/videolist', name: 'videolist', component: VideoList },
   { path: '/videoinfo', name: 'videoinfo', component: VideoInfo },
+  { path: '/dating', name: 'dating', component: DatingPage },
   { path: '/login', name: 'login', component: LoginPage }
 ]
 

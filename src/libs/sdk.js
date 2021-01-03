@@ -475,26 +475,11 @@ class SDK {
   }
 
   async stopScreenShare() {
-    const stopScreenSharePromise = new Promise((resolve, reject) => {
-      const handleVideoSourceLeaveChannel = () => {
-        this.client.off('videoSourceLeaveChannel', handleVideoSourceLeaveChannel)
-        setTimeout(resolve, 1)
-      }
-      try {
-        this.client.on('videoSourceLeaveChannel', handleVideoSourceLeaveChannel)
-        let ret = this.client.videoSourceLeave()
-        console.info("stopScreenShare leaveChannel", ret)
-        wait(8000).catch((err) => {
-          this.client.off('videoSourceLeaveChannel', handleVideoSourceLeaveChannel)
-          reject(err)
-        })
-      } catch(err) {
-        this.client.off('videoSourceLeaveChannel', handleVideoSourceLeaveChannel)
-        reject(err)
-      }
-    })
-
-    await stopScreenSharePromise
+    let rtcEngine = this.client
+    rtcEngine.stopScreenCapture2()
+    rtcEngine.videoSourceLeave()
+    rtcEngine.videoSourceRelease()
+    return true
   }
 
   async publish(){

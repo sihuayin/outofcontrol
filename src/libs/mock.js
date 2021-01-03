@@ -16,6 +16,7 @@ Mock.mock(/\/login/, 'post', function() {
     data: {
       'id': 1,
       'token': 'sxx',
+      'name': 'dingidng',
       'role': 'yisheng'
     }
   }
@@ -62,9 +63,37 @@ Mock.mock(/\/specialist\/1\/join/, 'post', function() {
       }],
       room: {
         id: 1,
-        type: 'one',
+        type: 'some',
         time: ''
       }
+    }
+  }
+})
+
+Mock.mock(/\/docter\/datings/, 'get', function() {
+  return {
+    success: true,
+    message: '',
+    data: {
+      page: 1,
+      pageSize: 10,
+      total: 100,
+      data: [{
+        id: 1,
+        title: '测试',
+        status: 0,
+        date: '2020-12-22'
+      }, {
+        id: 2,
+        title: '测试1',
+        status: 1,
+        date: '2020-12-23'
+      }, {
+        id: 3,
+        title: '测试2',
+        status: 3,
+        date: '2020-12-24'
+      }]
     }
   }
 })
