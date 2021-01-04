@@ -7,6 +7,7 @@ class Auth {
     this.name = ''
     this.token = ''
     this.role = ''
+    this.roleId = 0
 
     this.init()
   }
@@ -20,6 +21,7 @@ class Auth {
         this.name = user.name
         this.token = user.token
         this.role = user.role
+        this.roleId = user.roleId
       } catch(err) {
         console.log('解析json文件错误!', err)
       }
@@ -31,6 +33,7 @@ class Auth {
     this.name = user.name
     this.token = user.token
     this.role = user.role
+    this.roleId = user.roleId
     storage.set(USER_STORAGE + 'info', this.toJson())
   }
 
@@ -39,6 +42,7 @@ class Auth {
     this.name = ''
     this.token = ''
     this.role = ''
+    this.roleId = 0
     storage.set(USER_STORAGE + 'info', this.toJson())
   }
 
@@ -47,13 +51,21 @@ class Auth {
       id: this.id,
       name: this.name,
       token: this.token,
-      role: this.role
+      role: this.role,
+      roleId: this.roleId
     })
   }
 
   loggedIn() {
-    console.log('lg', this)
     return this.token !== ''
+  }
+
+  isYisheng() {
+    return this.roleId === 4
+  }
+
+  isZhuanjia() {
+    return this.roleId === 8
   }
 }
 

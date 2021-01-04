@@ -42,7 +42,7 @@
         </a-row>
         
 
-        <a-list item-layout="horizontal" :data-source="data" :bordered="true" :style="{'margin-top': '20px'}">
+        <a-list item-layout="horizontal" :data-source="datings" :bordered="true" :style="{'margin-top': '20px'}">
           <div slot="header">
             可以直播的列表
           </div>
@@ -62,27 +62,31 @@
 <script>
 import joinMixin from '../mixins/joinMixin'
 import CommonHeader from '../components/CommonHeader'
-const data = [
-  {id: 1}
-];
+import { mapState, mapActions } from 'vuex'
+
 export default {
   name: 'Vistor',
   components: {
     CommonHeader
   },
   mixins: [joinMixin],
-  data() {
-    return {
-      data
-    }
-  },
+
+  computed: mapState({
+    datings: state => state.docter.datings
+  }),
   methods: {
+    ...mapActions('docter', [
+      'getDocterDatings'
+    ]),
     goOneApply() {
       this.$router.push('/oneapply')
     },
     goVideoList() {
       this.$router.push('/videolist')
     }
+  },
+  mounted() {
+    this.getDocterDatings(1, 50, 'unfinished')
   }
 }
 </script>

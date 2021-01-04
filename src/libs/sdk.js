@@ -63,6 +63,12 @@ class SDK {
       })
     })
 
+    this.client.on('clientRoleChanged', (oldRole, newRole) => {
+      this.fire('role-changed', {
+        oldRole, newRole
+      })
+    })
+
     this.client.on('userjoined', (uid) => {
       this.fire('user-published', {
         user: {

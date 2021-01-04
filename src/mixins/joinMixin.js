@@ -1,5 +1,5 @@
 import { mapActions } from 'vuex'
-
+import auth from '../libs/auth'
 export default {
   methods: {
     ...mapActions('room', [
@@ -8,7 +8,11 @@ export default {
     async goLive(id) {
       try {
         await this.joinVideo(id)
-        this.$router.push(`/room/${id}`)
+        if (auth.role !== 'zhuanjia') {
+          this.$router.push(`/room/${id}`)
+        } else {
+          this.$router.push(`/zhuanjia_room/${id}`)
+        }
       } catch(e) {
         this.$message.error(e.message)
       }

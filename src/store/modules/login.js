@@ -19,10 +19,9 @@ const actions = {
     commit('changeUsername', name)
   },
 
-  async doLogin () {
-    const data = await doLogin({})
+  async doLogin (state, body) {
+    const data = await doLogin(body)
     if (data.success) {
-      console.log('denglu chenggong', data)
       auth.login(data.data)
     }
     return data

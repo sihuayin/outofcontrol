@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="loading-container">
     <a-spin size="large" />
   </div>
 </template>
@@ -20,3 +20,13 @@ export default {
   }
 }
 </script>
+
+<style>
+.loading-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+

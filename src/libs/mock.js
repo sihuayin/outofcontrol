@@ -9,18 +9,18 @@ Mock.mock(/\/login/, 'get', function() {
   }
 })
 
-Mock.mock(/\/login/, 'post', function() {
-  return {
-    success: true,
-    message: '',
-    data: {
-      'id': 1,
-      'token': 'sxx',
-      'name': 'dingidng',
-      'role': 'yisheng'
-    }
-  }
-})
+// Mock.mock(/\/login/, 'post', function() {
+//   return {
+//     success: true,
+//     message: '',
+//     data: {
+//       'id': 1,
+//       'token': 'sxx',
+//       'name': 'dingidng',
+//       'role': 'yisheng'
+//     }
+//   }
+// })
 
 Mock.mock(/\/specialists/, 'get', function() {
   return {
@@ -62,7 +62,7 @@ Mock.mock(/\/specialist\/1\/join/, 'post', function() {
         role: 'yisheng'
       }],
       room: {
-        id: 1,
+        id: 2,
         type: 'some',
         time: ''
       }
@@ -94,6 +94,15 @@ Mock.mock(/\/docter\/datings/, 'get', function() {
         status: 3,
         date: '2020-12-24'
       }]
+    }
+  }
+})
+
+Mock.mock(/\/rmt\/api\/docter\/one/, 'post', function() {
+  return {
+    success: true,
+    message: '',
+    data: {
     }
   }
 })

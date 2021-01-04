@@ -31,30 +31,13 @@ export default class Rtm {
         this._bus.on(eventName, cb)
     }
 
-    async login(config) {
-        const client = AgoraRTM.createInstance(config.appId, { enableLogUpload: config.uploadLog, logFilter: logFilter})
-        client.on('ConnectionStateChanged', (newState, reason) => {
-          this.prevConnectionState = this.connectionState
-          this.connectionState = newState
-          this.fire("ConnectionStateChanged", {newState, reason})
-        })
-        client.on("MessageFromPeer", (message, peerId, props) => {
-          this.fire("MessageFromPeer", {message, peerId, props})
-        })
-        await client.login({
-          uid: config.uid,
-          token: config.rtmToken
-        })
-        this._client = client
-    }
-
     async init(config) {
         const client = AgoraRTM.createInstance(config.appId, { enableLogUpload: config.uploadLog, logFilter: logFilter})
         let channel = null;
         console.log('[rtm]  wrapper init')
         try {
           client.on('ConnectionStateChanged', (newState, reason) => {
-            console.log("[rtm] [Wrapper] ConnectionStateChanged")
+            console.log("[rtm] [Wrapper] ConnectionStateChanged", newState, reason)
             this.prevConnectionState = this.connectionState
             this.connectionState = newState
             this.fire("ConnectionStateChanged", {newState, reason})
@@ -65,17 +48,16 @@ export default class Rtm {
           })
           console.log('config', config)
           await client.login({uid: config.uid, token: config.token})
-          console.log('watch -> ', client)
           this._client = client
           this.channels[config.channelName] = channel
           this.logged = true
         } catch(err) {
-            console.log(err)
-          if (client) {
-            await client.logout()
-          }
-          this.reset()
-          throw err
+            console.log('rtm error:', err)
+            if (client) {
+                await client.logout()
+            }
+            this.reset()
+            throw err
         }
       }
 
@@ -115,8 +97,8 @@ export default class Rtm {
             memberCount: memberCount
         })
         })
-        await channel.join()
         this.channels[config.channelName] = channel
+        await channel.join()
       }
 
     async leave(config) {
@@ -142,10 +124,10 @@ export default class Rtm {
         this.reset()
     }
 
-    async sendChannelMessage(channelName, message, options) {
+    async sendChannelMessage(channelName, message) {
         const channel = this.channels[channelName]
-        
-        await channel.sendMessage(this.client.createMessage(message), {enableHistoricalMessaging: options.enableHistoricalMessaging})
+        console.log('发送消息:', channelName, channel)
+        return await channel.sendMessage(this.client.createMessage(message))
     }
 
     async sendPeerMessage(peerId, message, options) {
@@ -184,7 +166,6 @@ export default class Rtm {
           console.log('[rtmWrapper] removeAllListeners')
         }
         this._client = undefined
-        this.removeAllListeners()
         console.log('[rtmWrapper] self removeAllListeners')
         this._streamList = []
         this._userList = []

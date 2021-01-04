@@ -14,6 +14,7 @@ import VideoList from './pages/VideoList'
 import VideoInfo from './pages/VideoInfo'
 import DatingPage from './pages/DatingPage'
 import TestPage from './pages/TestPage'
+import ZhuanjiaRoom from './pages/ZhuanjiaRoom'
 import App from './App.vue'
 import SDK from './libs/sdk'
 import auth from './libs/auth'
@@ -76,6 +77,7 @@ const routes = [
   { path: '/vistor', name:'vistir', component: Vistor,  meta: { requiresAuth: true }},
   { path: '/home', name:'home', component: Home,  meta: { requiresAuth: true }},
   { path: '/room/:id', name: 'room', component: Room },
+  { path: '/zhuanjia_room/:id', name: 'zhuanjia_room', component: ZhuanjiaRoom },
   { path: '/oneapply', name: 'oneapply', component: OneApply },
   { path: '/videolist', name: 'videolist', component: VideoList },
   { path: '/videoinfo', name: 'videoinfo', component: VideoInfo },

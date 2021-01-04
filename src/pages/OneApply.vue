@@ -64,6 +64,11 @@
     </a-layout>
 </template>
 <script>
+
+import { mapActions } from 'vuex'
+import { message } from 'ant-design-vue'
+import { setTimeout } from 'timers';
+
 export default {
   name: 'OneApply',
   data: () => ({
@@ -76,11 +81,23 @@ export default {
     this.form = this.$form.createForm(this, { name: 'validate_other' });
   },
   methods: {
+    ...mapActions('docter', [
+      'addDocterDating'
+    ]),
     handleSubmit(e) {
       e.preventDefault();
-      this.form.validateFields((err, values) => {
+      this.form.validateFields(async (err, values) => {
         if (!err) {
           console.log('Received values of form: ', values);
+          const ret = await this.addDocterDating(values)
+          if (ret) {
+            message.error(ret)
+          } else {
+            message.info('添加成功')
+            setTimeout(() => {
+              this.$router.go(-1)
+            }, 500)
+          }
         }
       });
     },

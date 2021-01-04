@@ -16,9 +16,6 @@
           </a-col>
           <a-col flex="300px">
             <VistorWindow v-if="specialist.id && specialist.rtc" :uid="specialist.id" :name="specialist.name" />
-            <a-card title="专家" size="small" v-else>
-              <div :style="{width: '300px',  height: '230px', overflow: 'hidden'}">未加入</div>
-            </a-card>
             <VistorWindow v-if="vistor.id && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
             
             <a-card title="参与" size="small" v-if="canHandUp">
@@ -31,7 +28,6 @@
           </a-col>
         </a-row>
       </a-layout-content>
-      <a-layout-footer>{{members}}</a-layout-footer>
     </a-layout>
 </template>
 
@@ -59,7 +55,6 @@ export default {
       items: [],
       visible: false,
       localVideoSource: 0,
-      channelName: '',
       bus: null
     }
   },
@@ -68,42 +63,38 @@ export default {
       vistor: state => state.room.vistor,
       specialist: state => state.room.specialist,
       roomInfo: state => state.room.roomInfo,
-      shareDisplayId: state => state.room.shareDisplayId,
-      members: state => state.room.members
+      shareDisplayId: state => state.room.shareDisplayId
     }),
     canHandUp() {
       console.log('参与值对比', this.specialist, this.roomInfo)
-      return !this.vistor.id && this.roomInfo.type === 'some'
+      return !this.vistor.id && this.roomInfo.type === 'some' && auth.role === 'yisheng'
     }
   },
   async mounted () {
-    this.channelName = 'channel' + this.roomInfo.id
+    const channelName = 'channel' + this.roomInfo.id
     const userId = '' + auth.id
     this.rtm = new Rtm()
     await this.rtm.init({
       appId: config.appID,
       uploadLog: './rtm.txt',
       uid: userId,
-      channelName: this.channelName
+      channelName
     })
 
-    const [channel, bus] = this.rtm.createObserverChannel(this.channelName)
+    const [channel, bus] = this.rtm.createObserverChannel(channelName)
     this.bus = bus
 
     bus.on('ChannelMessage', ({
             message
         }) => {
       try {
-        console.log('消息来了 start -> ', message)
         const msgData = JSON.parse(message.text)
         if (msgData.type === 'hello') {
-          console.log('消息来了 Hello -> ', msgData.data)
-          this.addMemember(msgData.data)
-          // if (msgData.data && msgData.data.role === 'zhuanjia') {
-          //   this.setSpecialist(msgData.data)
-          // } else if (msgData.data && msgData.data.role === 'yisheng') {
-          //   this.setVistor(msgData.data)
-          // }
+          if (msgData.data && msgData.data.role === 'zhuanjia') {
+            this.setSpecialist(msgData.data)
+          } else if (msgData.data && msgData.data.role === 'yisheng') {
+            this.setVistor(msgData.data)
+          }
         } else if (msgData.type === 'handUp') { // 接收到举手信息
           if (msgData.data && msgData.data.id) {
             if (auth.role === 'zhuanjia') {
@@ -124,13 +115,10 @@ export default {
         console.log(e)
       }
     })
-    try {
-      await this.rtm.join(channel, bus, {
-        channelName: this.channelName
-      })
-    } catch(e) {
-      console.log('rmt join error: ', e)
-    }
+    await this.rtm.join(channel, bus, {
+      channelName
+    })
+
 
     // todo 发送我是谁的通知
     const message = {
@@ -141,18 +129,10 @@ export default {
         role: 'yisheng'
       }
     }
-    setTimeout(() => {
-      console.log('发送消息', message)
-      this.rtm.sendChannelMessage(this.channelName, {
-        messageType: 'TEXT',
-        text: JSON.stringify(message)
-      }, {})
-    }, 200)
-    // let ret = await this.rtm.sendChannelMessage(channelName, {
-    //   messageType: 'TEXT',
-    //   text: JSON.stringify(message)
-    // }, {})
-    // console.log('发送消息', ret)
+    await this.rtm.sendChannelMessage(channelName, {
+      messageType: 'TEXT',
+      text: JSON.stringify(message)
+    }, {})
 
     this.$nextTick(() => {
       let rtcEngine = this.$sdk
@@ -166,36 +146,28 @@ export default {
       })
 
       rtcEngine.on('user-published', (uid) => {
-        if (this.specialist.id === uid) {
-          this.setSpecialist({
-            id: uid,
-            rtc: true
-          })
-        } else {
-          this.setVistor({
-            id: uid,
-            rtc: true
-          })
-        }
+        this.setVistor({
+          id: uid,
+          rtc: true
+        })
+
       })
 
-      rtcEngine.on('user-unpublished', (uid) => {
-        if (this.specialist.id === uid) {
-          this.setSpecialist({
-            id: 0,
-            rtc: true
-          })
-        } else {
+      rtcEngine.on('user-unpublished', () => {
           this.setVistor({
             id: 0,
-            rtc: true
+            rtc: false
           })
-        }
       })
 
       rtcEngine.on('joined-channel', ({ uid }) => {
         if (parseInt(uid) === parseInt(auth.id)) {
-          if (this.roomInfo.type === 'one') {
+          if (auth.role === 'zhuanjia') {
+            this.setSpecialist({
+              id: uid,
+              rtc: true
+            })
+          } else {
             this.setVistor({
               id: uid,
               rtc: true
@@ -204,27 +176,8 @@ export default {
         }
 
       })
-      
-      rtcEngine.on('role-changed', ({ oldRole, newRole }) => {
-        console.log('角色变化, ', oldRole, newRole )
-        let data
-        if (newRole === 1) {
-          data = {
-            id: auth.id,
-            rtc: true,
-            name: auth.name
-          }
-        } else {
-          data = {
-            id: 0,
-            rtc: false,
-            name: ''
-          }
-        }
-        this.setVistor(data)
-      })
 
-      rtcEngine.join(null, this.channelName, null, auth.id)
+      rtcEngine.join(null, channelName, null, auth.id)
       global.rtcEngine = rtcEngine
     })
   },
@@ -233,14 +186,12 @@ export default {
       this.bus.removeAllListeners()
     }
     this.$sdk.release()
-    this.rtm.destroyRtm()
   },
   methods: {
     ...mapActions('room', [
       'setVistor',
       'setSpecialist',
-      'setDisplayInfo',
-      'addMemember'
+      'setDisplayInfo'
     ]),
     prepareShare () {
       this.visible = true
@@ -273,10 +224,10 @@ export default {
       const message = {
         type: 'handUp',
         data: {
-          id: auth.id
+          id: 1
         }
       }
-      this.rtm.sendChannelMessage(this.channelName, {
+      this.rtm.sendChannelMessage('demoChannel', {
         messageType: 'TEXT',
         text: JSON.stringify(message)
       }, {})

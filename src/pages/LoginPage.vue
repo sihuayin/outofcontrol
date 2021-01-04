@@ -46,7 +46,7 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log('Received values of form: ', values);
-          this.doLogin().then((res) => {
+          this.doLogin(values).then((res) => {
             if (!res.success) {
               this.$message.error(res.message)
             } else {

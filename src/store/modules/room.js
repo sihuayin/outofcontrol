@@ -20,7 +20,8 @@ const state = () => ({
     id: 0,
     type: 'one'
   },
-  shareDisplayId: 0
+  shareDisplayId: 0,
+  members: []
 })
 
 // getters
@@ -29,6 +30,9 @@ const getters = {
 
 // actions
 const actions = {
+  addMemember ({ commit }, member) {
+    commit('addMemember', member)
+  },
 
   setSpecialist ({ commit }, data) {
     commit('specialist', data)
@@ -47,7 +51,7 @@ const actions = {
           if (member.role === 'zhuanjia') {
             commit('specialist', member)
           } else {
-            commit('setVistor', member)
+            commit('addMemember', member)
           }
         })
 
@@ -79,10 +83,24 @@ const mutations = {
         state.vistor.rtc = data.rtc === undefined ? state.vistor.rtc : data.rtc
     },
     setRoomInfo (state, data) {
-      state.roomInfo = data
+      state.roomInfo.id = data.id || state.roomInfo.id
+      state.roomInfo.type = data.type || state.roomInfo.type
     },
     setDisplayInfo(state, info) {
       state.shareDisplayId = info
+    },
+    addMemember(state, member) {
+      let mem = state.members.find(m => m.id === member.id)
+      const data = Object.assign({
+        id: 0,
+        name: '',
+        role: ''
+      }, member)
+      if (mem) {
+        mem = data
+      } else {
+        state.members.push(data)
+      }
     }
 }
 
