@@ -195,7 +195,7 @@ export default {
     },
     chooseDisplay(windowId) {
       console.log('开始', windowId)
-      this.$sdk.prepareScreenShare(null, 'demoChannel', '')
+      this.$sdk.prepareScreenShare(null, this.channelName, '')
       .then(uid => {
         console.log('准备完成', uid, windowId)
         this.$sdk.startScreenShare(windowId)

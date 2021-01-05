@@ -2,13 +2,21 @@
   <a-layout class="main">
       <CommonHeader />
       <a-layout-content>
-        <a-calendar @panelChange="onPanelChange">
-          <ul slot="dateCellRender" slot-scope="value" class="events">
+        <div :style="{
+        display: 'inline-block',
+        width: '100%',
+        border: '1px solid #d9d9d9',
+        borderRadius: '4px',
+      }">
+        <a-calendar :value="value"  @panelChange="onPanelChange">
+          <div slot="dateCellRender" slot-scope="value" class="events">
             <a-button type="primary" icon="search" v-for="item in getListData(value)" :key="item.id" @click="goLive(item.id)">
               {{item.date}}
             </a-button>
-          </ul>
+          </div>
         </a-calendar>
+      </div>
+        
       </a-layout-content>
 
     </a-layout>
@@ -36,12 +44,7 @@ export default {
     return {
       busy: false,
       loading: false,
-      data: [{
-        email: 'test',
-        name: {
-          last: 'tt'
-        }
-      }]
+      value: moment()
     }
   },
   async mounted() {
@@ -55,6 +58,9 @@ export default {
     ]),
 
     getListData(value) {
+      if (value.format('YYYY-MM') !== this.value.format('YYYY-MM')) {
+        return []
+      }
       return this.specialists.filter((item) => item.date === value.format('YYYY-MM-DD'))
     },
 
@@ -81,6 +87,12 @@ export default {
   bottom: 40px;
   width: 100%;
   text-align: center;
+}
+.ant-fullcalendar-next-month-btn-day {
+  display: none;
+}
+.ant-fullcalendar-fullscreen .ant-fullcalendar-cell .ant-fullcalendar-month, .ant-fullcalendar-fullscreen .ant-fullcalendar-cell .ant-fullcalendar-date {
+  height: 100px;
 }
 </style>
 

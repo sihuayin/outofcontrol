@@ -1913,3 +1913,105 @@ Build info: Sep 28 2020 18:33:54 r
 
 INFO    19:05:29:754  34848; [rs] **report stats: seq: 23, report list size 0, tx/rx: 3528/1104, cache size: 0
 INFO    19:05:29:754  34848; [rs] report server1: 58.218.179.199:8913
+Local Date: Tue Jan  5 20:40:44 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (20:40:44:915 |    2)  83715; [rlbs] [report servers]: 150.138.141.231
+INFO    (20:40:44:916 |    1)  83715; [rlbs] [report servers]: 58.51.128.130
+INFO    (20:40:44:916 |    0)  83715; [rlbs] [report servers]: 223.111.161.200
+INFO    (20:40:44:916 |    0)  83715; [rlbs/u] responsed from 106.14.12.130:9700 with servers 150.138.141.231:8913
+INFO    (20:40:44:916 |    0)  83715; [rs] updateServers 150.138.141.231:8913, priority 3
+INFO    (20:40:44:916 |    0)  83715; [rs] updateServers 58.51.128.130:8913, priority 3
+INFO    (20:40:44:916 |    0)  83715; [rs] updateServers 223.111.161.200:8913, priority 3
+INFO    (20:40:45: 79 |    0)  83715; [ap/u] **responsed from 52.52.84.170:1080, CDS(8).
+INFO    (20:40:45: 80 |    1)  83715; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+INFO    (20:40:45:203 |  123)  83715; [ap/u] **responsed from 35.178.208.187:25000, CDS(8).
+INFO    (20:40:45:204 |    1)  83715; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (20:40:49:873 |  669)  83715; [rs] **report stats: seq: 28, report list size 0, tx/rx: 4034/1344, cache size: 0
+INFO    (20:40:49:873 |    0)  83715; [rs] report server1: 150.138.141.231:8913
+Local Date: Tue Jan  5 22:30:12 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (22:30:12:478 |  157)  82179; [ap/u] **responsed from 35.178.208.187:25000, CDS(8).
+INFO    (22:30:12:478 |    0)  82179; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (22:30:17:151 |    0)  82179; [rs] **report stats: seq: 28, report list size 0, tx/rx: 4034/1344, cache size: 0
+INFO    (22:30:17:151 |    0)  82179; [rs] report server1: 182.150.1.210:8913
+Local Date: Tue Jan  5 22:31:47 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (22:31:47:833 |  159)  46339; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+INFO    (22:31:47:837 |    4)  46339; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (22:31:52:534 |    0)  46339; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (22:31:52:534 |    0)  46339; [rs] report server1: 58.218.179.199:8913
+Local Date: Tue Jan  5 22:36:40 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (22:36:40: 20 |    0)  84227; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (22:36:44:665 |  645)  84227; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (22:36:44:665 |    0)  84227; [rs] report server1: 220.194.222.106:8913
+Local Date: Tue Jan  5 22:45:19 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (22:45:19:872 |    1)  47107; [ap/u] **responsed from 106.14.12.130:8000, TDS(64).
+INFO    (22:45:19:872 |    0)  47107; [ap] onAPTdsRes success with config: {"_store xdump-3.1":["A",{"rtc.enable_xdump":true,"rtc.enable_xdump_file":true,"rtc.enable_xdump_upload":true},{"retention":"15d","store":true}]}, size: 1
+INFO    (22:45:19:874 |    2)  47107; CacheManager: save cache to storage elapsed 1
+INFO    (22:45:19:874 |    0)  47107; [rp-tds-_store xdump-3.1-A] {"rtc.enable_xdump":true,"rtc.enable_xdump_file":true,"rtc.enable_xdump_upload":true}
+INFO    (22:45:19:902 |   28)  47107; [rlbs] [report servers]: 61.54.25.56
+INFO    (22:45:19:902 |    0)  47107; [rlbs] [report servers]: 223.111.146.119
+INFO    (22:45:19:902 |    0)  47107; [rlbs] [report servers]: 182.18.83.244
+INFO    (22:45:19:902 |    0)  47107; [rlbs/u] responsed from 106.14.12.130:9700 with servers 61.54.25.56:8913
+INFO    (22:45:19:902 |    0)  47107; [rs] updateServers 61.54.25.56:8913, priority 3
+INFO    (22:45:19:902 |    0)  47107; [rs] updateServers 223.111.146.119:8913, priority 3
+INFO    (22:45:19:902 |    0)  47107; [rs] updateServers 182.18.83.244:8913, priority 3
+INFO    (22:45:19:994 |   92)  47107; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+INFO    (22:45:20:138 |    0)  47107; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (22:45:24:838 |  700)  47107; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (22:45:24:838 |    0)  47107; [rs] report server1: 61.54.25.56:8913
+Local Date: Tue Jan  5 22:56:15 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (22:56:15: 61 |    0)  83459; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (22:56:19:569 |  508)  83459; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (22:56:19:569 |    0)  83459; [rs] report server1: 58.51.128.130:8913
+Local Date: Tue Jan  5 22:57:51 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (22:57:51:431 |  229)  46851; [rlbs] [report servers]: 115.231.27.31
+INFO    (22:57:51:431 |    0)  46851; [rlbs] [report servers]: 150.138.141.231
+INFO    (22:57:51:431 |    0)  46851; [rlbs] [report servers]: 223.111.168.121
+INFO    (22:57:51:431 |    0)  46851; [rlbs/u] responsed from 106.14.12.130:9700 with servers 115.231.27.31:8913
+INFO    (22:57:51:431 |    0)  46851; [rs] updateServers 115.231.27.31:8913, priority 3
+INFO    (22:57:51:431 |    0)  46851; [rs] updateServers 150.138.141.231:8913, priority 3
+INFO    (22:57:51:436 |    5)  46851; [rs] updateServers 223.111.168.121:8913, priority 3
+INFO    (22:57:51:436 |    0)  46851; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+INFO    (22:57:51:437 |    1)  46851; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (22:57:56: 86 |    0)  46851; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (22:57:56: 86 |    0)  46851; [rs] report server1: 115.231.27.31:8913
+Local Date: Tue Jan  5 23:06:16 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (23: 6:16:907 |  688)  46595; [rs] **report stats: seq: 28, report list size 0, tx/rx: 4034/1344, cache size: 0
+INFO    (23: 6:16:907 |    0)  46595; [rs] report server1: 101.64.176.200:8913
+Local Date: Tue Jan  5 23:09:35 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (23: 9:35:271 |    0)  83715; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (23: 9:35:271 |    0)  83715; [rs] report server1: 111.202.4.80:8913
+Local Date: Tue Jan  5 23:10:41 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (23:10:41:147 |   57)  83971; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (23:10:45:846 |  699)  83971; [rs] **report stats: seq: 23, report list size 0, tx/rx: 3469/1104, cache size: 0
+INFO    (23:10:45:846 |    0)  83971; [rs] report server1: 123.162.188.67:8913
+Local Date: Tue Jan  5 23:11:47 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (23:11:47: 45 |   34)  83971; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (23:11:51:710 |  665)  83971; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (23:11:51:710 |    0)  83971; [rs] report server1: 221.178.5.7:8913
+Local Date: Tue Jan  5 23:13:15 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (23:13:15:478 |  117)  83971; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (23:13:20:161 |    0)  83971; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (23:13:20:161 |    0)  83971; [rs] report server1: 223.111.161.200:8913
