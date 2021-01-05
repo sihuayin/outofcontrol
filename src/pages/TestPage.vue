@@ -11,102 +11,105 @@
             
           </a-col>
           <a-col flex="300px">
-             <a-card title="你好" size="small">
+             <!-- <a-card title="你好" size="small">
               <div :style="{width: '300px', height: '240px', background: 'red'}"></div>
+            </a-card> -->
+            <VistorWindow v-if="specialist && specialist.rtc" :uid="specialist.id" :name="specialist.name" />
+            <a-card title="专家" size="small" v-else>
+              <div :style="{width: '300px',  height: '230px', overflow: 'hidden'}">未加入</div>
             </a-card>
-            <a-card title="你好" size="small">
+            <VistorWindow v-if="vistor && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
+            <!-- <a-card title="你好" size="small">
               <div :style="{width: '300px', height: '240px', background: 'blue'}"></div>
             </a-card>
+            -->
            
-           
-            
+            <!-- <a-card title="参与" size="small" v-if="canHandUp">
+              <a-button @click="handUp" type="primary" ghost><a-icon type="video-camera" />举手</a-button>
+            </a-card> -->
             
             
           </a-col>
         </a-row>
       </a-layout-content>
+       <a-layout-footer>{{members}}, {{specialist}}</a-layout-footer>
     </a-layout>
 </template>
 <script>
 import SecondHeader from '../components/SecondHeader'
-import Rtm from '../libs/rtm'
-import config from '../config/config'
-import auth from '../libs/auth'
+// import Rtm from '../libs/rtm'
+// import config from '../config/config'
+// import auth from '../libs/auth'
+import VistorWindow from '../components/VistorWindow'
+import { mapState, mapActions, mapGetters } from 'vuex'
 export default {
   name: 'TestPage',
   components: {
-    SecondHeader
+    SecondHeader,
+    VistorWindow
+  },
+   computed: {
+    ...mapState({
+      // vistor: state => state.room.vistor,
+      // specialist: state => state.room.specialist,
+      roomInfo: state => state.room.roomInfo,
+      members: state => state.room.members
+    }),
+    ...mapGetters('room', {
+      specialist: 'specialist',
+      vistor: 'vistor'
+    })
+  },
+  methods: {
+    ...mapActions('room', [
+      'setDisplayInfo',
+      'addMemember'
+    ]),
   },
   async mounted () {
-    const channelName = 'channeltest1'
-    const userId = '' + 10
-    this.rtm = new Rtm()
-    await this.rtm.init({
-      appId: config.appID,
-      uploadLog: './rtm.txt',
-      uid: userId,
-      channelName
-    })
+    // // rtm加入
+    // this.addMemember({
+    //   id: 1,
+    //   role: '专家',
+    //   roleId: 8,
+    //   name: 'liaojie'
+    // })
+    // setTimeout(() => {
+    // // rtc加入
+    // this.addMemember({
+    //   id: 1,
+    //   role: '专家',
+    //   rtc: true
+    // })
+    // }, 5000)
 
-    const [channel, bus] = this.rtm.createObserverChannel(channelName)
-    this.bus = bus
-
-    bus.on('ChannelMessage', ({
-            message
-        }) => {
-      try {
-        console.log('消息来了 start -> ', message)
-        const msgData = JSON.parse(message.text)
-        if (msgData.type === 'hello') {
-          console.log('消息来了 Hello -> ', msgData.data)
-          this.addMemember(msgData.data)
-          // if (msgData.data && msgData.data.role === 'zhuanjia') {
-          //   this.setSpecialist(msgData.data)
-          // } else if (msgData.data && msgData.data.role === 'yisheng') {
-          //   this.setVistor(msgData.data)
-          // }
-        } else if (msgData.type === 'handUp') { // 接收到举手信息
-          if (msgData.data && msgData.data.id) {
-            if (auth.role === 'zhuanjia') {
-              // todo 添加到举手列表
-            }
-          }
-        } else if (msgData.type === 'selectOne') {
-          if (msgData.data && msgData.data.id !== undefined) {
-            if (auth.role === 'yisheng' && auth.id === msgData.data.id) { // 选中的人是我
-              // todo 切换角色加入频道直播
-              this.$sdk.publish()
-            } else if (auth.role === 'yisheng' && auth.id !== msgData.data.id) {
-              this.$sdk.unpublish()
-            }
-          }
-        }
-      } catch(e) {
-        console.log(e)
-      }
+    // rtm加入
+    this.addMemember({
+      id: 2,
+      role: 'yisheng',
+      roleId: 4,
+      name: 'kk'
     })
-    try {
-      await this.rtm.join(channel, bus, {
-        channelName
-      })
-      const count = await this.rtm.client.getChannelMemberCount([channelName])
-      console.log('频道人数,', count)
-      // todo 发送我是谁的通知
-      const message = {
-        type: 'hello',
-        data: {
-          id: 1,
-          name: 'test',
-          role: 'yisheng'
-        }
-      }
-      this.rtm.sendChannelMessage(channelName, {
-        text: JSON.stringify(message)
-      }, {})
-    } catch(e) {
-      console.log('rmt join error: ', e)
-    }
-    
+        this.addMemember({
+      id: 21,
+      role: 'yisheng',
+      roleId: 4,
+      name: 'kk1'
+    })
+        this.addMemember({
+      id: 22,
+      role: 'yisheng',
+      roleId: 4,
+      name: 'kk2'
+    })
+    // setTimeout(() => {
+    // // rtc加入
+    // this.addMemember({
+    //   id: 2,
+    //   rtc: true
+    // })
+    // }, 5000)
+
   }
 }
 </script>

@@ -1,8 +1,6 @@
 <template>
   <a-layout class="main">
-      <a-layout-header>Header
-        <LogoutButton />
-      </a-layout-header>
+      <CommonHeader />
       <a-layout-content>
         <a-calendar @panelChange="onPanelChange">
           <ul slot="dateCellRender" slot-scope="value" class="events">
@@ -12,21 +10,22 @@
           </ul>
         </a-calendar>
       </a-layout-content>
-      <a-layout-footer>Footer -> <span>specialist: {{specialist.name}}</span><span>vistor: {{vistor.name}}</span></a-layout-footer>
+
     </a-layout>
 </template>
 <script>
-import infiniteScroll from 'vue-infinite-scroll'
 import { mapState, mapActions } from 'vuex'
 import joinMixin from '../mixins/joinMixin'
-import LogoutButton from '../components/LogoutButton'
+import CommonHeader from '../components/CommonHeader'
+import moment from 'moment'
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
 
 export default {
   name: 'Home',
   components: {
-    LogoutButton
+    CommonHeader
   },
-  directives: { infiniteScroll },
   mixins: [joinMixin],
   computed: mapState({
     specialists: state => state.specialist.list,
@@ -46,7 +45,9 @@ export default {
     }
   },
   async mounted() {
-    this.getSpecialists()
+    this.getSpecialists({
+      month: moment().month() + 1
+    })
   },
   methods: {
     ...mapActions('specialist', [
@@ -55,6 +56,10 @@ export default {
 
     getListData(value) {
       return this.specialists.filter((item) => item.date === value.format('YYYY-MM-DD'))
+    },
+
+    onPanelChange() {
+      console.log(arguments)
     }
   }
 }

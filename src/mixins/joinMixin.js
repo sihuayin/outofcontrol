@@ -8,7 +8,7 @@ export default {
     async goLive(id) {
       try {
         await this.joinVideo(id)
-        if (auth.role !== 'zhuanjia') {
+        if (auth.isYisheng()) {
           this.$router.push(`/room/${id}`)
         } else {
           this.$router.push(`/zhuanjia_room/${id}`)

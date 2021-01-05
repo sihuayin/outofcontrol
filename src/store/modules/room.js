@@ -1,59 +1,46 @@
 // import {doLogin} from '../../api/loginApi'
 import {videoJoin} from '../../api/specialistApi'
 
-// initial state
-// shape: [{ id, quantity }]
+
 const state = () => ({
-  specialist: {
-      id: 0,
-      name: '',
-      role: '',
-      rtc: false
-  },
-  vistor: {
-      id: 0,
-      name: '',
-      role: '',
-      rtc: false
-  },
   roomInfo: {
     id: 0,
     type: 'one'
   },
   shareDisplayId: 0,
-  members: []
+  members: [],
+  hands: []
 })
 
 // getters
 const getters = {
+  specialist: (state) => {
+    return state.members.find(m => m.roleId === 8)
+  },
+  vistor: (state) => {
+    return state.members.find(m => m.roleId === 4 && m.rtc)
+  }
 }
 
 // actions
 const actions = {
+  addHand({ commit }, member) {
+    commit('addHand', member)
+  },
+  removeHand({ commit }, member) {
+    commit('removeHand', member)
+  },
   addMemember ({ commit }, member) {
     commit('addMemember', member)
   },
 
-  setSpecialist ({ commit }, data) {
-    commit('specialist', data)
-  },
-
-  setVistor({ commit }, user) {
-    commit('setVistor', user)
-  },
 
   joinVideo({ commit }, id) {
     commit('setRoomInfo', {})
     return videoJoin(id, {}).then((res) => {
       if (res.success) {
         const { members = [], room } = res.data
-        members.forEach((member) => {
-          if (member.role === 'zhuanjia') {
-            commit('specialist', member)
-          } else {
-            commit('addMemember', member)
-          }
-        })
+        members.forEach((member) => commit('addMemember', member))
 
         commit('setRoomInfo', room)
       } else {
@@ -73,15 +60,7 @@ const actions = {
 
 // mutations
 const mutations = {
-    specialist (state, data) {
-        state.specialist = data
-    },
-    setVistor (state, data) {
-        state.vistor.id = data.id || state.vistor.id
-        state.vistor.name = data.name || state.vistor.name
-        state.vistor.role = data.role || state.vistor.role
-        state.vistor.rtc = data.rtc === undefined ? state.vistor.rtc : data.rtc
-    },
+
     setRoomInfo (state, data) {
       state.roomInfo.id = data.id || state.roomInfo.id
       state.roomInfo.type = data.type || state.roomInfo.type
@@ -91,16 +70,31 @@ const mutations = {
     },
     addMemember(state, member) {
       let mem = state.members.find(m => m.id === member.id)
+      
       const data = Object.assign({
         id: 0,
         name: '',
-        role: ''
-      }, member)
+        role: '',
+        roleId: 0,
+        rtc: false
+      }, mem, member)
+      console.log('查询', mem, data)
       if (mem) {
-        mem = data
+        for (let i in data) {
+          mem[i] = data[i]
+        }
       } else {
         state.members.push(data)
       }
+    },
+    addHand(state, member) {
+      let mem = state.members.find(m => m.id === member.id)
+      if (!mem) {
+        state.members.push(member)
+      }
+    },
+    removeHand(state, member) {
+      state.members.filter(m => m.id !== member.id)
     }
 }
 

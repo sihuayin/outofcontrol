@@ -9,18 +9,18 @@ Mock.mock(/\/login/, 'get', function() {
   }
 })
 
-// Mock.mock(/\/login/, 'post', function() {
-//   return {
-//     success: true,
-//     message: '',
-//     data: {
-//       'id': 1,
-//       'token': 'sxx',
-//       'name': 'dingidng',
-//       'role': 'yisheng'
-//     }
-//   }
-// })
+Mock.mock(/\/login/, 'post', function() {
+  return {
+    success: true,
+    message: '',
+    data: {
+      'id': 1,
+      'token': 'sxx',
+      'name': 'dingidng',
+      'role': 'yisheng'
+    }
+  }
+})
 
 Mock.mock(/\/specialists/, 'get', function() {
   return {
@@ -55,16 +55,19 @@ Mock.mock(/\/specialist\/1\/join/, 'post', function() {
       members: [{
         id: 1,
         name: 'test',
-        role: 'zhuanjia'
+        role: 'zhuanjia',
+        roleId: 8
       }, {
         id: 2,
         name: 'ddd',
-        role: 'yisheng'
+        role: 'yisheng',
+        roleId: 4
       }],
       room: {
         id: 2,
         type: 'some',
-        time: ''
+        time: '',
+        roleId: 4
       }
     }
   }

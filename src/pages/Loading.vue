@@ -11,7 +11,7 @@ export default {
     setTimeout(() => {
       if (!auth.loggedIn()) {
         this.$router.replace('/login')
-      } else if (auth.role === 'zhuanjia') {
+      } else if (auth.isZhuanjia()) {
         this.$router.replace('/home')
       } else {
         this.$router.replace('/vistor')

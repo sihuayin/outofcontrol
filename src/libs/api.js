@@ -1,6 +1,7 @@
 import Axios from 'axios'
 import { message } from 'ant-design-vue'
 import qs from 'qs'
+import auth from './auth'
 
 const axios  = Axios.create({
   baseURL: 'http://47.95.218.174/rmt/api',
@@ -24,6 +25,10 @@ axios.interceptors.request.use(function (config) {
     config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
     console.log('config', config)
     config.data = qs.stringify(config.data);//对参数进行序列化
+  }
+
+  if (auth.token) {
+    config.headers['token'] = auth.token
   }
 
   return config;

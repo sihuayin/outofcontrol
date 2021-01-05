@@ -21,8 +21,8 @@ const actions = {
     commit('changeUsername', name)
   },
 
-  async getSpecialists ({ commit }) {
-    const res = await getSpecialists({})
+  async getSpecialists ({ commit }, data) {
+    const res = await getSpecialists(data)
     console.log('rewulibiao ->', res)
     if (res.success) {
       commit('specialistsList', res.data)

@@ -1,4 +1,5 @@
 import {getDocterDatings, addDocterDating} from '../../api/docterApi'
+import moment from 'moment'
 
 // initial state
 // shape: [{ id, quantity }]
@@ -14,6 +15,7 @@ const state = () => ({
 
 // getters
 const getters = {
+  unfinshed: state => state.datings.filter(d => d.participated === 0 && moment()< moment(d.enddttm))
 }
 
 // actions

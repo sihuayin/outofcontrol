@@ -15,11 +15,11 @@
             
           </a-col>
           <a-col flex="300px">
-            <VistorWindow v-if="specialist.id && specialist.rtc" :uid="specialist.id" :name="specialist.name" />
+            <VistorWindow v-if="specialist && specialist.rtc" :uid="specialist.id" :name="specialist.name" />
             <a-card title="专家" size="small" v-else>
               <div :style="{width: '300px',  height: '230px', overflow: 'hidden'}">未加入</div>
             </a-card>
-            <VistorWindow v-if="vistor.id && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
+            <VistorWindow v-if="vistor && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
             
             <a-card title="参与" size="small" v-if="canHandUp">
               <a-button @click="handUp" type="primary" ghost><a-icon type="video-camera" />举手</a-button>
@@ -40,7 +40,7 @@ import SecondHeader from '../components/SecondHeader'
 import ShareWindow from '../components/ShareWindow'
 // import SharePanel from '../components/SharePanel'
 import VistorWindow from '../components/VistorWindow'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
 import config from '../config/config'
@@ -65,15 +65,17 @@ export default {
   },
   computed: {
     ...mapState({
-      vistor: state => state.room.vistor,
-      specialist: state => state.room.specialist,
       roomInfo: state => state.room.roomInfo,
       shareDisplayId: state => state.room.shareDisplayId,
       members: state => state.room.members
     }),
+    ...mapGetters('room', {
+      specialist: 'specialist',
+      vistor: 'vistor'
+    }),
     canHandUp() {
       console.log('参与值对比', this.specialist, this.roomInfo)
-      return !this.vistor.id && this.roomInfo.type === 'some'
+      return !this.vistor && this.roomInfo.type === 'some'
     }
   },
   async mounted () {
@@ -99,23 +101,12 @@ export default {
         if (msgData.type === 'hello') {
           console.log('消息来了 Hello -> ', msgData.data)
           this.addMemember(msgData.data)
-          // if (msgData.data && msgData.data.role === 'zhuanjia') {
-          //   this.setSpecialist(msgData.data)
-          // } else if (msgData.data && msgData.data.role === 'yisheng') {
-          //   this.setVistor(msgData.data)
-          // }
-        } else if (msgData.type === 'handUp') { // 接收到举手信息
-          if (msgData.data && msgData.data.id) {
-            if (auth.role === 'zhuanjia') {
-              // todo 添加到举手列表
-            }
-          }
-        } else if (msgData.type === 'selectOne') {
+        }  else if (msgData.type === 'selectOne') {
           if (msgData.data && msgData.data.id !== undefined) {
-            if (auth.role === 'yisheng' && auth.id === msgData.data.id) { // 选中的人是我
+            if (auth.isYisheng() && auth.id === msgData.data.id) { // 选中的人是我
               // todo 切换角色加入频道直播
               this.$sdk.publish()
-            } else if (auth.role === 'yisheng' && auth.id !== msgData.data.id) {
+            } else if (auth.isYisheng() && auth.id !== msgData.data.id) {
               this.$sdk.unpublish()
             }
           }
@@ -136,9 +127,10 @@ export default {
     const message = {
       type: 'hello',
       data: {
-        id: 1,
-        name: 'test',
-        role: 'yisheng'
+        id: auth.id,
+        name: auth.name,
+        role: auth.role,
+        roleId: auth.roleId
       }
     }
     setTimeout(() => {
@@ -156,7 +148,7 @@ export default {
 
     this.$nextTick(() => {
       let rtcEngine = this.$sdk
-      const role = auth.role === 'zhuanjia' || this.roomInfo.type === 'one' ? 1 : 2
+      const role = this.roomInfo.type === 'one' ? 1 : 2
       console.log('身份', role)
       rtcEngine.client.setClientRole(role)
       // rtcEngine.client.setChannelProfile(1)
@@ -166,37 +158,23 @@ export default {
       })
 
       rtcEngine.on('user-published', (uid) => {
-        if (this.specialist.id === uid) {
-          this.setSpecialist({
-            id: uid,
-            rtc: true
-          })
-        } else {
-          this.setVistor({
-            id: uid,
-            rtc: true
-          })
-        }
+        this.addMemember({
+          id: uid,
+          rtc: true
+        })
       })
 
       rtcEngine.on('user-unpublished', (uid) => {
-        if (this.specialist.id === uid) {
-          this.setSpecialist({
-            id: 0,
-            rtc: true
-          })
-        } else {
-          this.setVistor({
-            id: 0,
-            rtc: true
-          })
-        }
+        this.addMemember({
+          id: uid,
+          rtc: false
+        })
       })
 
       rtcEngine.on('joined-channel', ({ uid }) => {
         if (parseInt(uid) === parseInt(auth.id)) {
           if (this.roomInfo.type === 'one') {
-            this.setVistor({
+            this.addMemember({
               id: uid,
               rtc: true
             })
@@ -221,7 +199,7 @@ export default {
             name: ''
           }
         }
-        this.setVistor(data)
+        this.addMemember(data)
       })
 
       rtcEngine.join(null, this.channelName, null, auth.id)
@@ -237,8 +215,6 @@ export default {
   },
   methods: {
     ...mapActions('room', [
-      'setVistor',
-      'setSpecialist',
       'setDisplayInfo',
       'addMemember'
     ]),

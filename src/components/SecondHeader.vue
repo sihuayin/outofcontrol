@@ -7,7 +7,7 @@
     <a-col :span="4">
       <a-row type="flex" justify="space-around">
         <a-space>
-          <a-button @click="$router.go(-1)" type="primary">
+          <a-button @click.prevent="goBack" type="primary">
             <a-icon type="close-circle" />返回
           </a-button>
         </a-space>
@@ -18,6 +18,11 @@
 </template>
 <script>
 export default {
-  name: 'SecondHeader'
+  name: 'SecondHeader',
+  methods: {
+    goBack() {
+      this.$router.back()
+    }
+  }
 }
 </script>

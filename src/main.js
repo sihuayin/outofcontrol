@@ -18,7 +18,7 @@ import ZhuanjiaRoom from './pages/ZhuanjiaRoom'
 import App from './App.vue'
 import SDK from './libs/sdk'
 import auth from './libs/auth'
-import './libs/mock'
+// import './libs/mock'
 import 'ant-design-vue/dist/antd.css';
 import './assets/index.less'
 import {
@@ -86,7 +86,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: __dirname,
   routes // (缩写) 相当于 routes: routes
 })

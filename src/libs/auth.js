@@ -33,7 +33,7 @@ class Auth {
     this.name = user.name
     this.token = user.token
     this.role = user.role
-    this.roleId = user.roleId
+    this.roleId = user.roleId || user.roleid
     storage.set(USER_STORAGE + 'info', this.toJson())
   }
 

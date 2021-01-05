@@ -15,12 +15,13 @@
             
           </a-col>
           <a-col flex="300px">
-            <VistorWindow v-if="specialist.id && specialist.rtc" :uid="specialist.id" :name="specialist.name" />
-            <VistorWindow v-if="vistor.id && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
-            
-            <a-card title="参与" size="small" v-if="canHandUp">
-              <a-button @click="handUp" type="primary" ghost><a-icon type="video-camera" />举手</a-button>
+            <VistorWindow v-if="specialist && specialist.rtc" :uid="specialist.id" :name="specialist.name" />
+            <a-card title="专家" size="small" v-else>
+              <div :style="{width: '300px',  height: '230px', overflow: 'hidden'}">未加入</div>
             </a-card>
+            <VistorWindow v-if="vistor && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
+            
+            <Hands v-if="showHands" :hands="hands"/>
             <a-modal v-model="visible" title="共享屏幕" @ok="visible=false">
               <ShareWindow :items="items" @display="chooseDisplay" />
             </a-modal>
@@ -36,7 +37,8 @@ import SecondHeader from '../components/SecondHeader'
 import ShareWindow from '../components/ShareWindow'
 // import SharePanel from '../components/SharePanel'
 import VistorWindow from '../components/VistorWindow'
-import { mapState, mapActions } from 'vuex'
+import Hands from '../components/Hands'
+import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
 import config from '../config/config'
@@ -48,30 +50,35 @@ export default {
   components: {
     ShareWindow,
     SecondHeader,
-    VistorWindow
+    VistorWindow,
+    Hands
   },
   data () {
     return {
       items: [],
       visible: false,
       localVideoSource: 0,
-      bus: null
+      bus: null,
+      channelName: '',
     }
   },
   computed: {
     ...mapState({
-      vistor: state => state.room.vistor,
-      specialist: state => state.room.specialist,
+      hands: state => state.room.hands,
       roomInfo: state => state.room.roomInfo,
       shareDisplayId: state => state.room.shareDisplayId
     }),
-    canHandUp() {
-      console.log('参与值对比', this.specialist, this.roomInfo)
-      return !this.vistor.id && this.roomInfo.type === 'some' && auth.role === 'yisheng'
+    ...mapGetters('room', {
+      specialist: 'specialist',
+      vistor: 'vistor'
+    }),
+    showHands() {
+      return !this.vistor
     }
   },
   async mounted () {
     const channelName = 'channel' + this.roomInfo.id
+    this.channelName = channelName
     const userId = '' + auth.id
     this.rtm = new Rtm()
     await this.rtm.init({
@@ -90,24 +97,14 @@ export default {
       try {
         const msgData = JSON.parse(message.text)
         if (msgData.type === 'hello') {
-          if (msgData.data && msgData.data.role === 'zhuanjia') {
-            this.setSpecialist(msgData.data)
-          } else if (msgData.data && msgData.data.role === 'yisheng') {
-            this.setVistor(msgData.data)
-          }
+          this.addMemember(msgData.data)
         } else if (msgData.type === 'handUp') { // 接收到举手信息
           if (msgData.data && msgData.data.id) {
-            if (auth.role === 'zhuanjia') {
+            if (auth.isZhuanjia()) {
               // todo 添加到举手列表
-            }
-          }
-        } else if (msgData.type === 'selectOne') {
-          if (msgData.data && msgData.data.id !== undefined) {
-            if (auth.role === 'yisheng' && auth.id === msgData.data.id) { // 选中的人是我
-              // todo 切换角色加入频道直播
-              this.$sdk.publish()
-            } else if (auth.role === 'yisheng' && auth.id !== msgData.data.id) {
-              this.$sdk.unpublish()
+              this.addHand({
+                id: msgData.data.id
+              })
             }
           }
         }
@@ -124,9 +121,10 @@ export default {
     const message = {
       type: 'hello',
       data: {
-        id: 1,
-        name: 'test',
-        role: 'yisheng'
+        id: auth.id,
+        name: auth.name,
+        role: auth.role,
+        roleId: auth.roleId
       }
     }
     await this.rtm.sendChannelMessage(channelName, {
@@ -136,8 +134,7 @@ export default {
 
     this.$nextTick(() => {
       let rtcEngine = this.$sdk
-      const role = auth.role === 'zhuanjia' || this.roomInfo.type === 'one' ? 1 : 2
-      console.log('身份', role)
+      const role = 1
       rtcEngine.client.setClientRole(role)
       // rtcEngine.client.setChannelProfile(1)
 
@@ -146,33 +143,25 @@ export default {
       })
 
       rtcEngine.on('user-published', (uid) => {
-        this.setVistor({
+         this.addMemember({
           id: uid,
           rtc: true
         })
-
       })
 
-      rtcEngine.on('user-unpublished', () => {
-          this.setVistor({
-            id: 0,
+      rtcEngine.on('user-unpublished', (uid) => {
+          this.addMemember({
+            id: uid,
             rtc: false
           })
       })
 
       rtcEngine.on('joined-channel', ({ uid }) => {
         if (parseInt(uid) === parseInt(auth.id)) {
-          if (auth.role === 'zhuanjia') {
-            this.setSpecialist({
-              id: uid,
-              rtc: true
-            })
-          } else {
-            this.setVistor({
-              id: uid,
-              rtc: true
-            })
-          }
+          this.addMemember({
+            id: uid,
+            rtc: true
+          })
         }
 
       })
@@ -186,12 +175,13 @@ export default {
       this.bus.removeAllListeners()
     }
     this.$sdk.release()
+    this.rtm.destroyRtm()
   },
   methods: {
     ...mapActions('room', [
-      'setVistor',
-      'setSpecialist',
-      'setDisplayInfo'
+      'addMember',
+      'setDisplayInfo',
+      'addHand'
     ]),
     prepareShare () {
       this.visible = true
@@ -219,18 +209,6 @@ export default {
     stopShare() {
       this.$sdk.stopScreenShare()
       this.setDisplayInfo(0)
-    },
-    handUp() {
-      const message = {
-        type: 'handUp',
-        data: {
-          id: 1
-        }
-      }
-      this.rtm.sendChannelMessage('demoChannel', {
-        messageType: 'TEXT',
-        text: JSON.stringify(message)
-      }, {})
     }
   }
 }
