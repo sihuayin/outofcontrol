@@ -6,6 +6,7 @@ import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 // const { crashReporter } = require('electron');
 const os = require('os')
+const path = require('path')
 const platform = os.platform()
 
 const isMac = platform === 'darwin'

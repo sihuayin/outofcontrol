@@ -2015,3 +2015,102 @@ Build info: Sep 28 2020 18:25:01 r
 INFO    (23:13:15:478 |  117)  83971; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
 INFO    (23:13:20:161 |    0)  83971; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
 INFO    (23:13:20:161 |    0)  83971; [rs] report server1: 223.111.161.200:8913
+Local Date: 1月 06 2021 Local Time: 09:09:04
+Build info: Sep 28 2020 18:33:54 r
+
+INFO    09:09:04:898  14820; [ap/u] **responsed from 50.17.126.121:1080, CDS(8).
+INFO    09:09:04:898  14820; [ap/u] **responsed from 50.17.126.121:1080, TDS(64).
+INFO    09:09:04:987  14820; [ap/u] **responsed from 52.58.56.244:25000, CDS(8).
+INFO    09:09:04:987  14820; [ap/u] **responsed from 52.58.56.244:25000, TDS(64).
+INFO    09:09:05:690  14820; [dns] parsed ip 47.95.116.69
+INFO    09:09:05:690  14820; [dns] parsed ip 116.62.127.18
+INFO    09:09:05:690  14820; [dns] parsed ip 47.94.215.36
+INFO    09:09:05:690  14820; [dns] parsed ip 112.126.76.219
+INFO    09:09:05:690  14820; [dns] parsed ip 47.95.250.218
+INFO    09:09:05:690  14820; [dns] parsed ip 116.62.134.61
+INFO    09:09:05:690  14820; [dns] parsed ip 101.132.119.238
+INFO    09:09:05:690  14820; [dns] parsed ip 47.95.242.6
+INFO    09:09:05:690  14820; [dns] parsed ip 47.97.157.160
+INFO    09:09:05:690  14820; [ap] onParsedDns with err 0, 47.95.116.69, 116.62.127.18, 47.94.215.36, 112.126.76.219, 47.95.250.218, 116.62.134.61, 101.132.119.238, 47.95.242.6, 47.97.157.160, 
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '47.95.116.69'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '116.62.127.18'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '47.94.215.36'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '112.126.76.219'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '47.95.250.218'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '116.62.134.61'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '101.132.119.238'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '47.95.242.6'
+INFO    09:09:05:690  14820; [cm] save key '10.2.77.149' dns 'ap2.agora.io' ip '47.97.157.160'
+INFO    09:09:05:692  14820; CacheManager: save cache to storage elapsed 2
+INFO    09:09:05:692  14820; [dns] parsed ip 47.97.157.160
+INFO    09:09:05:692  14820; [dns] parsed ip 47.94.215.36
+INFO    09:09:05:692  14820; [dns] parsed ip 47.95.116.69
+INFO    09:09:05:692  14820; [dns] parsed ip 47.95.242.6
+INFO    09:09:05:692  14820; [dns] parsed ip 101.132.119.238
+INFO    09:09:05:692  14820; [dns] parsed ip 47.95.250.218
+INFO    09:09:05:692  14820; [dns] parsed ip 116.62.127.18
+INFO    09:09:05:692  14820; [dns] parsed ip 116.62.134.61
+INFO    09:09:05:692  14820; [dns] parsed ip 112.126.76.219
+INFO    09:09:05:692  14820; [voet]onParsedDns is 47.97.157.160
+INFO    09:09:05:692  14820; [voet]onParsedDns is 47.94.215.36
+INFO    09:09:05:692  14820; [voet]onParsedDns is 47.95.116.69
+INFO    09:09:05:692  14820; [voet]onParsedDns is 47.95.242.6
+INFO    09:09:05:692  14820; [voet]onParsedDns is 101.132.119.238
+INFO    09:09:05:692  14820; [voet]onParsedDns is 47.95.250.218
+INFO    09:09:05:692  14820; [voet]onParsedDns is 116.62.127.18
+INFO    09:09:05:692  14820; [voet]onParsedDns is 116.62.134.61
+INFO    09:09:05:692  14820; [voet]onParsedDns is 112.126.76.219
+INFO    09:09:09:688  14820; [rs] **report stats: seq: 27, report list size 0, tx/rx: 3978/1296, cache size: 0
+INFO    09:09:09:688  14820; [rs] report server1: 182.201.243.7:8913
+Local Date: 1月 06 2021 Local Time: 09:14:40
+Build info: Sep 28 2020 18:33:54 r
+
+INFO    09:14:40:803  36628; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3625/1152, cache size: 0
+INFO    09:14:40:803  36628; [rs] report server1: 223.111.168.121:8913
+Local Date: 1月 06 2021 Local Time: 09:43:54
+Build info: Sep 28 2020 18:33:54 r
+
+INFO    09:43:54:091  23092; [rs] **report stats: seq: 27, report list size 0, tx/rx: 3974/1296, cache size: 0
+INFO    09:43:54:091  23092; [rs] report server1: 223.111.168.121:8913
+Local Date: 1月 06 2021 Local Time: 09:46:11
+Build info: Sep 28 2020 18:33:54 r
+
+INFO    09:46:11:195  34376; [dns] parsed ip 101.132.119.238
+INFO    09:46:11:195  34376; [dns] parsed ip 112.126.76.219
+INFO    09:46:11:195  34376; [dns] parsed ip 47.97.157.160
+INFO    09:46:11:195  34376; [dns] parsed ip 47.95.116.69
+INFO    09:46:11:195  34376; [dns] parsed ip 116.62.134.61
+INFO    09:46:11:195  34376; [dns] parsed ip 47.94.215.36
+INFO    09:46:11:195  34376; [dns] parsed ip 47.95.250.218
+INFO    09:46:11:195  34376; [dns] parsed ip 116.62.127.18
+INFO    09:46:11:195  34376; [dns] parsed ip 47.95.242.6
+INFO    09:46:11:195  34376; [voet]onParsedDns is 101.132.119.238
+INFO    09:46:11:195  34376; [voet]onParsedDns is 112.126.76.219
+INFO    09:46:11:195  34376; [voet]onParsedDns is 47.97.157.160
+INFO    09:46:11:195  34376; [voet]onParsedDns is 47.95.116.69
+INFO    09:46:11:195  34376; [voet]onParsedDns is 116.62.134.61
+INFO    09:46:11:195  34376; [voet]onParsedDns is 47.94.215.36
+INFO    09:46:11:195  34376; [voet]onParsedDns is 47.95.250.218
+INFO    09:46:11:195  34376; [voet]onParsedDns is 116.62.127.18
+INFO    09:46:11:195  34376; [voet]onParsedDns is 47.95.242.6
+Local Date: 1月 06 2021 Local Time: 10:33:04
+Build info: Sep 28 2020 18:33:54 r
+
+INFO    10:33:04:025  28600; [dns] parsed ip 47.95.250.218
+INFO    10:33:04:026  28600; [dns] parsed ip 112.126.76.219
+INFO    10:33:04:026  28600; [dns] parsed ip 47.95.116.69
+INFO    10:33:04:026  28600; [dns] parsed ip 47.97.157.160
+INFO    10:33:04:026  28600; [dns] parsed ip 101.132.119.238
+INFO    10:33:04:026  28600; [dns] parsed ip 47.95.242.6
+INFO    10:33:04:026  28600; [dns] parsed ip 116.62.127.18
+INFO    10:33:04:026  28600; [dns] parsed ip 47.94.215.36
+INFO    10:33:04:026  28600; [dns] parsed ip 116.62.134.61
+INFO    10:33:04:026  28600; [voet]onParsedDns is 47.95.250.218
+INFO    10:33:04:026  28600; [voet]onParsedDns is 112.126.76.219
+INFO    10:33:04:026  28600; [voet]onParsedDns is 47.95.116.69
+INFO    10:33:04:026  28600; [voet]onParsedDns is 47.97.157.160
+INFO    10:33:04:026  28600; [voet]onParsedDns is 101.132.119.238
+INFO    10:33:04:026  28600; [voet]onParsedDns is 47.95.242.6
+INFO    10:33:04:026  28600; [voet]onParsedDns is 116.62.127.18
+INFO    10:33:04:026  28600; [voet]onParsedDns is 47.94.215.36
+INFO    10:33:04:026  28600; [voet]onParsedDns is 116.62.134.61

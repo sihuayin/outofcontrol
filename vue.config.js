@@ -5,6 +5,8 @@ module.exports = {
   },
   pluginOptions: {
     electronBuilder: {
+      externals: ["agora-electron-sdk"],
+      nodeModulesPath: ['./node_modules'],
       builderOptions: {
         "asar": false
       }
