@@ -1,0 +1,33 @@
+Create video stream channel for type : 0, uid :0
+
+duration : 2, tx :61194, rx :4632, txbr :0, rxbr :0, txAudioBr :0, rxAudioBr :0, users :1
+
+TO start process, path : /Users/sihuayin/Documents/electron/outofcontrol/node_modules/agora-electron-sdk/build/Release/
+execv : VideoSource, id:/9A285FC7-9CD3-40AD-, pid:84709, fd:43,appid:f75ff0253dab479d8c760d4f141ef4d0
+
+Receive msg : 5
+
+Create video stream channel for type : 3, uid :0
+
+Receive msg : 6
+
+Receive msg : 17
+
+duration : 4, tx :223129, rx :8395, txbr :647, rxbr :15, txAudioBr :57, rxAudioBr :0, users :2
+
+duration : 6, tx :392704, rx :12848, txbr :677, rxbr :17, txAudioBr :54, rxAudioBr :0, users :2
+
+duration : 8, tx :600578, rx :17280, txbr :830, rxbr :17, txAudioBr :55, rxAudioBr :0, users :2
+
+~NodeVideoStreamChannel
+
+duration : 10, tx :823368, rx :21888, txbr :891, rxbr :18, txAudioBr :58, rxAudioBr :0, users :1
+
+duration : 12, tx :1047271, rx :25543, txbr :895, rxbr :14, txAudioBr :58, rxAudioBr :0, users :1
+
+duration : 14, tx :1265657, rx :29453, txbr :873, rxbr :15, txAudioBr :57, rxAudioBr :0, users :1
+
+duration : 14, tx :1320468, rx :30434, txbr :792, rxbr :14, txAudioBr :51, rxAudioBr :0, users :1
+
+duration : 14, tx :1320468, rx :30434, txbr :792, rxbr :14, txAudioBr :0, rxAudioBr :0, users :1
+

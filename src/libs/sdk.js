@@ -71,17 +71,13 @@ class SDK {
 
     this.client.on('userjoined', (uid) => {
       this.fire('user-published', {
-        user: {
-          uid,
-        }
+        uid
       })
     })
 
     this.client.on('removestream', (uid) => {
       this.fire('user-unpublished', {
-        user: {
-          uid
-        },
+        uid
       })
     })
 
@@ -215,10 +211,11 @@ class SDK {
         code: ret
       }
     }
+    this.reset()
     return
   }
 
-  release() {
+  async release() {
     let ret = this.client.release()
     if (ret < 0) {
       throw {

@@ -30,8 +30,8 @@ const actions = {
   removeHand({ commit }, member) {
     commit('removeHand', member)
   },
-  addMemember ({ commit }, member) {
-    commit('addMemember', member)
+  addMember ({ commit }, member) {
+    commit('addMember', member)
   },
 
 
@@ -40,7 +40,7 @@ const actions = {
     return videoJoin(id, {}).then((res) => {
       if (res.success) {
         const { members = [], room } = res.data
-        members.forEach((member) => commit('addMemember', member))
+        members.forEach((member) => commit('addMember', member))
 
         commit('setRoomInfo', room)
       } else {
@@ -68,7 +68,10 @@ const mutations = {
     setDisplayInfo(state, info) {
       state.shareDisplayId = info
     },
-    addMemember(state, member) {
+    addMember(state, member) {
+      if (member.roleid) {
+        member.roleId = member.roleid
+      }
       let mem = state.members.find(m => m.id === member.id)
       
       const data = Object.assign({

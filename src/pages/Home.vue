@@ -5,8 +5,10 @@
         <div :style="{
         display: 'inline-block',
         width: '100%',
+        height: '100%',
         border: '1px solid #d9d9d9',
         borderRadius: '4px',
+        overflow: 'hiddden'
       }">
         <a-calendar :value="value"  @panelChange="onPanelChange">
           <div slot="dateCellRender" slot-scope="value" class="events">
@@ -25,6 +27,7 @@
 import { mapState, mapActions } from 'vuex'
 import joinMixin from '../mixins/joinMixin'
 import CommonHeader from '../components/CommonHeader'
+import auth from '../libs/auth'
 import moment from 'moment'
 import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
@@ -48,9 +51,11 @@ export default {
     }
   },
   async mounted() {
+    console.log('auth', auth)
     this.getSpecialists({
-      month: moment().month() + 1
-    })
+      id: auth.id, data: {
+      month: moment().format('YYYY-MM')
+    }})
   },
   methods: {
     ...mapActions('specialist', [
@@ -91,8 +96,25 @@ export default {
 .ant-fullcalendar-next-month-btn-day {
   display: none;
 }
-.ant-fullcalendar-fullscreen .ant-fullcalendar-cell .ant-fullcalendar-month, .ant-fullcalendar-fullscreen .ant-fullcalendar-cell .ant-fullcalendar-date {
-  height: 100px;
+
+.events {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.events .ant-badge-status {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.notes-month {
+  text-align: center;
+  font-size: 28px;
+}
+.notes-month section {
+  font-size: 28px;
 }
 </style>
 

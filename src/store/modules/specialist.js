@@ -21,8 +21,8 @@ const actions = {
     commit('changeUsername', name)
   },
 
-  async getSpecialists ({ commit }, data) {
-    const res = await getSpecialists(data)
+  async getSpecialists ({ commit }, {id, data} ) {
+    const res = await getSpecialists(id, data)
     console.log('rewulibiao ->', res)
     if (res.success) {
       commit('specialistsList', res.data)
@@ -35,10 +35,10 @@ const mutations = {
   changeUsername (state, name) {
     state.username = name
   },
-  specialistsList (state, {page, pageSize, total, data}) {
-    state.page = page
-    state.pageSize = pageSize
-    state.total = total
+  specialistsList (state, data) {
+    // state.page = page
+    // state.pageSize = pageSize
+    // state.total = total
     state.list = data
   }
 }

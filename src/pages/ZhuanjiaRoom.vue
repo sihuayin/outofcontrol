@@ -41,7 +41,7 @@ import Hands from '../components/Hands'
 import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
-import config from '../config/config'
+import config, {SHARE_ID} from '../config/config'
 // import path from 'path'
 // import os from 'os'
 
@@ -97,7 +97,7 @@ export default {
       try {
         const msgData = JSON.parse(message.text)
         if (msgData.type === 'hello') {
-          this.addMemember(msgData.data)
+          this.addMember(msgData.data)
         } else if (msgData.type === 'handUp') { // 接收到举手信息
           if (msgData.data && msgData.data.id) {
             if (auth.isZhuanjia()) {
@@ -142,15 +142,21 @@ export default {
         console.log('console.log', err, msg)
       })
 
-      rtcEngine.on('user-published', (uid) => {
-         this.addMemember({
-          id: uid,
-          rtc: true
-        })
+      rtcEngine.on('user-published', ({uid}) => {
+        if (uid === SHARE_ID && this.shareDisplayId) { // 共享屏幕
+          return
+        } else if (uid == SHARE_ID) {
+          this.setDisplayInfo(uid)
+        } else {
+          this.addMember({
+            id: uid,
+            rtc: true
+          })
+        }
       })
 
-      rtcEngine.on('user-unpublished', (uid) => {
-          this.addMemember({
+      rtcEngine.on('user-unpublished', ({uid}) => {
+          this.addMember({
             id: uid,
             rtc: false
           })
@@ -158,23 +164,29 @@ export default {
 
       rtcEngine.on('joined-channel', ({ uid }) => {
         if (parseInt(uid) === parseInt(auth.id)) {
-          this.addMemember({
+          this.addMember({
             id: uid,
             rtc: true
           })
         }
 
       })
-
-      rtcEngine.join(null, channelName, null, auth.id)
-      global.rtcEngine = rtcEngine
+      try {
+        rtcEngine.join(null, channelName, null, auth.id)
+        global.rtcEngine = rtcEngine
+      } catch(e) {
+        message.error('加入失败')
+        setTimeout(() => {
+          this.$router.go(-1)
+        }, 1000)
+      }
     })
   },
   beforeDestroy() {
     if (this.bus) {
       this.bus.removeAllListeners()
     }
-    this.$sdk.release()
+    this.$sdk.leave()
     this.rtm.destroyRtm()
   },
   methods: {
@@ -199,7 +211,7 @@ export default {
       .then(uid => {
         console.log('准备完成', uid, windowId)
         this.$sdk.startScreenShare(windowId)
-        this.setDisplayInfo(uid)
+        
         this.visible = false
       })
       .catch(err => {

@@ -63,12 +63,12 @@ export default {
   methods: {
     ...mapActions('room', [
       'setDisplayInfo',
-      'addMemember'
+      'addMember'
     ]),
   },
   async mounted () {
     // // rtm加入
-    // this.addMemember({
+    // this.addMember({
     //   id: 1,
     //   role: '专家',
     //   roleId: 8,
@@ -76,7 +76,7 @@ export default {
     // })
     // setTimeout(() => {
     // // rtc加入
-    // this.addMemember({
+    // this.addMember({
     //   id: 1,
     //   role: '专家',
     //   rtc: true
@@ -84,19 +84,19 @@ export default {
     // }, 5000)
 
     // rtm加入
-    this.addMemember({
+    this.addMember({
       id: 2,
       role: 'yisheng',
       roleId: 4,
       name: 'kk'
     })
-        this.addMemember({
+        this.addMember({
       id: 21,
       role: 'yisheng',
       roleId: 4,
       name: 'kk1'
     })
-        this.addMemember({
+        this.addMember({
       id: 22,
       role: 'yisheng',
       roleId: 4,
@@ -104,7 +104,7 @@ export default {
     })
     // setTimeout(() => {
     // // rtc加入
-    // this.addMemember({
+    // this.addMember({
     //   id: 2,
     //   rtc: true
     // })

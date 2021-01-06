@@ -100,7 +100,7 @@ export default {
         const msgData = JSON.parse(message.text)
         if (msgData.type === 'hello') {
           console.log('消息来了 Hello -> ', msgData.data)
-          this.addMemember(msgData.data)
+          this.addMember(msgData.data)
         }  else if (msgData.type === 'selectOne') {
           if (msgData.data && msgData.data.id !== undefined) {
             if (auth.isYisheng() && auth.id === msgData.data.id) { // 选中的人是我
@@ -158,14 +158,14 @@ export default {
       })
 
       rtcEngine.on('user-published', (uid) => {
-        this.addMemember({
+        this.addMember({
           id: uid,
           rtc: true
         })
       })
 
       rtcEngine.on('user-unpublished', (uid) => {
-        this.addMemember({
+        this.addMember({
           id: uid,
           rtc: false
         })
@@ -174,7 +174,7 @@ export default {
       rtcEngine.on('joined-channel', ({ uid }) => {
         if (parseInt(uid) === parseInt(auth.id)) {
           if (this.roomInfo.type === 'one') {
-            this.addMemember({
+            this.addMember({
               id: uid,
               rtc: true
             })
@@ -199,7 +199,7 @@ export default {
             name: ''
           }
         }
-        this.addMemember(data)
+        this.addMember(data)
       })
 
       rtcEngine.join(null, this.channelName, null, auth.id)
@@ -216,7 +216,7 @@ export default {
   methods: {
     ...mapActions('room', [
       'setDisplayInfo',
-      'addMemember'
+      'addMember'
     ]),
     prepareShare () {
       this.visible = true
