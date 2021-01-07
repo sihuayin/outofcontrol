@@ -55,6 +55,10 @@ const actions = {
 
   setDisplayInfo({ commit }, info) {
     commit('setDisplayInfo', info)
+  },
+
+  clear({commit}) {
+    commit('clear')
   }
 }
 
@@ -98,6 +102,15 @@ const mutations = {
     },
     removeHand(state, member) {
       state.members.filter(m => m.id !== member.id)
+    },
+    clear(state) {
+      state.members = []
+      state.roomInfo = {
+        id: 0,
+        type: 'one'
+      }
+      state.shareDisplayId = 0
+      state.hands = []
     }
 }
 

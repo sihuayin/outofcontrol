@@ -9,7 +9,7 @@
             <a-card title="共享内容" class="full-height">
               <a-button @click="prepareShare" slot="extra" type="primary" ghost v-if="!shareDisplayId">共享屏幕</a-button>
               <a-button @click="stopShare" slot="extra" type="danger" ghost v-else>停止共享</a-button>
-              <VistorWindow v-if="shareDisplayId" :uid="shareDisplayId" role="localVideoSource"/>
+              <VistorWindow v-if="shareDisplayId" :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
               <div v-else :style="{width: '100%', height: '100%'}"></div>
             </a-card>
             
@@ -43,7 +43,7 @@ import VistorWindow from '../components/VistorWindow'
 import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
-import config from '../config/config'
+import config, {SHARE_ID} from '../config/config'
 // import path from 'path'
 // import os from 'os'
 
@@ -60,6 +60,7 @@ export default {
       visible: false,
       localVideoSource: 0,
       channelName: '',
+      localShare: false,
       bus: null
     }
   },
@@ -157,14 +158,25 @@ export default {
         console.log('console.log', err, msg)
       })
 
-      rtcEngine.on('user-published', (uid) => {
-        this.addMember({
-          id: uid,
-          rtc: true
-        })
+      rtcEngine.on('user-published', ({uid}) => {
+        if (uid === SHARE_ID && this.shareDisplayId) { // 共享屏幕
+          return
+        } else if (uid == SHARE_ID) {
+          this.setDisplayInfo(uid)
+        } else {
+          this.addMember({
+            id: uid,
+            rtc: true
+          })
+        }
       })
 
-      rtcEngine.on('user-unpublished', (uid) => {
+      rtcEngine.on('user-unpublished', ({uid}) => {
+        if (uid === SHARE_ID) {
+          this.localShare = false
+          this.setDisplayInfo(0)
+          return
+        }
         this.addMember({
           id: uid,
           rtc: false
@@ -212,11 +224,13 @@ export default {
     }
     this.$sdk.release()
     this.rtm.destroyRtm()
+    this.clear()
   },
   methods: {
     ...mapActions('room', [
       'setDisplayInfo',
-      'addMember'
+      'addMember',
+      'clear'
     ]),
     prepareShare () {
       this.visible = true
@@ -234,8 +248,9 @@ export default {
       .then(uid => {
         console.log('准备完成', uid, windowId)
         this.$sdk.startScreenShare(windowId)
-        this.setDisplayInfo(uid)
+        // this.setDisplayInfo(uid)
         this.visible = false
+        this.localShare = true
       })
       .catch(err => {
         console.log(err)

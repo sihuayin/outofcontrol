@@ -25,6 +25,12 @@ export default {
             return 
         } 
 
+        if (this.role === 'remoteVideoSource') {
+            dom && rtcEngine.client.subscribe(this.uid, dom)
+            rtcEngine.client.setupViewContentMode('videosource', 1);
+            rtcEngine.client.setupViewContentMode(String(SHARE_ID), 1);
+        }
+
         if (this.uid === auth.id) {
             console.log('渲染本地', this.uid, auth.id)
             rtcEngine.client.setupLocalVideo(dom)

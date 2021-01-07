@@ -188,12 +188,14 @@ export default {
     }
     this.$sdk.leave()
     this.rtm.destroyRtm()
+    this.clear()
   },
   methods: {
     ...mapActions('room', [
       'addMember',
       'setDisplayInfo',
-      'addHand'
+      'addHand',
+      'clear'
     ]),
     prepareShare () {
       this.visible = true
