@@ -60,6 +60,7 @@ export default {
       localVideoSource: 0,
       bus: null,
       channelName: '',
+      localShare: false
     }
   },
   computed: {
@@ -156,6 +157,11 @@ export default {
       })
 
       rtcEngine.on('user-unpublished', ({uid}) => {
+        if (uid === SHARE_ID) {
+          this.localShare = false
+          this.setDisplayInfo(0)
+          return
+        }
           this.addMember({
             id: uid,
             rtc: false
@@ -213,7 +219,7 @@ export default {
       .then(uid => {
         console.log('准备完成', uid, windowId)
         this.$sdk.startScreenShare(windowId)
-        
+        this.localShare = true
         this.visible = false
       })
       .catch(err => {
