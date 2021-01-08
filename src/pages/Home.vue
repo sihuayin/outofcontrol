@@ -63,9 +63,6 @@ export default {
     ]),
 
     getListData(value) {
-      if (value.format('YYYY-MM') !== this.value.format('YYYY-MM')) {
-        return []
-      }
       return this.specialists.filter((item) => item.date === value.format('YYYY-MM-DD'))
     },
 

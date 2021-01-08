@@ -34,8 +34,8 @@ function createWindow() {
 
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 860,
     show: false,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone

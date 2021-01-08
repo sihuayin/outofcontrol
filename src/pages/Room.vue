@@ -9,8 +9,17 @@
             <a-card title="共享内容" class="full-height">
               <a-button @click="prepareShare" slot="extra" type="primary" ghost v-if="!shareDisplayId">共享屏幕</a-button>
               <a-button @click="stopShare" slot="extra" type="danger" ghost v-else>停止共享</a-button>
-              <VistorWindow v-if="shareDisplayId" :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
-              <div v-else :style="{width: '100%', height: '100%'}"></div>
+              <a-modal
+                title="Title"
+                width="100%"
+                :visible="!!shareDisplayId"
+                :destroyOnClose="true"
+                @ok="stopShare"
+                @cancel="stopShare"
+              >
+              <ScreenWindow :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
+              </a-modal>
+              
             </a-card>
             
           </a-col>
@@ -40,6 +49,7 @@ import SecondHeader from '../components/SecondHeader'
 import ShareWindow from '../components/ShareWindow'
 // import SharePanel from '../components/SharePanel'
 import VistorWindow from '../components/VistorWindow'
+import ScreenWindow from '../components/ScreenWindow'
 import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
@@ -52,7 +62,8 @@ export default {
   components: {
     ShareWindow,
     SecondHeader,
-    VistorWindow
+    VistorWindow,
+    ScreenWindow
   },
   data () {
     return {
@@ -222,7 +233,7 @@ export default {
     if (this.bus) {
       this.bus.removeAllListeners()
     }
-    this.$sdk.release()
+    this.$sdk.leave()
     this.rtm.destroyRtm()
     this.clear()
   },
@@ -244,7 +255,7 @@ export default {
     },
     chooseDisplay(windowId) {
       console.log('开始', windowId)
-      this.$sdk.prepareScreenShare(null, 'demoChannel', '')
+      this.$sdk.prepareScreenShare(null, this.channelName, '')
       .then(uid => {
         console.log('准备完成', uid, windowId)
         this.$sdk.startScreenShare(windowId)

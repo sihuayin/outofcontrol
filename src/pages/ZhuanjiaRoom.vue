@@ -9,8 +9,16 @@
             <a-card title="共享内容" class="full-height">
               <a-button @click="prepareShare" slot="extra" type="primary" ghost v-if="!shareDisplayId">共享屏幕</a-button>
               <a-button @click="stopShare" slot="extra" type="danger" ghost v-else>停止共享</a-button>
-              <VistorWindow v-if="shareDisplayId" :uid="shareDisplayId" role="localVideoSource"/>
-              <div v-else :style="{width: '100%', height: '100%'}"></div>
+              <a-modal
+                title="共享内容"
+                width="100%"
+                :visible="!!shareDisplayId"
+                :destroyOnClose="true"
+                @ok="stopShare"
+                @cancel="stopShare"
+              >
+                <ScreenWindow :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
+              </a-modal>
             </a-card>
             
           </a-col>
@@ -37,6 +45,7 @@ import SecondHeader from '../components/SecondHeader'
 import ShareWindow from '../components/ShareWindow'
 // import SharePanel from '../components/SharePanel'
 import VistorWindow from '../components/VistorWindow'
+import ScreenWindow from '../components/ScreenWindow'
 import Hands from '../components/Hands'
 import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
@@ -51,6 +60,7 @@ export default {
     ShareWindow,
     SecondHeader,
     VistorWindow,
+    ScreenWindow,
     Hands
   },
   data () {

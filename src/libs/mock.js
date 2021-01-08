@@ -17,33 +17,30 @@ Mock.mock(/\/login/, 'post', function() {
       'id': 1,
       'token': 'sxx',
       'name': 'dingidng',
-      'role': 'yisheng'
+      'role': 'yisheng',
+      'roleid': 8
     }
   }
 })
 
-Mock.mock(/\/specialists/, 'get', function() {
+Mock.mock(/\/specialist\/1\/datings/, 'get', function() {
   return {
     success: true,
     message: '',
-    data: {
-      page: 1,
-      pageSize: 10,
-      total: 100,
-      data: [{
-        id: 1,
-        type: 'one',
-        date: '2020-12-22'
-      }, {
-        id: 2,
-        type: 'two',
-        date: '2020-12-23'
-      }, {
-        id: 3,
-        type: 'only',
-        date: '2020-12-24'
-      }]
-    }
+    data: [{
+      id: 1,
+      title: '测试',
+      participated: 0,
+      date: '2021-01-08'
+    }, {
+      id: 2,
+      type: 'two',
+      date: '2020-12-23'
+    }, {
+      id: 3,
+      type: 'only',
+      date: '2020-12-24'
+    }]
   }
 })
 
@@ -65,7 +62,7 @@ Mock.mock(/\/specialist\/1\/join/, 'post', function() {
       }],
       room: {
         id: 2,
-        type: 'some',
+        type: 'one',
         time: '',
         roleId: 4
       }
@@ -73,7 +70,7 @@ Mock.mock(/\/specialist\/1\/join/, 'post', function() {
   }
 })
 
-Mock.mock(/\/docter\/datings/, 'get', function() {
+Mock.mock(/\/doctor\/datings/, 'get', function() {
   return {
     success: true,
     message: '',
@@ -82,10 +79,10 @@ Mock.mock(/\/docter\/datings/, 'get', function() {
       pageSize: 10,
       total: 100,
       data: [{
-        id: 1,
+        meetingid: 1,
         title: '测试',
-        status: 0,
-        date: '2020-12-22'
+        participated: 0,
+        enddttm: '2021-01-10'
       }, {
         id: 2,
         title: '测试1',
