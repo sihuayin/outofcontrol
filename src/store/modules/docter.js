@@ -15,7 +15,7 @@ const state = () => ({
 
 // getters
 const getters = {
-  unfinshed: state => state.datings.filter(d => d.participated === 0 && moment()< moment(d.enddttm))
+  unfinshed: state => state.datings.filter(d => moment()< moment(d.enddttm))
 }
 
 // actions

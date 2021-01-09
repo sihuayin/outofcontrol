@@ -9,7 +9,7 @@ class SDK {
   constructor(options) {
     this.appId = options.appId
     this.logPath = options.logPath
-    this.role = 2
+    this.role = options.role
     this.joined = false
     this.videoMuted = false
     this.audioMuted = false
@@ -76,6 +76,7 @@ class SDK {
     })
 
     this.client.on('removestream', (uid) => {
+      console.log(`removestream ${uid}`)
       this.fire('user-unpublished', {
         uid
       })
@@ -98,37 +99,33 @@ class SDK {
 
     this.client.on('remoteVideoStateChanged', (uid, state, reason) => {
       console.log('remoteVideoStateChanged ', reason, uid)
-      if (reason === 5) {
-        this.fire('user-unpublished', {
-          user: {
-            uid,
-          },
-          mediaType: 'video',
-        })
-      }
+      // if (reason === 5) {
+      //   this.fire('user-unpublished', {
+      //     uid,
+      //     mediaType: 'video',
+      //   })
+      // }
 
-      if (reason === 6) {
-        this.fire('user-published', {
-          user: {
-            uid,
-          },
-          mediaType: 'video',
-        })
-      }
+      // if (reason === 6) {
+      //   this.fire('user-published', {
+      //     user: {
+      //       uid,
+      //     },
+      //     mediaType: 'video',
+      //   })
+      // }
     })
 
     this.client.on('remoteAudioStateChanged', (uid, state, reason) => {
       console.log('remoteAudioStateChanged ', reason, uid)
 
       // remote user disable audio
-      if (reason === 5) {
-        this.fire('user-unpublished', {
-          user: {
-            uid,
-          },
-          mediaType: 'audio',
-        })
-      }
+      // if (reason === 5) {
+      //   this.fire('user-unpublished', {
+      //     uid,
+      //     mediaType: 'audio',
+      //   })
+      // }
     })
 
     this.client.on('joinedchannel', (channel, uid) => {
@@ -192,6 +189,7 @@ class SDK {
         code: ret
       }
     }
+    this.localUid = uid
     this.joined = true;
     return
   }
@@ -386,13 +384,13 @@ class SDK {
         rtcEngine.videoSourceSetChannelProfile(1);
         rtcEngine.videoSourceEnableWebSdkInteroperability(true)
         // to adjust render dimension to optimize performance
-        rtcEngine.setVideoRenderDimension(3, SHARE_ID, 1200, 680);
+        rtcEngine.setVideoRenderDimension(3, SHARE_ID + this.localUid, 1200, 680);
 
         // rtcEngine.videoSourceSetEncryptionSecret("hello")
         // rtcEngine.videoSourceSetEncryptionMode("aes-128-xts")
         
         // rtcEngine.videoSourceEnableEncryption(true, {encryptionMode: 1, encryptionKey: "hello"});
-        rtcEngine.videoSourceJoin(token, channelName, info, SHARE_ID);
+        rtcEngine.videoSourceJoin(token, channelName, info, SHARE_ID + this.localUid);
       } catch(err) {
         clearTimeout(timer)
         reject(err)

@@ -7,6 +7,10 @@
       <a-menu-item>
         <a href="javascript:;" @click="goMyDating">我的预约</a>
       </a-menu-item>
+      <!-- <a-menu-divider /> -->
+      <!-- <a-menu-item>
+        <a href="javascript:;" @click="goTesting">设备检测</a>
+      </a-menu-item> -->
       <a-menu-divider />
       <a-menu-item>
         <a href="javascript:;" @click="logout">退出</a>
@@ -47,6 +51,9 @@ export default {
     },
     goMyDating() {
       this.$router.push('/dating')
+    },
+    goTesting() {
+      this.$router.push('/testing')
     }
   }
 }

@@ -154,10 +154,9 @@ export default {
       })
 
       rtcEngine.on('user-published', ({uid}) => {
-        if (uid === SHARE_ID && this.shareDisplayId) { // 共享屏幕
-          return
-        } else if (uid == SHARE_ID) {
+        if (uid >= SHARE_ID) {
           this.setDisplayInfo(uid)
+          return
         } else {
           this.addMember({
             id: uid,
@@ -167,8 +166,7 @@ export default {
       })
 
       rtcEngine.on('user-unpublished', ({uid}) => {
-        if (uid === SHARE_ID) {
-          this.localShare = false
+        if (uid >= SHARE_ID) {
           this.setDisplayInfo(0)
           return
         }
@@ -237,6 +235,7 @@ export default {
       })
     },
     stopShare() {
+      this.localShare = false
       this.$sdk.stopScreenShare()
       this.setDisplayInfo(0)
     }

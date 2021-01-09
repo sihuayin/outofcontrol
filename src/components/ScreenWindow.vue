@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { SHARE_ID } from '../config/config'
+// import { SHARE_ID } from '../config/config'
 export default {
     name: 'ScreenWindow',
     props: {
@@ -15,16 +15,12 @@ export default {
         const rtcEngine = this.$sdk
         if (this.role === 'localVideoSource') {
             dom && rtcEngine.client.setupLocalVideoSource(dom)
-            rtcEngine.client.setupViewContentMode('videosource', 1);
-            rtcEngine.client.setupViewContentMode(String(SHARE_ID), 1);
-            return 
         } else {
             dom && rtcEngine.client.subscribe(this.uid, dom)
-            this.$nextTick(() => {
-                rtcEngine.client.setupViewContentMode('videosource', 1);
-                rtcEngine.client.setupViewContentMode(String(SHARE_ID), 1);
-            })
+
         }
+        rtcEngine.client.setupViewContentMode('videosource', 1);
+        rtcEngine.client.setupViewContentMode(String(this.uid), 1);
     }
 }
 </script>

@@ -1,0 +1,1889 @@
+Local Date: Sat Jan  9 22:47:07 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (22:47: 7: 49 |    0)  46083; [rlbs] [report servers]: 61.240.228.196
+INFO    (22:47: 7: 49 |    0)  46083; [rlbs] [report servers]: 182.135.92.6
+INFO    (22:47: 7: 49 |    0)  46083; [rlbs] [report servers]: 115.238.195.209
+INFO    (22:47: 7: 49 |    0)  46083; [rlbs/u] responsed from 106.14.12.130:9700 with servers 61.240.228.196:8913
+INFO    (22:47: 7: 49 |    0)  46083; [rs] updateServers 61.240.228.196:8913, priority 3
+INFO    (22:47: 7: 49 |    0)  46083; [rs] updateServers 182.135.92.6:8913, priority 3
+INFO    (22:47: 7: 49 |    0)  46083; [rs] updateServers 115.238.195.209:8913, priority 3
+INFO    (22:47: 7:247 |  198)  46083; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (22:47:11:903 |  656)  46083; [rs] **report stats: seq: 23, report list size 2, tx/rx: 3469/1008, cache size: 0
+INFO    (22:47:11:903 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:47:16: 78 |    0)    775; [API][rtc_engine_impl.cpp:3082][setClientRole]
+INFO    (22:47:16: 78 |    0)    775; API call to setClientRole 1
+INFO    (22:47:16: 78 |    0)    775; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:47:16: 78 |    0)    775; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:47:16: 78 |    0)  46083; [rp] {"rtc.suspend_callback_client_role_changed":false}
+INFO    (22:47:16: 79 |    1)    775; doSetClientRole 1
+INFO    (22:47:16: 79 |    0)    775; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:47:16: 79 |    0)    775; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:47:16: 79 |    0)  46083; [rp] {"rtc.client_role":1}
+INFO    (22:47:16: 79 |    0)  46083; set client role to broadcaster
+INFO    (22:47:16: 79 |    0)    775; [API][rtc_engine_impl.cpp:327][joinChannel]
+INFO    (22:47:16: 79 |    0)    775; API call to join channel 'channel44' uid 10, SDK ver 3.1.2.231 build 16003, device info 'MacBookPro12,1/x86_64/OS X/10.15.7'
+INFO    (22:47:16: 79 |    0)    775; [API][rtc_engine_impl.cpp:4886][initialize]
+INFO    (22:47:16: 79 |    0)    775; API call to initialize rtc channel channel44
+INFO    (22:47:16: 80 |    1)  46083; doStopLastmileProbeTest
+INFO    (22:47:16: 80 |    0)  46083; ***CALL BEGIN: appid:'f7****************************d0' cname:'channel44' info:'Electron' sid:'DDE4483E57084AE89AAE9E92F5A4B556'
+INFO    (22:47:16: 80 |    0)  46083; addRef of media engine, ref=1
+INFO    (22:47:16: 80 |    0)  46083; [che] create chat engine, ctx:0x0
+INFO    (22:47:16: 81 |    1)  46083; [MYDEBUG] large group call false
+INFO    (22:47:16: 82 |    1)  46083; setupMediaEngineMode(): Hardware decoding false
+INFO    (22:47:16: 82 |    0)  46083; setupMediaEngineMode: mode 2
+WARN    (22:47:16: 82 |    0)  46083; setupMediaEngineMode: skip updateClientRole as audio engine not created, mode 2
+INFO    (22:47:16: 82 |    0)  46083; engine git commit version:c58e0029b and branch:release/3.1.2.231
+INFO    (22:47:16: 84 |    2)  46083; [Noise Supp]: Using floating point noise suppression
+INFO    (22:47:16: 84 |    0)  46083; [Noise Supp]: Using floating point noise suppression
+INFO    (22:47:16: 87 |    3)  46083; output: kPlatformDefaultAudio
+ERROR   (22:47:16:116 |   29)  46083; AsyncAudioDevice constructed, counter: 1
+
+INFO    (22:47:16:118 |    2)  46083; audio jitterbuffer new smooth
+INFO    (22:47:16:119 |    1)  46083; [Noise Supp]: Using floating point noise suppression
+INFO    (22:47:16:119 |    0)  46083; [Noise Supp]: Using floating point noise suppression
+INFO    (22:47:16:120 |    1)  46083; OutputMixer: start audio file decoder thread successfully
+INFO    (22:47:16:121 |    1)  46083;   OS info: OS X
+INFO    (22:47:16:121 |    0)  79927; Hardware model: MacBookPro12,1
+INFO    (22:47:16:122 |    1)  79927; Set playout device on Mac: index = 0, name = default (Built-in Output), id = 48
+INFO    (22:47:16:122 |    0)  46083;  Output device: Apple Inc. Built-in Output
+INFO    (22:47:16:123 |    1)  46083;  Input device: Apple Inc. Built-in Microphone
+INFO    (22:47:16:123 |    0)  46083; StereoPlayoutIsAvailable(), output: available=1
+INFO    (22:47:16:123 |    0)  46083; StereoRecordingIsAvailable(), output: available=1
+WARN    (22:47:16:123 |    0)  46083; enableLocalRecordingDevice: enable 1 already set
+INFO    (22:47:16:124 |    1)    775; [API][rtc_engine_impl.cpp:2210][setupLocalVideo]
+INFO    (22:47:16:124 |    0)    775; API call to setupLocalVideo 0x7ffca9fb36f0
+INFO    (22:47:16:124 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:47:16:124 |    0)  46083; setMuteStatus, muted: Off
+INFO    (22:47:16:124 |    0)  46083; setMuteOutput, muted: false
+INFO    (22:47:16:124 |    0)  46083; Audio Engine Init success, mSpecMode 2
+INFO    (22:47:16:124 |    0)  79927;  Output device: Apple Inc. Built-in Output
+INFO    (22:47:16:124 |    0)  46083; Available number of cores:4
+INFO    (22:47:16:125 |    1)  79927; Set recording device on Mac: index = 0, name = default (Built-in Microphone), id = 41
+INFO    (22:47:16:125 |    0)  79927;  Input device: Apple Inc. Built-in Microphone
+INFO    (22:47:16:127 |    2)  46083; SetVideoEngineRef: VideoEngineRef = 0x210010
+INFO    (22:47:16:127 |    0)  46083; CreateVideoSendTrack
+INFO    (22:47:16:127 |    0)  46083; init: feature prerotation enabled
+INFO    (22:47:16:166 |   39)  46083; RefreshCameraList: found 1 cameras
+INFO    (22:47:16:166 |    0)  46083; Camera 0: name FaceTime HD Camera id CC262145KKHG1HNB0
+INFO    (22:47:16:166 |    0)  46083; Agora Engine video codec set to standard mode role mode 2
+INFO    (22:47:16:166 |    0)  46083; Agora Engine video codec index 1
+INFO    (22:47:16:166 |    0)  46083; Agora Engine video stream type = 0
+INFO    (22:47:16:168 |    2)  46083; Device type: 4062
+INFO    (22:47:16:168 |    0)  46083; Hardware encoding false
+INFO    (22:47:16:168 |    0)  46083; last unique frame idx: -1 - -1
+INFO    (22:47:16:169 |    1)  46083; Device type: 4062
+INFO    (22:47:16:169 |    0)  46083; EncoderWrapper::Create hardware_ = 0, hardware_low_ = 0
+INFO    (22:47:16:169 |    0)  46083; low bit rate limit 1
+INFO    (22:47:16:169 |    0)  46083; dont need to increase unique frame idx
+INFO    (22:47:16:169 |    0)  46083; the init unique frame idx: -1 - -1
+INFO    (22:47:16:169 |    0)  46083; setCodec: index=1 width=640 height=360 framerate=15
+INFO    (22:47:16:169 |    0)  46083; setCodec: Intra Request = 0
+INFO    (22:47:16:169 |    0)  46083; Device type: 4062
+INFO    (22:47:16:169 |    0)  46083; Hardware encoding false
+INFO    (22:47:16:169 |    0)  46083; last unique frame idx: -1 - -1
+INFO    (22:47:16:170 |    1)  46083; Device type: 4062
+INFO    (22:47:16:170 |    0)  46083; EncoderWrapper::Create hardware_ = 0, hardware_low_ = 0
+INFO    (22:47:16:170 |    0)  46083; low bit rate limit 1
+INFO    (22:47:16:170 |    0)  46083; set last big unique frame idx: -1
+INFO    (22:47:16:170 |    0)  46083; set last small unique frame idx: -1
+INFO    (22:47:16:170 |    0)  46083; the init unique frame idx: -1 - -1
+INFO    (22:47:16:170 |    0)  46083; h264WebInteropEnable: enable 1
+INFO    (22:47:16:170 |    0)  46083; setCaptureDevice: index=0
+INFO    (22:47:16:170 |    0)  46083; setMaxVideoBitrate: max bitrate=0
+INFO    (22:47:16:170 |    0)  46083; [setupParameterObservers:1611] setting of localViewMirrorSetting[] is invalid!
+INFO    (22:47:16:170 |    0)  46083; [operator():1623] m_context.parameters.video.renderMode: json is invalid! value:0x0
+INFO    (22:47:16:170 |    0)  46083; [operator():1669] m_context.parameters.video.mirrorMode: json is invalid! value:0x0
+INFO    (22:47:16:170 |    0)  46083; Setting video fec method 2, real using 2
+INFO    (22:47:16:171 |    1)  46083; SetBandwidthAgressiveLevel to 3.
+INFO    (22:47:16:171 |    0)  46083; dynamic sending rate control set to 2.
+
+INFO    (22:47:16:171 |    0)  46083; videoEngine created and initialize here
+INFO    (22:47:16:171 |    0)  46083; CreateVideoSendTrack
+INFO    (22:47:16:171 |    0)  46083; [MIO] updateCapturer: (0x0), type:(1)
+INFO    (22:47:16:171 |    0)  46083; CreateAgoraDefaultCapture: type=0
+INFO    (22:47:16:171 |    0)  46083; VideoSendTrackImpl::UpdateCapturer capturer=0x7ffcada4f150
+INFO    (22:47:16:171 |    0)  46083; CreateVideoCapturer: interface=0x7ffcada4f150
+INFO    (22:47:16:171 |    0)  46083; [MIO] updateLocalRender: (0x0), type:(1)
+INFO    (22:47:16:171 |    0)  46083; CreateAgoraDefaultRender
+INFO    (22:47:16:171 |    0)  46083; VideoSendTrackImpl::UpdateRenderer, renderer=0x7ffca9f694e0
+INFO    (22:47:16:171 |    0)  46083; CreateVideoRenderer: interface=0x7ffca9f694e0
+INFO    (22:47:16:171 |    0)  46083; [MIO] video send track prepared !!
+INFO    (22:47:16:171 |    0)  46083; [che] applyVideoProfile: 640x480 30 fps  -1 minFps 750 kbps, min -1 kbps orientationMode 1 degradationPrefer 0 mirrorMode 0
+INFO    (22:47:16:171 |    0)  46083; validateVideoParameters: validate video parameters resolution 640x480, fps 30, rate 750000
+INFO    (22:47:16:171 |    0)  46083; enableMirrorMode: enable=0
+INFO    (22:47:16:171 |    0)  46083; setMaxVideoBitrate: max bitrate=750000
+INFO    (22:47:16:171 |    0)  46083; setCodecRates: set frame rate to 30
+INFO    (22:47:16:171 |    0)  46083; setCodec: index=1 width=640 height=360 framerate=30
+INFO    (22:47:16:171 |    0)  46083; setCodec: Intra Request = 0
+INFO    (22:47:16:171 |    0)  46083; Device type: 4062
+INFO    (22:47:16:171 |    0)  46083; Hardware encoding false
+INFO    (22:47:16:171 |    0)  46083; last unique frame idx: -1 - -1
+INFO    (22:47:16:171 |    0)  46083; Device type: 4062
+INFO    (22:47:16:171 |    0)  46083; EncoderWrapper::Create hardware_ = 0, hardware_low_ = 0
+INFO    (22:47:16:171 |    0)  46083; low bit rate limit 1
+INFO    (22:47:16:171 |    0)  46083; set last big unique frame idx: -1
+INFO    (22:47:16:171 |    0)  46083; set last small unique frame idx: -1
+INFO    (22:47:16:171 |    0)  46083; the init unique frame idx: -1 - -1
+INFO    (22:47:16:171 |    0)  46083; SetTargetWidthHeight width:640, height:360
+INFO    (22:47:16:171 |    0)  46083; setCodecResolution: set to 640 x 480
+INFO    (22:47:16:171 |    0)  46083; setCodec: index=1 width=640 height=480 framerate=30
+INFO    (22:47:16:171 |    0)  46083; setCodec: Intra Request = 0
+INFO    (22:47:16:171 |    0)  46083; Device type: 4062
+INFO    (22:47:16:171 |    0)  46083; Hardware encoding false
+INFO    (22:47:16:171 |    0)  46083; last unique frame idx: -1 - -1
+INFO    (22:47:16:171 |    0)  46083; Device type: 4062
+INFO    (22:47:16:171 |    0)  46083; EncoderWrapper::Create hardware_ = 0, hardware_low_ = 0
+INFO    (22:47:16:171 |    0)  46083; low bit rate limit 1
+INFO    (22:47:16:171 |    0)  46083; set last big unique frame idx: -1
+INFO    (22:47:16:171 |    0)  46083; set last small unique frame idx: -1
+INFO    (22:47:16:171 |    0)  46083; the init unique frame idx: -1 - -1
+INFO    (22:47:16:171 |    0)  46083; SetTargetWidthHeight width:640, height:480
+INFO    (22:47:16:171 |    0)  46083; Set broadcast min br to -1.
+INFO    (22:47:16:171 |    0)  46083; [che] chat engine initialized
+INFO    (22:47:16:171 |    0)  46083; [time] process EngineInitialize takes 92
+INFO    (22:47:16:176 |    5)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:47:16:176 |    0)  46083; [tactics] version:3.1.2.231 maxBitrate:750 640X480 30 fps needHandle:1
+INFO    (22:47:16:176 |    0)  46083; [tactics] config json version:20150101-0000 duallinkd:true poor:0
+INFO    (22:47:16:176 |    0)  46083; [tactics] parse config for beckon error for tactics size:15
+INFO    (22:47:16:176 |    0)  46083; [vocs]queryDns ap2.agora.io
+INFO    (22:47:16:176 |    0)  46083; [base_context]queryDns domain is ap2.agora.io
+INFO    (22:47:16:176 |    0)  46083; [cm] queryDns domain is ap2.agora.io
+INFO    (22:47:16:176 |    0)  46083; [base_context]queryDns domain is ap2.agora.io
+INFO    (22:47:16:177 |    1)  46083; [vocs] vocs initialized
+INFO    (22:47:16:177 |    0)  46083; reInit: reset mSpecMode to -1
+INFO    (22:47:16:177 |    0)  46083; [cm] reset channelProfile to NASA(CHANNEL_PROFILE_LIVE_BROADCASTING)
+INFO    (22:47:16:178 |    1)  46083; add ping address 192.168.10.1
+INFO    (22:47:16:178 |    0)  46083; PING 192.168.10.1:0 16(44) bytes of data
+INFO    (22:47:16:180 |    2)  46083; CacheManager: save cache to storage elapsed 1
+INFO    (22:47:16:180 |    0)  46083; [cm] emit join channel signal, size=4
+INFO    (22:47:16:180 |    0)  46083; [cm] connection state changed from 1 to 2
+INFO    (22:47:16:180 |    0)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:47:16:180 |    0)  46083; [tactics] version:3.1.2.231 maxBitrate:750 640X480 30 fps needHandle:1
+INFO    (22:47:16:180 |    0)  46083; [vocs] lookup channel...
+INFO    (22:47:16:180 |    0)  46083; [vocs] selected: 106.14.12.130:8000
+INFO    (22:47:16:180 |    0)  46083; tcp_client connecting 106.14.12.130:8000
+INFO    (22:47:16:180 |    0)  46083; [vocs] report bitrate: a/v/t: 50/750/800
+INFO    (22:47:16:180 |    0)  46083; [vocs] creating channel with 106.14.12.130:8000, ts 1610203636180.......
+INFO    (22:47:16:180 |    0)  46083; [vocs] selected: 52.52.84.170:1080
+INFO    (22:47:16:180 |    0)  46083; [vocs] report bitrate: a/v/t: 50/750/800
+INFO    (22:47:16:180 |    0)  46083; [vocs] creating channel with 52.52.84.170:1080, ts 1610203636180.......
+INFO    (22:47:16:180 |    0)  46083; [vocs] selected: 35.178.208.187:25000
+INFO    (22:47:16:180 |    0)  46083; [vocs] report bitrate: a/v/t: 50/750/800
+INFO    (22:47:16:181 |    1)  46083; [vocs] creating channel with 35.178.208.187:25000, ts 1610203636180.......
+INFO    (22:47:16:181 |    0)  46083; Create video user 0
+INFO    (22:47:16:181 |    0)  46083; doStartLocalRender: init? 1 capture id -1 device 0 capturing? 0 rendering? 0
+INFO    (22:47:16:181 |    0)  46083; doStartLocalRender: local render windows 0x7ffca9fb36f0
+INFO    (22:47:16:181 |    0)  46083; AgoraVideoOutput::Init type=100, view=0x7ffca9fb36f0
+INFO    (22:47:16:181 |    0)  46083; AgoraVideoOutput::Start uid=0, stream_id=0, render_mode=1
+INFO    (22:47:16:182 |    1)  46083; setRenderListener running for stream 0
+INFO    (22:47:16:182 |    0)  46083; doStartLocalRender success
+INFO    (22:47:16:185 |    3)  46083; [dns] parsed ip 116.62.134.61
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 47.94.215.36
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 47.97.157.160
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 47.95.242.6
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 112.126.76.219
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 101.132.119.238
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 47.95.250.218
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 47.95.116.69
+INFO    (22:47:16:185 |    0)  46083; [dns] parsed ip 116.62.127.18
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 116.62.134.61
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 47.94.215.36
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 47.97.157.160
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 47.95.242.6
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 112.126.76.219
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 101.132.119.238
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 47.95.250.218
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 47.95.116.69
+INFO    (22:47:16:185 |    0)  46083; [vocs]onParsedDns: 116.62.127.18
+INFO    (22:47:16:215 |   30)  46083; [vocs/t] tcp create channel connected with 0x7ffcad1f0360
+INFO    (22:47:16:215 |    0)  46083; [vocs] report bitrate: a/v/t: 50/750/800
+INFO    (22:47:16:215 |    0)  46083; [vocs] tcp - creating channel with 106.14.12.130:8000, ts 1610203636215.......
+INFO    (22:47:16:252 |   37)  46083; [vocs/u] **responsed from 106.14.12.130:8000, 3 vos, elapsed 172, server ts 1610203543355, wan ip 117.******.99
+INFO    (22:47:16:252 |    0)  46083; [vos] vos list: 120.92.79.126:4002
+INFO    (22:47:16:252 |    0)  46083; [vos] added server: 120.92.79.126:4002
+INFO    (22:47:16:252 |    0)  46083; [vos] vos list: 211.161.102.133:4002
+INFO    (22:47:16:252 |    0)  46083; [vos] added server: 211.161.102.133:4002
+INFO    (22:47:16:252 |    0)  46083; [vos] vos list: 120.92.79.126:4002
+INFO    (22:47:16:254 |    2)  46083; [ch0] vos initialized
+INFO    (22:47:16:254 |    0)  46083; [vos] selected: 211.161.102.133:4002
+ERROR   (22:47:16:254 |    0)  46083; [ch0] login strategy=2
+INFO    (22:47:16:254 |    0)  46083; [ds]: ver 1 ds '{"streamType":5,"clientRole":1}'
+INFO    (22:47:16:254 |    0)  46083; Engine Capability: Intra Request=1
+INFO    (22:47:16:254 |    0)  46083; [che] getEngineCapabilities: 0:{1:BROADCASTING,2:UNIFIED_COMMUNICATION},1:{0:L16,1:G722,2:OPUS,3:OPUS2ch,4:SILK,5:NOVA,6:AACLC,7:AACLC2ch,8:HEAAC,9:HEAAC2ch,11:kHEAAC2ch_2,12:kHEAAC_2},2:{0:EVP,1:VP8,2:E264,3:H264}, 
+INFO    (22:47:16:254 |    0)  46083; [ch0] Login VOS (proto:12, cid:4248702912, uid:10, ts:1610203636254, ticket size:92, detail size:302 ds:1 stream:+A+VH) 2: 211.161.102.133:4002
+INFO    (22:47:16:254 |    0)  46083; add ping address 117.100.111.99
+INFO    (22:47:16:254 |    0)  46083; PING 117.100.111.99:0 16(44) bytes of data
+INFO    (22:47:16:290 |   36)  46083; [ch0] **VOS response to login request (res 0 elapsed 210, server ts 1610203543409, s-c:-92881) from 211.161.102.133:4002, and current dest server 211.161.102.133:4002
+INFO    (22:47:16:290 |    0)  46083; [cap] synchronise capability set with seq: 1
+INFO    (22:47:16:290 |    0)  46083; updateActiveVosList: ["211.161.102.133:4002"]
+INFO    (22:47:16:290 |    0)  46083; [cm] connection state changed from 2 to 3
+INFO    (22:47:16:290 |    0)  46083; RequestEncodeKeyFrame
+INFO    (22:47:16:291 |    1)  46083; [che] start call begins
+INFO    (22:47:16:291 |    0)  46083; prepareCall in
+INFO    (22:47:16:291 |    0)  46083; Update settings: mode 3, rec_source -2, rec_fs 16000, builtin aec 0
+INFO    (22:47:16:291 |    0)  46083; Set Application Mode in RTC Engine to No. 4 UC 0
+ERROR   (22:47:16:291 |    0)  46083; GetCodec() invalid index (error=8004)
+INFO    (22:47:16:291 |    0)  46083; SetCodec by type : No. 122, Channel 1
+INFO    (22:47:16:293 |    2)  46083; SetCodec by type : No. 122, Channel 1
+INFO    (22:47:16:293 |    0)  46083; setLoopbackRecording, enabled: false, delay 0, aec 1 
+INFO    (22:47:16:293 |    0)  46083; getScenarioHwaecConfig: scenario 0 role 2 route 3 hwApm 0
+INFO    (22:47:16:293 |    0)  46083; useInteractiveAdmParameters in: interactive 0
+INFO    (22:47:16:293 |    0)  46083; _startCall: called for the first time, scenario 0, mSpecMode 2, route_ 3, useHwAec 0
+INFO    (22:47:16:293 |    0)  46083; StartPlayout complete
+INFO    (22:47:16:293 |    0)  46083; getScenarioRecordConfig: scenario 0 audienceNeedRecord 0
+INFO    (22:47:16:293 |    0)  46083; StartSend
+INFO    (22:47:16:293 |    0)  46083; SetLocalState: state 1 error 0
+INFO    (22:47:16:293 |    0)  46083; StartRecording complete
+INFO    (22:47:16:293 |    0)  46083; _startCall: audienceRecord 0, mWillsend 1, enableBuildinAEC 0(media volume), enableLocalAudio 1
+INFO    (22:47:16:294 |    1)  46083; setAecType: aec is set to 3
+INFO    (22:47:16:294 |    0)  79927;  Output device: Apple Inc. Built-in Output
+INFO    (22:47:16:295 |    1)  46083; _setAudioOutputRouting: Application Config module:  Route 3, NS on, AEC on, AGC on, BSS off, HC off
+INFO    (22:47:16:295 |    0)  46083; _setAudioOutputRouting: Config para: gmode to 1, TLV to 6, CMG to 12
+INFO    (22:47:16:295 |    0)  46083; _setAudioOutputRouting: MID = 4062, Routing = 3
+INFO    (22:47:16:295 |    0)  46083; output: kPlatformDefaultAudio
+INFO    (22:47:16:295 |    0)  46083;   Output: audioLayer=0
+INFO    (22:47:16:296 |    1)  46083; [che] applyVideoProfile: 640x480 30 fps  -1 minFps 750 kbps, min -1 kbps orientationMode 1 degradationPrefer 0 mirrorMode 0
+INFO    (22:47:16:296 |    0)  46083; validateVideoParameters: validate video parameters resolution 640x480, fps 30, rate 750000
+INFO    (22:47:16:296 |    0)  46083; enableMirrorMode: enable=0
+INFO    (22:47:16:296 |    0)  46083; setMaxVideoBitrate: max bitrate=750000
+INFO    (22:47:16:296 |    0)  46083; setCodecRates: set frame rate to 30
+INFO    (22:47:16:296 |    0)  46083; setCodec: index=1 width=640 height=480 framerate=30
+INFO    (22:47:16:296 |    0)  46083; setCodec: Intra Request = 0
+INFO    (22:47:16:296 |    0)  46083; setCodecResolution: set to 640 x 480
+INFO    (22:47:16:296 |    0)  46083; Set broadcast min br to -1.
+INFO    (22:47:16:296 |    0)  46083; [che] start call returns 0, elapsed 5
+INFO    (22:47:16:296 |    0)  46083; [time] process EngineStartCall takes 5
+INFO    (22:47:16:297 |    1)  46083; join channel success: cname 'channel44' uid 10 elapsed 217
+INFO    (22:47:16:297 |    0)  46083; CacheManager: save cache to storage elapsed 0
+INFO    (22:47:16:298 |    1)  46083; [rp] publish audio old:0,new:2,elapsed:0
+INFO    (22:47:16:298 |    0)  46083; [API][rtc_engine_impl.cpp:4658][onMediaEngineEvent]
+INFO    (22:47:16:298 |    0)  46083; [API][rtc_engine_impl.cpp:4658][onMediaEngineEvent]
+INFO    (22:47:16:298 |    0)  46083; [rp] publish video old:0,new:2,elapsed:0
+INFO    (22:47:16:298 |    0)  46083; operator(): device? 0 init? 1 local enabled? 1 capturing? 0 rendering? 1
+INFO    (22:47:16:299 |    1)  46083; [rtpSender] set paced sender status 1.
+
+INFO    (22:47:16:299 |    0)  46083; [rtpSender] set paced sender mode 0.
+
+INFO    (22:47:16:299 |    0)  46083; Initializing paced sender for broadcasting, strategy 2.
+INFO    (22:47:16:299 |    0)  54275; AgoraVideoInput::Init type=100, device=CC262145KKHG1HNB0
+INFO    (22:47:16:299 |    0)  54275; AgoraCameraCapture::Initialize, device=CC262145KKHG1HNB0
+INFO    (22:47:16:299 |    0)  54275; RegisterCameraCallback called 140723160927096
+INFO    (22:47:16:299 |    0)  46083; h264WebInteropEnable: enable 1
+INFO    (22:47:16:299 |    0)  46083; setCodec: index=1 width=640 height=480 framerate=30
+INFO    (22:47:16:299 |    0)  46083; setCodec: Intra Request = 1
+INFO    (22:47:16:299 |    0)  46083; Device type: 4062
+INFO    (22:47:16:299 |    0)  46083; Hardware encoding false
+INFO    (22:47:16:299 |    0)  46083; last unique frame idx: -1 - -1
+INFO    (22:47:16:299 |    0)  46083; Device type: 4062
+INFO    (22:47:16:299 |    0)  46083; EncoderWrapper::Create hardware_ = 0, hardware_low_ = 0
+INFO    (22:47:16:299 |    0)  46083; low bit rate limit 1
+INFO    (22:47:16:299 |    0)  46083; set last big unique frame idx: -1
+INFO    (22:47:16:299 |    0)  46083; set last small unique frame idx: -1
+INFO    (22:47:16:299 |    0)  46083; the init unique frame idx: -1 - -1
+INFO    (22:47:16:300 |    1)  46083; SetTargetWidthHeight width:640, height:480
+INFO    (22:47:16:300 |    0)  46083; setMaxVideoBitrate: max bitrate=750000
+INFO    (22:47:16:300 |    0)  46083; SetTargetWidthHeight width:640, height:480
+INFO    (22:47:16:300 |    0)  54275; AgoraVideoInput::Start width=640, height=480, fps=30
+INFO    (22:47:16:300 |    0)  54275; AgoraCameraCapture::Start width=640, height=480, fps=30, rotation=0
+INFO    (22:47:16:303 |    3)  79927; MacBook Pro using internal speakers; stereo panning right
+INFO    (22:47:16:304 |    1)  79927; initPlayout ouput stream format:
+INFO    (22:47:16:304 |    0)  79927; mSampleRate = 44100.000000, mChannelsPerFrame = 2
+INFO    (22:47:16:304 |    0)  79927; mBytesPerPacket = 8, mFramesPerPacket = 1
+INFO    (22:47:16:304 |    0)  79927; mBytesPerFrame = 8, mBitsPerChannel = 32
+INFO    (22:47:16:304 |    0)  79927; mFormatFlags = 9
+INFO    (22:47:16:304 |    0)  79927; mFormatID = 1819304813
+INFO    (22:47:16:306 |    2)  79927;   initial playout status: _renderDelayOffsetSamples=1450, _renderDelayUs=0, _renderLatencyUs=30476
+INFO    (22:47:16:317 |   11)  79927;  Input device: Apple Inc. Built-in Microphone
+INFO    (22:47:16:318 |    1)  79927; initRecording Input stream format:
+INFO    (22:47:16:318 |    0)  79927;  mSampleRate = 44100.000000, mChannelsPerFrame = 2
+INFO    (22:47:16:318 |    0)  79927;  mBytesPerPacket = 8, mFramesPerPacket = 1
+INFO    (22:47:16:318 |    0)  79927;  mBytesPerFrame = 8, mBitsPerChannel = 32
+INFO    (22:47:16:318 |    0)  79927;  mFormatFlags = 9
+INFO    (22:47:16:318 |    0)  79927;  mFormatID = 1819304813
+INFO    (22:47:16:326 |    8)  54275; operator(): startCapture success
+INFO    (22:47:16:326 |    0)  46083; SetBandwidthAgressiveLevel to 3.
+INFO    (22:47:16:326 |    0)  46083; RequestEncodeKeyFrame
+WARN    (22:47:16:326 |    0)  46083; doStartLocalRender: Local renderer is rendering
+INFO    (22:47:16:329 |    3)  46083; [cap] Received capability set ack seq: 1
+INFO    (22:47:16:333 |    4)   3587; Capturer: use capability 640 x 480 quality is AVCaptureSessionPreset640x480
+
+INFO    (22:47:16:333 |    0)   3587; The device has capture format.wide:1280,format.height:720
+INFO    (22:47:16:334 |    1)   3587; The device has capture format.wide:1280,format.height:720
+INFO    (22:47:16:334 |    0)   3587; The device has capture format.wide:1280,format.height:720
+INFO    (22:47:16:334 |    0)   3587; The device has capture format.wide:640,format.height:480
+INFO    (22:47:16:334 |    0)   3587; The device has capture format.wide:640,format.height:480
+INFO    (22:47:16:334 |    0)   3587; The device has capture format.wide:640,format.height:480
+INFO    (22:47:16:334 |    0)   3587; The device has capture format.wide:320,format.height:240
+INFO    (22:47:16:334 |    0)   3587; The device has capture format.wide:320,format.height:240
+INFO    (22:47:16:334 |    0)   3587; The device has capture format.wide:320,format.height:240
+INFO    (22:47:16:340 |    6)  46083; [ch0] rtt: 42
+INFO    (22:47:16:340 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 15 muted 0
+ERROR   (22:47:16:340 |    0)  46083; onPeerAudioMuteStatus: uid 15 already unmuted
+INFO    (22:47:16:340 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 15 muted 1
+INFO    (22:47:16:340 |    0)  46083; [pm] peer 15 is online
+INFO    (22:47:16:340 |    0)  46083; setupMediaEngineMode(): Hardware decoding false
+INFO    (22:47:16:340 |    0)  46083; setupMediaEngineMode: mode 1
+INFO    (22:47:16:340 |    0)  46083; getScenarioHwaecConfig: scenario 0 role 2 route 3 hwApm 0
+INFO    (22:47:16:340 |    0)  46083; getScenarioHwaecConfig: scenario 0 role 1 route 3 hwApm 1
+INFO    (22:47:16:340 |    0)  46083; getScenarioRecordConfig: scenario 0 audienceNeedRecord 0
+INFO    (22:47:16:340 |    0)  46083; getScenarioSwaecConfig: scenario 0 role 2 swAec 0
+INFO    (22:47:16:340 |    0)  46083; getScenarioSwaecConfig: scenario 0 role 1 swAec 1
+INFO    (22:47:16:340 |    0)  46083; _updateClientRole: scenario 0 mRouting 3 mSpecMode 2 mode 1 audienceRecord 0 with mWillsend 1, previousUseHwAec 0, useHwAec 1, changeRecord 0, changeHwAec 1: need restart audio engine
+INFO    (22:47:16:340 |    0)  46083; useInteractiveAdmParameters in: interactive 1
+INFO    (22:47:16:340 |    0)  46083; Set Application Mode in RTC Engine to No. 4 UC 0
+INFO    (22:47:16:340 |    0)  46083; VideoEngine: setClientRole from -1 to 1 videoEnabled=1
+INFO    (22:47:16:340 |    0)  46083; Call LiveModeSwitchToBroadcaster
+INFO    (22:47:16:340 |    0)  46083; notifyPeerCount: cnt 1
+INFO    (22:47:16:341 |    1)  46083; [che] onPeerJoined: inserted uid 15 of cid channel44 m_validPeers[cid].size() 1
+INFO    (22:47:16:341 |    0)  46083; onFirstRemoteAudioFrame cid channel44 uid 15 codec 122 elapsed 261
+INFO    (22:47:16:341 |    0)  46083; onTracerFirstRemoteAudio cid channel44 uid 15 codec 122 elapsed 261
+INFO    (22:47:16:341 |    0)  46083; audio jitterbuffer new smooth
+INFO    (22:47:16:341 |    0)  46083; invoked by unmute, ignore. uid = 15
+INFO    (22:47:16:342 |    1)  46083; [API][rtc_engine_impl.cpp:4658][onMediaEngineEvent]
+INFO    (22:47:16:342 |    0)  46083; [rp] subscribe audio cid:channel44 uid:15,old:0,new:2,elapsed:0
+INFO    (22:47:16:342 |    0)  46083; [rp] subscribe audio cid:channel44 uid:15,old:2,new:3,elapsed:1
+INFO    (22:47:16:342 |    0)  46083; operator(): device? 0 init? 1 local enabled? 1 capturing? 0 rendering? 1
+INFO    (22:47:16:342 |    0)  46083; [rp] subscribe video cid:channel44 uid:15,old:0,new:2,elapsed:0
+INFO    (22:47:16:342 |    0)  46083; [rtpSender] set paced sender status 1.
+
+INFO    (22:47:16:342 |    0)  46083; [rtpSender] set paced sender mode 0.
+
+INFO    (22:47:16:342 |    0)  46083; Initializing paced sender for broadcasting, strategy 2.
+INFO    (22:47:16:343 |    1)  46083; h264WebInteropEnable: enable 1
+INFO    (22:47:16:343 |    0)  46083; setCodec: index=1 width=640 height=480 framerate=30
+INFO    (22:47:16:343 |    0)  46083; setCodec: Intra Request = 1
+INFO    (22:47:16:343 |    0)  46083; setMaxVideoBitrate: max bitrate=750000
+INFO    (22:47:16:343 |    0)  46083; SetTargetWidthHeight width:640, height:480
+INFO    (22:47:16:343 |    0)  54275; operator(): startCapture success
+INFO    (22:47:16:343 |    0)  46083; SetBandwidthAgressiveLevel to 3.
+INFO    (22:47:16:343 |    0)  46083; RequestEncodeKeyFrame
+WARN    (22:47:16:343 |    0)  46083; doStartLocalRender: Local renderer is rendering
+INFO    (22:47:16:410 |   67)  46083; [pm] peer 15 has enabled video
+INFO    (22:47:16:410 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 15 muted 1
+INFO    (22:47:16:410 |    0)  46083; onTracerFirstRemoteVideo cid channel44 uid 15 codec 2 elapsed 331
+INFO    (22:47:16:411 |    1)  46083; [miaokai] Received 1st packet of stream 0, from cid channel44 uid 15, frame number 375.
+
+INFO    (22:47:16:411 |    0)  46083; Create video user 15
+INFO    (22:47:16:411 |    0)  46083; Codec: VP8, Payload type 100, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:47:16:411 |    0)  46083; Codec: H264, Payload type 107, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:47:16:411 |    0)  46083; User 15 has enabled intra request mode
+INFO    (22:47:16:411 |    0)  46083; User 15 has enabled nasa feedback
+INFO    (22:47:16:411 |    0)  46083; uid 15 stream encoded by hardware encoder 0 (prev -1)
+INFO    (22:47:16:412 |    1)  46083; [rp] subscribe video cid:channel44 uid:15,old:2,new:3,elapsed:70
+INFO    (22:47:16:420 |    8)  46083; last intra frame 2028 375 16 with 18 packets starting seq 2012 stream 0x51 frome user 32764 2848249504 has been cached at 887233
+INFO    (22:47:16:420 |    0)  46083; [miaokai] Assembled 1st frame from stream 0.
+
+INFO    (22:47:16:421 |    1)  46083; Destroy decoder.
+INFO    (22:47:16:425 |    4)  46083; Finish init decoder.
+INFO    (22:47:16:425 |    0)  46083; [miaokai] Decoded 1st frame from stream 0.
+
+INFO    (22:47:16:436 |   11)  46083; [che] onVideoSizeChanged: cid channel44 uid 15 640x480 rotate 0
+INFO    (22:47:16:436 |    0)  46083; [MIO] updateRemoteRenderer for uid(15) with render(0x0), type(1)
+INFO    (22:47:16:436 |    0)  46083; CreateVideoReceiveTrack: uid=15
+INFO    (22:47:16:436 |    0)  46083; CreateAgoraDefaultRender
+INFO    (22:47:16:436 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=15, renderer=0x7ffcadb1de80
+INFO    (22:47:16:436 |    0)  46083; CreateVideoRenderer: interface=0x7ffcadb1de80
+INFO    (22:47:16:436 |    0)  46083; onRemoteFirstFrameDecoded user 15 resolution 640 * 480, elapsed 356
+INFO    (22:47:16:436 |    0)  46083; doStartRemoteRender: cid channel44 uid 15
+INFO    (22:47:16:436 |    0)  46083; AgoraVideoOutput::Init type=100, view=0x0
+ERROR   (22:47:16:436 |    0)  46083; AgoraVideoOutput::Init unable to initialize renderer
+ERROR   (22:47:16:436 |    0)  46083; doStartRemoteRender: failed to initialize remote render, uid=15, view=0x0
+INFO    (22:47:16:448 |   12)  46083; [API][rtc_engine_impl.cpp:4658][onMediaEngineEvent]
+INFO    (22:47:16:485 |   37)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:47:16:485 |    0)    775; API call to setupRemoteVideo cid  uid 15
+INFO    (22:47:16:485 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:47:16:485 |    0)  46083; doStartRemoteRender: cid  uid 15
+INFO    (22:47:16:485 |    0)  46083; AgoraVideoOutput::Init type=100, view=0x7ffcada98670
+INFO    (22:47:16:485 |    0)  46083; AgoraVideoOutput::Start uid=15, stream_id=15, render_mode=1
+INFO    (22:47:16:485 |    0)  46083; setRenderListener running for stream 15
+INFO    (22:47:16:485 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 15, frozen false
+INFO    (22:47:16:485 |    0)  46083; doStartRemoteRender success
+INFO    (22:47:16:492 |    7)  46083; last intra frame 2045 376 15 with 18 packets starting seq 2030 stream 0x51 frome user 32764 2904535552 has been cached at 887233
+INFO    (22:47:16:547 |   55)  46083; [vocs/u] **responsed from 52.52.84.170:1080, 3 vos, elapsed 467, server ts 1610203543509, wan ip 114.******.143
+INFO    (22:47:16:547 |    0)  46083; [vos] vos list: 125.39.38.75:4005
+INFO    (22:47:16:547 |    0)  46083; [vos] added server: 125.39.38.75:4005
+INFO    (22:47:16:547 |    0)  46083; [vos] vos list: 221.194.159.195:4006
+INFO    (22:47:16:547 |    0)  46083; [vos] added server: 221.194.159.195:4006
+INFO    (22:47:16:547 |    0)  46083; [vos] vos list: 220.194.222.117:4007
+INFO    (22:47:16:547 |    0)  46083; [vos] added server: 220.194.222.117:4007
+INFO    (22:47:16:547 |    0)  46083; add ping address 114.246.34.143
+INFO    (22:47:16:547 |    0)  46083; PING 114.246.34.143:0 16(44) bytes of data
+INFO    (22:47:16:739 |  192)  46083; [vocs/u] **responsed from 35.178.208.187:25000, 3 vos, elapsed 659, server ts 1610203543577, wan ip 114.******.143
+INFO    (22:47:16:739 |    0)  46083; [vos] vos list: 125.39.38.149:4002
+INFO    (22:47:16:739 |    0)  46083; [vos] added server: 125.39.38.149:4002
+INFO    (22:47:16:739 |    0)  46083; [vos] vos list: 125.39.38.66:4003
+INFO    (22:47:16:739 |    0)  46083; [vos] added server: 125.39.38.66:4003
+INFO    (22:47:16:739 |    0)  46083; [vos] vos list: 221.194.159.205:4010
+INFO    (22:47:16:739 |    0)  46083; [vos] added server: 221.194.159.205:4010
+INFO    (22:47:16:856 |  117)  46083; [miaokai] Render 1st frame from stream 0.
+
+INFO    (22:47:16:914 |   58)  46083; User 15's view size is changed to 640 * 480
+INFO    (22:47:17: 36 |    0)  71179; SetLocalState: state 2 error 0
+INFO    (22:47:17: 37 |    1)  46083; TRACER: onFirstLocalAudioFrame codec 122 elapsed 957
+INFO    (22:47:17: 37 |    0)  46083; TRACER: onFirstLocalAudioFramePublished codec 122 elapsed 957
+INFO    (22:47:17: 37 |    0)  46083; [rp] publish audio old:2,new:3,elapsed:746
+INFO    (22:47:17:122 |   85)  77839; => OnMacDataSourceChange()
+INFO    (22:47:17:122 |    0)  77839; setAecType: aec is set to 5
+INFO    (22:47:17:122 |    0)  77839; setAecType: aec is set to 3
+INFO    (22:47:17:122 |    0)  46083; [API][rtc_engine_impl.cpp:4658][onMediaEngineEvent]
+INFO    (22:47:17:122 |    0)  46083; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:47:17:122 |    0)  46083; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:47:17:122 |    0)  46083; [rp] {"che.audio.output.routing":3}
+INFO    (22:47:17:123 |    1)  46083; setAecType: aec is set to 3
+INFO    (22:47:17:123 |    0)  46083; _setAudioOutputRouting: Application Config module:  Route 3, NS on, AEC on, AGC on, BSS off, HC off
+INFO    (22:47:17:123 |    0)  46083; _setAudioOutputRouting: Config para: gmode to 1, TLV to 6, CMG to 12
+INFO    (22:47:17:123 |    0)  46083; _setAudioOutputRouting: MID = 4062, Routing = 3
+INFO    (22:47:17:128 |    5)  46083; updateDeliveredResolution: width:640 height:480
+INFO    (22:47:17:128 |    0)  46083; SetStreamState: localVideoState 1, error 0
+INFO    (22:47:17:128 |    0)  46083; [che] onVideoSizeChanged: cid  uid 0 640x480 rotate 0
+INFO    (22:47:17:128 |    0)  46083; Quick Intra Request Received and to Enc Intra now
+
+INFO    (22:47:17:128 |    0)  46083; VQC module init done. stream no 0, mode 1, structure 257, scenario 512, preference 0, disableVQC 0.
+INFO    (22:47:17:129 |    1)  54275; Encoder rc method 3
+INFO    (22:47:17:160 |   31)  46083; TRACER: onFirstLocalVideoFrame codec 2 elapsed 1081
+INFO    (22:47:17:161 |    1)  46083; [rp] publish video old:2,new:3,elapsed:870
+INFO    (22:47:17:214 |   53)  46083; User 0's view size is changed to 640 * 480
+INFO    (22:47:17:271 |   57)  46083; Create video user 10
+INFO    (22:47:17:410 |  139)  46083; setNetEQMinimumPlayoutDelay delay(0)
+INFO    (22:47:18:109 |    0)  46083; [pm] peer 15 has enabled local video
+INFO    (22:47:18:109 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 15 muted 0
+INFO    (22:47:18:109 |    0)  46083; [xla] first remote audio frame uid:15, valid:1, drawn:349, pub:28654, join:1819
+INFO    (22:47:18:109 |    0)  46083; [xla] first remote video frame uid:15, valid:1, drawn:356, pub:28105, join:1819
+INFO    (22:47:18:731 |  622)  46083; SetOpusMaxPayloadBytes: 1200
+INFO    (22:47:19:296 |    0)  71179; AEC_Delay changes, current delay is 80 (ms)
+INFO    (22:47:20: 69 |    0)  46083; Intra Request Received from 0
+
+INFO    (22:47:20: 76 |    7)  46083; Intra Request after Quick Intra
+
+WARN    (22:47:20: 83 |    7)  46083; Idr miss, internal frn wrap around, reset. prevfrn (61), cfrn (0), maxfrn (65536)
+INFO    (22:47:20:296 |  213)  46083; SetStreamState: localVideoState 2, error 0
+INFO    (22:47:20:296 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:20:439 |  143)   3587; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:20:536 |   97)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:22:295 |    0)  71179; Audio statistics - rec count: record count = 200 signal level: near_in = 68, near_out = 48 farin = 69
+INFO    (22:47:22:296 |    1)  46083; audio cc ctrl br to be -1
+INFO    (22:47:22:308 |   12)  55047; Audio statistics - play count: playout count = 200  signal level: far_in = 90
+INFO    (22:47:23:515 |  207)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:47:23:808 |  293)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:23:830 |   22)  46083; Intra Request Received from 0
+
+WARN    (22:47:23:848 |   18)  46083; Idr miss, internal frn wrap around, reset. prevfrn (109), cfrn (0), maxfrn (65536)
+INFO    (22:47:23:909 |   61)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:24:296 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:24:297 |    1)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:47:24:297 |    0)  46083; [tactics] handle videobwe:692 fps:24 now:887241258 887261258
+INFO    (22:47:26:297 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:27:184 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:27:195 |   11)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:47:27:282 |   87)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:28:297 |   15)  46083; audio cc ctrl br to be -1
+INFO    (22:47:30:297 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:30:549 |  252)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:30:614 |   65)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:47:30:655 |   41)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:32:297 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:33:549 |  252)  46083; Quick Intra Request Received and to Enc Intra now
+
+WARN    (22:47:33:557 |    8)  46083; Idr miss, internal frn wrap around, reset. prevfrn (287), cfrn (0), maxfrn (65536)
+INFO    (22:47:33:916 |  359)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:34: 16 |    0)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:34:298 |  282)  46083; audio cc ctrl br to be -1
+INFO    (22:47:36:296 |    0)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 81, near_out = 83 farin = 81
+INFO    (22:47:36:304 |    8)  46083; audio cc ctrl br to be -1
+INFO    (22:47:36:308 |    4)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 94
+INFO    (22:47:37:197 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:47:37:290 |   93)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:37:389 |   99)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:37:568 |  179)  55047; The active speaker is changed to (15)
+INFO    (22:47:37:731 |  163)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:47:38:305 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:40:298 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:40:665 |  367)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:40:764 |   99)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:42:304 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:43:769 |  465)  82231; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:47:43:769 |    0)  82231; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:47:43:769 |    0)  46083; [rp] {"rtc.video.mute_peer":{"uid":10000012,"mute":true}}
+INFO    (22:47:43:769 |    0)  46083; [pm] mute video peer 10000012 muted true
+INFO    (22:47:43:770 |    1)  46083; [netob] switch video mute status to peer 10000012 type 1
+INFO    (22:47:43:770 |    0)  46083; [ds]: ver 2 ds '{"streamType":5,"clientRole":1,"peers":[[10000012,1]]}'
+INFO    (22:47:43:770 |    0)  46083; [ch0] sync (cid:4248702912, uid:10, sync:2): 211.161.102.133:4002
+INFO    (22:47:43:779 |    9)  46083; Quick Intra Request Received and to Enc Intra now
+
+INFO    (22:47:43:790 |   11)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 0
+ERROR   (22:47:43:790 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already unmuted
+INFO    (22:47:43:790 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:43:790 |    0)  46083; [pm] peer 10000012 is online
+INFO    (22:47:43:790 |    0)  46083; notifyPeerCount: cnt 2
+INFO    (22:47:43:790 |    0)  46083; [che] onPeerJoined: inserted uid 10000012 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:47:43:790 |    0)  46083; [pm] peer 10000012 has muted audio
+INFO    (22:47:43:790 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:43:790 |    0)  46083; [pm] peer 10000012 has enabled video
+INFO    (22:47:43:790 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:43:790 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+INFO    (22:47:43:791 |    1)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:2,new:1,elapsed:0
+INFO    (22:47:43:791 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+WARN    (22:47:43:791 |    0)  46083; Idr miss, internal frn wrap around, reset. prevfrn (300), cfrn (0), maxfrn (65536)
+INFO    (22:47:43:841 |   50)  46083; [pm] peer 10000012 has enabled local video
+INFO    (22:47:43:841 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+WARN    (22:47:43:841 |    0)  46083; Idr miss, internal frn wrap around, reset. prevfrn (389), cfrn (0), maxfrn (65536)
+INFO    (22:47:43:850 |    9)  46083; last intra frame 4331 766 22 with 23 packets starting seq 4309 stream 0x51 frome user 32764 2914405984 has been cached at 887260
+WARN    (22:47:43:893 |   43)  46083; Idr miss, internal frn wrap around, reset. prevfrn (389), cfrn (0), maxfrn (65536)
+INFO    (22:47:44:147 |    0)  46687; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:44:237 |   90)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:44:298 |   61)  46083; audio cc ctrl br to be -1
+INFO    (22:47:45: 31 |    0)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:47:45:182 |  151)  46083; [rs] **report stats: seq: 166, report list size 0, tx/rx: 26961/7968, cache size: 0
+INFO    (22:47:45:182 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:47:46:298 |  116)  46083; audio cc ctrl br to be -1
+INFO    (22:47:47:207 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:47:47:518 |  311)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:47:618 |  100)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:48:183 |    0)  46083; **CALL STATS: duration 30s cpu app/total 19.90/84.87 memory size app/ratio app/total 294256KB/4.56/98.81 battery 100 tx/rx: 871/1.12K kbps 2.981M/3.367M bytes
+INFO    (22:47:48:298 |  115)  46083; audio cc ctrl br to be -1
+INFO    (22:47:50:302 |    4)  46083; audio cc ctrl br to be -1
+INFO    (22:47:50:810 |  508)  46083; [pm] peer 10000012 has disabled local video
+INFO    (22:47:50:810 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:50:891 |   81)  46083; [pm] peer 10000012 is offline: quit(0)
+INFO    (22:47:50:892 |    1)  46083; [netob] cid channel44 uid 10000012 offline
+INFO    (22:47:50:892 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000012, priority: 1
+INFO    (22:47:50:892 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000012, priority: 1
+INFO    (22:47:50:892 |    0)  46083; stopRemoteVideo: uid=10000012
+INFO    (22:47:50:892 |    0)  46083; [che] onPeerOffline: uid 10000012 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:47:50:892 |    0)  46083; [che] clearPeerInMap: uid 10000012 of cid channel44 to be removed
+INFO    (22:47:50:892 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+ERROR   (22:47:50:892 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already muted
+INFO    (22:47:50:892 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000012
+INFO    (22:47:50:892 |    0)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:47:50:892 |    0)    775; API call to setupRemoteVideo cid  uid 10000012
+INFO    (22:47:50:892 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:47:50:893 |    1)  46083; doStartRemoteRender: cid  uid 10000012
+ERROR   (22:47:50:893 |    0)  46083; doStartRemoteRender: cannot find video_user 10000012
+INFO    (22:47:51: 10 |    0)  70451; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:51:119 |  109)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:51:874 |  755)  46083; VCMEncodedFrameCallback::Encoded frame 1001
+INFO    (22:47:51:892 |   18)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:47:51:908 |   16)  46083; VCMEncodedFrameCallback::Encoded frame 1002
+INFO    (22:47:51:951 |   43)  46083; VCMEncodedFrameCallback::Encoded frame 1003
+INFO    (22:47:51:986 |   35)  46083; VCMEncodedFrameCallback::Encoded frame 1004
+INFO    (22:47:52: 14 |    0)  46083; VCMEncodedFrameCallback::Encoded frame 1005
+INFO    (22:47:52: 48 |   34)  46083; VCMEncodedFrameCallback::Encoded frame 1006
+INFO    (22:47:52: 85 |   37)  46083; VCMEncodedFrameCallback::Encoded frame 1007
+INFO    (22:47:52:115 |   30)  46083; VCMEncodedFrameCallback::Encoded frame 1008
+INFO    (22:47:52:142 |   27)  46083; VCMEncodedFrameCallback::Encoded frame 1009
+INFO    (22:47:52:179 |   37)  46083; VCMEncodedFrameCallback::Encoded frame 1010
+INFO    (22:47:52:223 |   44)  46083; VCMEncodedFrameCallback::Encoded frame 1011
+INFO    (22:47:52:255 |   32)  46083; VCMEncodedFrameCallback::Encoded frame 1012
+INFO    (22:47:52:276 |   21)  46083; VCMEncodedFrameCallback::Encoded frame 1013
+INFO    (22:47:52:303 |   27)  46083; notifyPeerCount: cnt 1
+INFO    (22:47:52:303 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:52:327 |   24)  46083; VCMEncodedFrameCallback::Encoded frame 1014
+INFO    (22:47:52:352 |   25)  46083; VCMEncodedFrameCallback::Encoded frame 1015
+INFO    (22:47:52:386 |   34)  46083; VCMEncodedFrameCallback::Encoded frame 1016
+INFO    (22:47:52:411 |   25)  46083; VCMEncodedFrameCallback::Encoded frame 1017
+WARN    (22:47:52:419 |    8)  46083; [pm] stream data of peer 10000012 is earlier than quit, ignore it
+INFO    (22:47:52:448 |   29)  46083; VCMEncodedFrameCallback::Encoded frame 1018
+INFO    (22:47:52:483 |   35)  46083; VCMEncodedFrameCallback::Encoded frame 1019
+INFO    (22:47:54:304 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:54:313 |    9)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 88
+INFO    (22:47:54:314 |    1)  71179; Audio statistics - rec count: record count = 601 signal level: near_in = 93, near_out = 97 farin = 93
+INFO    (22:47:54:376 |   62)  70451; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:54:481 |  105)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:55:529 |   48)  62255; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:47:55:529 |    0)  62255; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:47:55:530 |    1)  46083; [rp] {"rtc.video.mute_peer":{"uid":10000012,"mute":true}}
+INFO    (22:47:55:530 |    0)  46083; [pm] mute video peer 10000012 muted true
+INFO    (22:47:55:559 |   29)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 0
+ERROR   (22:47:55:559 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already unmuted
+INFO    (22:47:55:559 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:55:559 |    0)  46083; [pm] peer 10000012 is online
+INFO    (22:47:55:559 |    0)  46083; notifyPeerCount: cnt 2
+INFO    (22:47:55:559 |    0)  46083; [che] onPeerJoined: inserted uid 10000012 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:47:55:559 |    0)  46083; [pm] peer 10000012 has muted audio
+INFO    (22:47:55:559 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:55:559 |    0)  46083; [pm] peer 10000012 has enabled video
+INFO    (22:47:55:560 |    1)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:55:560 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+INFO    (22:47:55:560 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:2,new:1,elapsed:0
+INFO    (22:47:55:560 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+INFO    (22:47:55:599 |   39)  46083; [pm] peer 10000012 has enabled local video
+INFO    (22:47:55:599 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:47:56:308 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:47:57:217 |    0)  46083; Quick Intra Request Received and to Enc Intra now
+
+WARN    (22:47:57:226 |    9)  46083; Idr miss, internal frn wrap around, reset. prevfrn (392), cfrn (0), maxfrn (65536)
+INFO    (22:47:57:226 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:47:57:942 |  716)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:47:58: 50 |    0)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:47:58:309 |  259)  46083; audio cc ctrl br to be -1
+INFO    (22:47:59: 25 |    0)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48: 0:309 |  284)  46083; audio cc ctrl br to be -1
+INFO    (22:48: 1:326 |   17)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48: 1:329 |    3)  46083; [pm] peer 10000012 has disabled local video
+INFO    (22:48: 1:329 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:48: 1:398 |   69)  46083; [pm] peer 10000012 is offline: quit(0)
+INFO    (22:48: 1:398 |    0)  46083; [netob] cid channel44 uid 10000012 offline
+INFO    (22:48: 1:399 |    1)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000012, priority: 1
+INFO    (22:48: 1:399 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000012, priority: 1
+INFO    (22:48: 1:399 |    0)  46083; stopRemoteVideo: uid=10000012
+INFO    (22:48: 1:399 |    0)  46083; [che] onPeerOffline: uid 10000012 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:48: 1:399 |    0)  46083; [che] clearPeerInMap: uid 10000012 of cid channel44 to be removed
+INFO    (22:48: 1:399 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+ERROR   (22:48: 1:399 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already muted
+INFO    (22:48: 1:399 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000012
+INFO    (22:48: 1:399 |    0)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:48: 1:399 |    0)    775; API call to setupRemoteVideo cid  uid 10000012
+INFO    (22:48: 1:399 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:48: 1:399 |    0)  46083; doStartRemoteRender: cid  uid 10000012
+ERROR   (22:48: 1:399 |    0)  46083; doStartRemoteRender: cannot find video_user 10000012
+INFO    (22:48: 1:413 |   14)  49191; printFrameLog :uid:0,width 640, height 480,ystride:640
+WARN    (22:48: 2: 39 |    0)  46083; [pm] stream data of peer 10000012 is earlier than quit, ignore it
+INFO    (22:48: 2:310 |  271)  46083; notifyPeerCount: cnt 1
+INFO    (22:48: 2:310 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48: 4:311 |    1)  46083; audio cc ctrl br to be -1
+INFO    (22:48: 4:678 |  367)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48: 4:789 |  111)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48: 6:133 |    0)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48: 6:312 |  179)  46083; audio cc ctrl br to be -1
+INFO    (22:48: 7:265 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:48: 8: 56 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48: 8:156 |  100)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48: 8:312 |  156)  46083; audio cc ctrl br to be -1
+INFO    (22:48:10:312 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:11:423 |  111)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:11:523 |  100)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:12:312 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:12:348 |   36)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 98
+INFO    (22:48:12:348 |    0)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 86, near_out = 90 farin = 86
+INFO    (22:48:13:183 |    0)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48:14:312 |  129)  46083; audio cc ctrl br to be -1
+INFO    (22:48:14:797 |  485)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:14:895 |   98)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:15:185 |    0)  46083; [rs] **report stats: seq: 264, report list size 0, tx/rx: 41644/12672, cache size: 0
+INFO    (22:48:15:185 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:48:16:312 |  127)  46083; audio cc ctrl br to be -1
+INFO    (22:48:17:268 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+WARN    (22:48:17:369 |  101)  71179; captured signal too small
+WARN    (22:48:17:369 |    0)  71179; audio device captured signal too small
+INFO    (22:48:18:165 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:18:186 |   21)  46083; **CALL STATS: duration 1m0s cpu app/total 20.17/81.12 memory size app/ratio app/total 245108KB/3.82/96.27 battery 100 tx/rx: 1.70K/929 kbps 6.416M/6.998M bytes
+INFO    (22:48:18:263 |   77)  49191; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:18:315 |   52)  46083; audio cc ctrl br to be -1
+INFO    (22:48:18:315 |    0)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:48:18:315 |    0)  46083; [tactics] handle videobwe:942 fps:30 now:887295275 887315275
+INFO    (22:48:20:263 |    0)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48:20:313 |   50)  46083; audio cc ctrl br to be -1
+INFO    (22:48:21:535 |  222)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:21:636 |  101)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:22:313 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:24:313 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:24:902 |  589)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:25:  3 |    0)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:26:316 |  313)  46083; audio cc ctrl br to be -1
+INFO    (22:48:27:283 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:48:27:313 |   30)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48:28:273 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:28:314 |   41)  46083; audio cc ctrl br to be -1
+INFO    (22:48:28:374 |   60)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+WARN    (22:48:29:370 |    0)  71179; captured signal too small
+WARN    (22:48:29:370 |    0)  71179; audio device captured signal too small
+INFO    (22:48:30:315 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:30:348 |   33)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 57
+INFO    (22:48:30:349 |    1)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 85, near_out = 87 farin = 85
+INFO    (22:48:31:639 |  290)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:31:750 |  111)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:31:781 |   31)  46083; Quick Intra Request Received and to Enc Intra now
+
+WARN    (22:48:31:790 |    9)  46083; Idr miss, internal frn wrap around, reset. prevfrn (1017), cfrn (0), maxfrn (65536)
+INFO    (22:48:31:889 |   99)  46083; last intra frame 8608 1451 11 with 13 packets starting seq 8597 stream 0x51 frome user 32764 2904535552 has been cached at 887308
+WARN    (22:48:31:891 |    2)  46083; Idr miss, internal frn wrap around, reset. prevfrn (684), cfrn (0), maxfrn (65536)
+INFO    (22:48:31:899 |    8)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 0
+ERROR   (22:48:31:899 |    0)  46083; onPeerAudioMuteStatus: uid 10000017 already unmuted
+INFO    (22:48:31:899 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:48:31:899 |    0)  46083; [pm] peer 10000017 is online
+INFO    (22:48:31:900 |    1)  46083; notifyPeerCount: cnt 2
+INFO    (22:48:31:900 |    0)  46083; [che] onPeerJoined: inserted uid 10000017 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:48:31:900 |    0)  46083; [pm] peer 10000017 has muted audio
+INFO    (22:48:31:900 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:48:31:900 |    0)  46083; [pm] peer 10000017 has enabled video
+INFO    (22:48:31:900 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:48:31:900 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:48:31:900 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:2,new:1,elapsed:0
+INFO    (22:48:31:900 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:48:31:928 |   28)  46083; [pm] peer 10000017 has enabled local video
+INFO    (22:48:31:928 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 0
+WARN    (22:48:31:941 |   13)  46083; Idr miss, internal frn wrap around, reset. prevfrn (684), cfrn (0), maxfrn (65536)
+INFO    (22:48:31:981 |   40)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:48:31:981 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:48:31:981 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:48:31:981 |    0)  46083; Create video user 10000017
+INFO    (22:48:31:981 |    0)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:48:31:981 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+INFO    (22:48:32:148 |    0)  46083; onTracerFirstRemoteVideo cid channel44 uid 10000017 codec 2 elapsed 76066
+INFO    (22:48:32:148 |    0)  46083; [miaokai] Received 1st packet of stream 0, from cid channel44 uid 10000017, frame number 0.
+
+INFO    (22:48:32:148 |    0)  46083; Codec: VP8, Payload type 100, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:48:32:148 |    0)  46083; Codec: H264, Payload type 107, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:48:32:148 |    0)  46083; User 10000017 has enabled intra request mode
+INFO    (22:48:32:148 |    0)  46083; User 10000017 has enabled nasa feedback
+INFO    (22:48:32:149 |    1)  46083; uid 10000017 stream encoded by hardware encoder 0 (prev -1)
+INFO    (22:48:32:149 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:2,new:3,elapsed:248
+INFO    (22:48:32:313 |  164)  46083; audio cc ctrl br to be -1
+INFO    (22:48:32:470 |  157)  46083; last intra frame 15 0 15 with 16 packets starting seq 0 stream 0x51 frome user 32764 2913389120 has been cached at 887309
+INFO    (22:48:32:470 |    0)  46083; [miaokai] Assembled 1st frame from stream 0.
+
+INFO    (22:48:32:470 |    0)  46083; Destroy decoder.
+INFO    (22:48:32:470 |    0)  46083; Finish init decoder.
+INFO    (22:48:32:470 |    0)  46083; [miaokai] Decoded 1st frame from stream 0.
+
+INFO    (22:48:32:477 |    7)  46083; [che] onVideoSizeChanged: cid channel44 uid 10000017 1094x822 rotate 0
+INFO    (22:48:32:477 |    0)  46083; [MIO] updateRemoteRenderer for uid(10000017) with render(0x0), type(1)
+INFO    (22:48:32:477 |    0)  46083; CreateVideoReceiveTrack: uid=10000017
+INFO    (22:48:32:477 |    0)  46083; CreateAgoraDefaultRender
+INFO    (22:48:32:477 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x7ffca9c4d880
+INFO    (22:48:32:477 |    0)  46083; CreateVideoRenderer: interface=0x7ffca9c4d880
+INFO    (22:48:32:477 |    0)  46083; onRemoteFirstFrameDecoded user 10000017 resolution 1094 * 822, elapsed 76395
+INFO    (22:48:32:477 |    0)  46083; doStartRemoteRender: cid channel44 uid 10000017
+INFO    (22:48:32:477 |    0)  46083; AgoraVideoOutput::Init type=100, view=0x7ffca9f863c0
+INFO    (22:48:32:477 |    0)  46083; AgoraVideoOutput::Start uid=10000017, stream_id=10000017, render_mode=1
+INFO    (22:48:32:477 |    0)  46083; setRenderListener running for stream 10000017
+INFO    (22:48:32:477 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen false
+INFO    (22:48:32:477 |    0)  46083; doStartRemoteRender success
+INFO    (22:48:32:477 |    0)  46083; [miaokai] Render 1st frame from stream 0.
+
+INFO    (22:48:32:874 |  397)  46083; User 10000017's view size is changed to 640 * 480
+INFO    (22:48:33:149 |    0)  46083; setNetEQMinimumPlayoutDelay delay(0)
+INFO    (22:48:34:314 |  165)  46083; audio cc ctrl br to be -1
+INFO    (22:48:34:416 |  102)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+WARN    (22:48:34:891 |  475)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (2257/2255)
+WARN    (22:48:34:891 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (2259/2258)
+WARN    (22:48:34:891 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (2261/2260)
+INFO    (22:48:34:900 |    9)  46083; [xla] first remote video frame uid:10000017, valid:0, drawn:76395, pub:2808, join:78610
+INFO    (22:48:35: 19 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:35:120 |  101)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:36:314 |  194)  46083; audio cc ctrl br to be -1
+INFO    (22:48:37:289 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:48:38:314 |   25)  46083; audio cc ctrl br to be -1
+INFO    (22:48:38:389 |   75)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:38:487 |   98)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:40:314 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:40:314 |    0)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:48:40:314 |    0)  46083; [tactics] handle videobwe:852 fps:24 now:887317273 887337273
+INFO    (22:48:41:235 |    0)  58115; printFrameLog :uid:10000017,width 1094, height 822,ystride:1152
+INFO    (22:48:41:516 |  281)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48:41:751 |  235)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:41:861 |  110)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:42:314 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:44:315 |    1)  46083; audio cc ctrl br to be -1
+INFO    (22:48:45:130 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:45:191 |   61)  46083; [rs] **report stats: seq: 373, report list size 0, tx/rx: 59437/17904, cache size: 0
+INFO    (22:48:45:191 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:48:45:219 |   28)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:46:316 |   97)  46083; audio cc ctrl br to be -1
+INFO    (22:48:47:300 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+WARN    (22:48:47:961 |  661)  46083; AddFrame: too old frame, timestamp=3015336616.
+INFO    (22:48:48:191 |    0)  46083; **CALL STATS: duration 1m30s cpu app/total 18.0/34.24 memory size app/ratio app/total 270536KB/4.21/99.14 battery 100 tx/rx: 1.106K/1.183K kbps 10.187M/10.687M bytes
+INFO    (22:48:48:316 |  125)  46083; audio cc ctrl br to be -1
+INFO    (22:48:48:349 |   33)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 92, near_out = 95 farin = 92
+INFO    (22:48:48:368 |   19)  55047; Audio statistics - play count: playout count = 602  signal level: far_in = 86
+INFO    (22:48:48:491 |  123)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:48:582 |   91)  58115; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48:48:601 |   19)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:49:  4 |    0)  58115; printFrameLog :uid:10000017,width 1094, height 822,ystride:1152
+INFO    (22:48:50:317 |  313)  46083; audio cc ctrl br to be -1
+INFO    (22:48:51:867 |  550)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:51:966 |   99)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:52:316 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:48:54:317 |    1)  46083; audio cc ctrl br to be -1
+INFO    (22:48:55:239 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:55:336 |   97)  58115; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:48:55:411 |   75)  58115; printFrameLog :uid:10000017,width 1094, height 822,ystride:1152
+INFO    (22:48:55:629 |  218)  46083; [pm] peer 10000017 has disabled local video
+INFO    (22:48:55:629 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:48:55:629 |    0)  46083; reset video recevier for user 10000017
+INFO    (22:48:55:629 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:3,new:1,elapsed:23481
+INFO    (22:48:55:679 |   50)  46083; [pm] peer 10000017 is offline: quit(0)
+INFO    (22:48:55:679 |    0)  46083; [netob] cid channel44 uid 10000017 offline
+INFO    (22:48:55:679 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000017, priority: 1
+INFO    (22:48:55:679 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000017, priority: 1
+INFO    (22:48:55:679 |    0)  46083; stopRemoteVideo: uid=10000017
+INFO    (22:48:55:679 |    0)  46083; stopRemoteRenderWithUid: cid: channel44 uid: 10000017
+INFO    (22:48:55:679 |    0)  46083; AgoraVideoOutput::Stop
+WARN    (22:48:55:679 |    0)  46083; Stop: Not running
+INFO    (22:48:55:680 |    1)  46083; AgoraVideoOutput::Destroy
+INFO    (22:48:55:680 |    0)  46083; stopRemoteRenderWithUid: success uid=10000017
+INFO    (22:48:55:680 |    0)  46083; Destroy decoder.
+INFO    (22:48:55:680 |    0)  46083; Destroy decoder.
+INFO    (22:48:55:681 |    1)  46083; DestroyVideoReceiveTrack: uid=10000017
+INFO    (22:48:55:681 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x0
+INFO    (22:48:55:681 |    0)  46083; CreateVideoRenderer: interface=0x0
+INFO    (22:48:55:681 |    0)  46083; [che] onPeerOffline: uid 10000017 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:48:55:681 |    0)  46083; [che] clearPeerInMap: uid 10000017 of cid channel44 to be removed
+INFO    (22:48:55:681 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+ERROR   (22:48:55:681 |    0)  46083; onPeerAudioMuteStatus: uid 10000017 already muted
+INFO    (22:48:55:681 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000017
+INFO    (22:48:55:682 |    1)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:48:55:682 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:48:55:682 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:48:55:682 |    0)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:48:55:682 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+INFO    (22:48:55:738 |   56)  67335; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:48:56:316 |    0)  46083; notifyPeerCount: cnt 1
+INFO    (22:48:56:316 |    0)  46083; audio cc ctrl br to be -1
+WARN    (22:48:57:269 |    0)  46083; [pm] stream data of peer 10000017 is earlier than quit, ignore it
+INFO    (22:48:57:312 |   43)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:48:58:317 |    5)  46083; audio cc ctrl br to be -1
+INFO    (22:48:58:604 |  287)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:48:58:702 |   98)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49: 0:316 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49: 0:317 |    1)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:49: 0:317 |    0)  46083; [tactics] handle videobwe:941 fps:30 now:887337275 887357275
+INFO    (22:49: 1:975 |  658)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49: 2: 77 |    0)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49: 2:317 |  240)  46083; audio cc ctrl br to be -1
+INFO    (22:49: 2:841 |  524)  67335; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49: 4:317 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49: 5:344 |   27)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49: 5:443 |   99)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49: 6:317 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49: 6:349 |   32)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 105, near_out = 105 farin = 105
+INFO    (22:49: 6:389 |   40)  55047; Audio statistics - play count: playout count = 602  signal level: far_in = 81
+INFO    (22:49: 7:316 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:49: 8:324 |    8)  46083; audio cc ctrl br to be -1
+INFO    (22:49: 8:718 |  394)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49: 8:818 |  100)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+WARN    (22:49: 9:841 |   23)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (3299/3298)
+INFO    (22:49: 9:944 |  103)  67335; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:10:318 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:12: 86 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:12:184 |   98)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:12:318 |  134)  46083; audio cc ctrl br to be -1
+INFO    (22:49:13:589 |  271)  46083; Intra Request issued, uid=15, force_low=0
+INFO    (22:49:13:600 |   11)  46083; AsyncRenderFrame frozen for stream 15
+INFO    (22:49:13:600 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 15, frozen true
+INFO    (22:49:13:610 |   10)  46083; AsyncRenderFrame running for stream 15
+INFO    (22:49:13:610 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 15, frozen false
+INFO    (22:49:13:630 |   20)  46083; AsyncRenderFrame frozen for stream 0
+INFO    (22:49:13:662 |   32)  46083; AsyncRenderFrame running for stream 0
+INFO    (22:49:13:708 |   46)  46083; Intra Request Received from 0
+
+INFO    (22:49:13:708 |    0)  46083; Intra Request after Quick Intra
+
+WARN    (22:49:13:719 |   11)  46083; Idr miss, internal frn wrap around, reset. prevfrn (1225), cfrn (0), maxfrn (65536)
+INFO    (22:49:13:799 |   80)  46083; last intra frame 12078 2048 21 with 22 packets starting seq 12057 stream 0x51 frome user 32764 2904535552 has been cached at 887350
+WARN    (22:49:13:801 |    2)  46083; Idr miss, internal frn wrap around, reset. prevfrn (596), cfrn (0), maxfrn (65536)
+INFO    (22:49:13:817 |   16)  46083; last intra frame 12059 2048 2 with 22 packets starting seq 12057 stream 0x51 frome user 2 331244416 has been cached at 887350
+INFO    (22:49:13:817 |    0)  46083; last intra frame 12060 2048 3 with 22 packets starting seq 12057 stream 0x51 frome user 2 331244416 has been cached at 887350
+WARN    (22:49:13:848 |   31)  46083; Idr miss, internal frn wrap around, reset. prevfrn (596), cfrn (0), maxfrn (65536)
+WARN    (22:49:13:947 |   99)  71179; adm record frequecy abnormal 39
+INFO    (22:49:14:117 |    0) 130731; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:49:14:117 |    0) 130731; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:49:14:117 |    0)  46083; [rp] {"rtc.video.mute_peer":{"uid":10000012,"mute":true}}
+INFO    (22:49:14:117 |    0)  46083; [pm] mute video peer 10000012 muted true
+INFO    (22:49:14:130 |   13)  46083; Quick Intra Request Received and to Enc Intra now
+
+WARN    (22:49:14:139 |    9)  46083; Idr miss, internal frn wrap around, reset. prevfrn (9), cfrn (0), maxfrn (65536)
+INFO    (22:49:14:158 |   19)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 0
+ERROR   (22:49:14:158 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already unmuted
+INFO    (22:49:14:158 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:49:14:158 |    0)  46083; [pm] peer 10000012 is online
+INFO    (22:49:14:158 |    0)  46083; notifyPeerCount: cnt 2
+INFO    (22:49:14:158 |    0)  46083; [che] onPeerJoined: inserted uid 10000012 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:49:14:158 |    0)  46083; [pm] peer 10000012 has muted audio
+INFO    (22:49:14:158 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:49:14:158 |    0)  46083; [pm] peer 10000012 has enabled video
+INFO    (22:49:14:158 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:49:14:159 |    1)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+INFO    (22:49:14:159 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:2,new:1,elapsed:0
+INFO    (22:49:14:159 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+INFO    (22:49:14:178 |   19)  46083; [pm] peer 10000012 has enabled local video
+INFO    (22:49:14:178 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:49:14:229 |   51)  46083; last intra frame 12120 2054 15 with 18 packets starting seq 12105 stream 0x51 frome user 32764 2904535552 has been cached at 887351
+WARN    (22:49:14:230 |    1)  46083; Idr miss, internal frn wrap around, reset. prevfrn (5), cfrn (0), maxfrn (65536)
+WARN    (22:49:14:280 |   50)  46083; Idr miss, internal frn wrap around, reset. prevfrn (5), cfrn (0), maxfrn (65536)
+INFO    (22:49:14:318 |   38)  46083; audio cc ctrl br to be -1
+INFO    (22:49:15:195 |    0)  46083; [rs] **report stats: seq: 476, report list size 0, tx/rx: 74416/22848, cache size: 0
+INFO    (22:49:15:195 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+WARN    (22:49:15:346 |  151)  55047; adm playout frequecy abnormal 39
+INFO    (22:49:16: 62 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:16:191 |  129)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:16:322 |  131)  46083; audio cc ctrl br to be -1
+INFO    (22:49:17:120 |    0)  67335; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:17:341 |  221)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:49:18:196 |    0)  46083; **CALL STATS: duration 2m0s cpu app/total 19.57/68.18 memory size app/ratio app/total 238140KB/3.77/97.23 battery 100 tx/rx: 1.21K/965 kbps 14.182M/14.289M bytes
+INFO    (22:49:18:318 |  122)  46083; audio cc ctrl br to be -1
+INFO    (22:49:19:435 |  117)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:19:569 |  134)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:20:321 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:21:808 |  487)  46083; [pm] peer 10000012 has disabled local video
+INFO    (22:49:21:808 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:49:21:838 |   30)  46083; [pm] peer 10000012 is offline: quit(0)
+INFO    (22:49:21:838 |    0)  46083; [netob] cid channel44 uid 10000012 offline
+INFO    (22:49:21:838 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000012, priority: 1
+INFO    (22:49:21:838 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000012, priority: 1
+INFO    (22:49:21:838 |    0)  46083; stopRemoteVideo: uid=10000012
+INFO    (22:49:21:838 |    0)  46083; [che] onPeerOffline: uid 10000012 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:49:21:838 |    0)  46083; [che] clearPeerInMap: uid 10000012 of cid channel44 to be removed
+INFO    (22:49:21:838 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+ERROR   (22:49:21:838 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already muted
+INFO    (22:49:21:838 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000012
+INFO    (22:49:21:850 |   12)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:49:21:851 |    1)    775; API call to setupRemoteVideo cid  uid 10000012
+INFO    (22:49:21:851 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:49:21:851 |    0)  46083; doStartRemoteRender: cid  uid 10000012
+ERROR   (22:49:21:851 |    0)  46083; doStartRemoteRender: cannot find video_user 10000012
+INFO    (22:49:22:318 |    0)  46083; notifyPeerCount: cnt 1
+INFO    (22:49:22:318 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:22:798 |  480)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:22:929 |  131)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:24:133 |    0)  67335; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:24:318 |  185)  46083; audio cc ctrl br to be -1
+INFO    (22:49:24:366 |   48)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 103, near_out = 102 farin = 103
+INFO    (22:49:24:406 |   40)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 81
+WARN    (22:49:25:448 |   42)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (3741/3740)
+INFO    (22:49:26:170 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:26:303 |  133)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:26:318 |   15)  46083; audio cc ctrl br to be -1
+INFO    (22:49:27:343 |   25)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:49:28:318 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:29:538 |  220)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:29:681 |  143)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:30:318 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:31:263 |    0)  67335; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:32:318 |   55)  46083; audio cc ctrl br to be -1
+INFO    (22:49:32:902 |  584)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:33: 44 |    0)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:33:409 |  365)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 0
+ERROR   (22:49:33:409 |    0)  46083; onPeerAudioMuteStatus: uid 10000017 already unmuted
+INFO    (22:49:33:409 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:49:33:409 |    0)  46083; [pm] peer 10000017 is online
+INFO    (22:49:33:409 |    0)  46083; notifyPeerCount: cnt 2
+INFO    (22:49:33:409 |    0)  46083; [che] onPeerJoined: inserted uid 10000017 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:49:33:409 |    0)  46083; [pm] peer 10000017 has muted audio
+INFO    (22:49:33:409 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:49:33:409 |    0)  46083; [pm] peer 10000017 has enabled video
+INFO    (22:49:33:409 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:49:33:409 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:49:33:410 |    1)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:2,new:1,elapsed:0
+INFO    (22:49:33:410 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:49:33:464 |   54)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:49:33:464 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:49:33:464 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:49:33:464 |    0)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:49:33:464 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+INFO    (22:49:33:488 |   24)  46083; [pm] peer 10000017 has enabled local video
+INFO    (22:49:33:488 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 0
+INFO    (22:49:33:718 |  230)  46083; onTracerFirstRemoteVideo cid channel44 uid 10000017 codec 2 elapsed 137635
+INFO    (22:49:33:719 |    1)  46083; Codec: VP8, Payload type 100, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:49:33:719 |    0)  46083; Codec: H264, Payload type 107, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:49:33:719 |    0)  46083; User 10000017 has enabled intra request mode
+INFO    (22:49:33:719 |    0)  46083; User 10000017 has enabled nasa feedback
+INFO    (22:49:33:719 |    0)  46083; uid 10000017 stream encoded by hardware encoder 0 (prev -1)
+INFO    (22:49:33:719 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:2,new:3,elapsed:310
+INFO    (22:49:34:208 |    0)  46083; last intra frame 20 0 20 with 21 packets starting seq 0 stream 0x51 frome user 28672 7680 has been cached at 887371
+INFO    (22:49:34:208 |    0)  46083; [miaokai] Assembled 1st frame from stream 0.
+
+INFO    (22:49:34:208 |    0)  46083; Destroy decoder.
+INFO    (22:49:34:208 |    0)  46083; Finish init decoder.
+INFO    (22:49:34:208 |    0)  46083; [miaokai] Decoded 1st frame from stream 0.
+
+INFO    (22:49:34:215 |    7)  46083; [che] onVideoSizeChanged: cid channel44 uid 10000017 1094x822 rotate 0
+INFO    (22:49:34:215 |    0)  46083; [MIO] updateRemoteRenderer for uid(10000017) with render(0x0), type(1)
+INFO    (22:49:34:215 |    0)  46083; CreateVideoReceiveTrack: uid=10000017
+INFO    (22:49:34:215 |    0)  46083; CreateAgoraDefaultRender
+INFO    (22:49:34:215 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x7ffcae573260
+INFO    (22:49:34:215 |    0)  46083; CreateVideoRenderer: interface=0x7ffcae573260
+INFO    (22:49:34:215 |    0)  46083; onRemoteFirstFrameDecoded user 10000017 resolution 1094 * 822, elapsed 138132
+INFO    (22:49:34:215 |    0)  46083; doStartRemoteRender: cid channel44 uid 10000017
+INFO    (22:49:34:215 |    0)  46083; AgoraVideoOutput::Init type=100, view=0x7ffcadb3df10
+INFO    (22:49:34:215 |    0)  46083; AgoraVideoOutput::Start uid=10000017, stream_id=10000017, render_mode=1
+INFO    (22:49:34:215 |    0)  46083; setRenderListener running for stream 10000017
+INFO    (22:49:34:215 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen false
+INFO    (22:49:34:215 |    0)  46083; doStartRemoteRender success
+INFO    (22:49:34:215 |    0)  46083; [miaokai] Render 1st frame from stream 0.
+
+INFO    (22:49:34:319 |  104)  46083; audio cc ctrl br to be -1
+INFO    (22:49:34:563 |  244)  46083; User 10000017's view size is changed to 640 * 480
+INFO    (22:49:34:719 |  156)  46083; setNetEQMinimumPlayoutDelay delay(0)
+WARN    (22:49:34:739 |   20)  46083; AddFrame: too old frame, timestamp=3025060325.
+WARN    (22:49:34:747 |    8)  46083; AddFrame: too old frame, timestamp=3025072655.
+INFO    (22:49:36:278 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:36:319 |   41)  46083; audio cc ctrl br to be -1
+INFO    (22:49:36:409 |   90)  46083; [xla] first remote video frame uid:10000017, valid:0, drawn:138132, pub:2737, join:140119
+INFO    (22:49:36:411 |    2)  67335; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:37:351 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:49:38:320 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:38:325 |    5)  67335; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:39: 48 |    0)  71179; AEC_Metric, echo clips for 0 (ms), echo delay for 7712 (ms)
+INFO    (22:49:39: 67 |   19)  71179; AEC_Delay changes, current delay is 64 (ms)
+INFO    (22:49:39:459 |  392)  46083; [pm] peer 10000017 has disabled local video
+INFO    (22:49:39:459 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:49:39:459 |    0)  46083; reset video recevier for user 10000017
+INFO    (22:49:39:459 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:3,new:1,elapsed:5740
+INFO    (22:49:39:527 |   68)  46083; [pm] peer 10000017 is offline: quit(0)
+INFO    (22:49:39:527 |    0)  46083; [netob] cid channel44 uid 10000017 offline
+INFO    (22:49:39:527 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000017, priority: 1
+INFO    (22:49:39:527 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000017, priority: 1
+INFO    (22:49:39:527 |    0)  46083; stopRemoteVideo: uid=10000017
+INFO    (22:49:39:527 |    0)  46083; stopRemoteRenderWithUid: cid: channel44 uid: 10000017
+INFO    (22:49:39:527 |    0)  46083; AgoraVideoOutput::Stop
+Local Date: Sat Jan  9 22:49:39 2021
+Build info: Sep 28 2020 18:25:01 r
+
+WARN    (22:49:39:527 |    0)  46083; Stop: Not running
+INFO    (22:49:39:527 |    0)  46083; AgoraVideoOutput::Destroy
+INFO    (22:49:39:527 |    0)  46083; stopRemoteRenderWithUid: success uid=10000017
+INFO    (22:49:39:528 |    1)  46083; Destroy decoder.
+INFO    (22:49:39:528 |    0)  46083; Destroy decoder.
+INFO    (22:49:39:528 |    0)  46083; DestroyVideoReceiveTrack: uid=10000017
+INFO    (22:49:39:528 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x0
+INFO    (22:49:39:528 |    0)  46083; CreateVideoRenderer: interface=0x0
+INFO    (22:49:39:528 |    0)  46083; [che] onPeerOffline: uid 10000017 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:49:39:528 |    0)  46083; [che] clearPeerInMap: uid 10000017 of cid channel44 to be removed
+INFO    (22:49:39:528 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+ERROR   (22:49:39:528 |    0)  46083; onPeerAudioMuteStatus: uid 10000017 already muted
+INFO    (22:49:39:528 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000017
+INFO    (22:49:39:529 |    1)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:49:39:529 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:49:39:529 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:49:39:529 |    0)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:49:39:529 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+INFO    (22:49:39:658 |  129)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:39:789 |  131)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:40:320 |    0)  46083; notifyPeerCount: cnt 1
+INFO    (22:49:40:320 |    0)  46083; audio cc ctrl br to be -1
+WARN    (22:49:40:658 |  338)  46083; [pm] stream data of peer 10000017 is earlier than quit, ignore it
+INFO    (22:49:42:319 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:42:387 |   68)  71179; Audio statistics - rec count: record count = 601 signal level: near_in = 97, near_out = 96 farin = 97
+INFO    (22:49:42:407 |   20)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 99
+INFO    (22:49:43: 11 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:43:155 |  144)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:44:321 |  166)  46083; audio cc ctrl br to be -1
+INFO    (22:49:44:322 |    1)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:49:44:322 |    0)  46083; [tactics] handle videobwe:749 fps:24 now:887381279 887401279
+INFO    (22:49:45:356 |   34)  46083; [rs] **report stats: seq: 591, report list size 1, tx/rx: 92896/28320, cache size: 0
+INFO    (22:49:45:356 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:49:45:422 |   66)  64315; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:46:321 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:46:388 |   67)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:46:522 |  134)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:47:362 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:49:48:199 |    0)  46083; **CALL STATS: duration 2m30s cpu app/total 19.22/68.93 memory size app/ratio app/total 236068KB/3.74/95.83 battery 100 tx/rx: 915/921 kbps 17.1016M/17.801M bytes
+INFO    (22:49:48:322 |  123)  46083; audio cc ctrl br to be -1
+INFO    (22:49:49:794 |  472)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:49:925 |  131)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:50:328 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:52:322 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:52:473 |  151)  64315; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:53:158 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:53:290 |  132)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:49:54:322 |   32)  46083; audio cc ctrl br to be -1
+INFO    (22:49:56:322 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:49:56:528 |  206)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:49:56:669 |  141)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+WARN    (22:49:56:710 |   41)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (4654/4653)
+WARN    (22:49:56:918 |  208)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (4661/4660)
+WARN    (22:49:56:918 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (4663/4662)
+INFO    (22:49:57:347 |    0)  55047; [che] OnAudioFrameFrozen: cid channel44 uid 15, frozen true
+INFO    (22:49:57:371 |   24)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+WARN    (22:49:57:618 |  247)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (4681/4680)
+WARN    (22:49:57:658 |   40)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (4685/4684)
+INFO    (22:49:58:257 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 0
+ERROR   (22:49:58:257 |    0)  46083; onPeerAudioMuteStatus: uid 10000017 already unmuted
+INFO    (22:49:58:257 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:49:58:257 |    0)  46083; [pm] peer 10000017 is online
+INFO    (22:49:58:257 |    0)  46083; notifyPeerCount: cnt 2
+INFO    (22:49:58:257 |    0)  46083; [che] onPeerJoined: inserted uid 10000017 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:49:58:257 |    0)  46083; [pm] peer 10000017 has muted audio
+INFO    (22:49:58:258 |    1)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:49:58:258 |    0)  46083; [pm] peer 10000017 has enabled video
+INFO    (22:49:58:258 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:49:58:258 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:49:58:259 |    1)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:2,new:1,elapsed:1
+INFO    (22:49:58:259 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:49:58:288 |   29)  46083; [pm] peer 10000017 has enabled local video
+INFO    (22:49:58:288 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 0
+INFO    (22:49:58:320 |   32)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:49:58:320 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:49:58:320 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:49:58:320 |    0)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:49:58:320 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+INFO    (22:49:58:323 |    3)  46083; audio cc ctrl br to be -1
+INFO    (22:49:58:448 |  125)  46083; onTracerFirstRemoteVideo cid channel44 uid 10000017 codec 2 elapsed 162364
+INFO    (22:49:58:448 |    0)  46083; Codec: VP8, Payload type 100, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:49:58:448 |    0)  46083; Codec: H264, Payload type 107, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:49:58:448 |    0)  46083; User 10000017 has enabled intra request mode
+INFO    (22:49:58:448 |    0)  46083; User 10000017 has enabled nasa feedback
+INFO    (22:49:58:448 |    0)  46083; uid 10000017 stream encoded by hardware encoder 0 (prev -1)
+INFO    (22:49:58:449 |    1)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:2,new:3,elapsed:191
+INFO    (22:49:59:137 |    0)  46083; last intra frame 27 0 27 with 28 packets starting seq 0 stream 0x51 frome user 28672 404424406 has been cached at 887396
+INFO    (22:49:59:137 |    0)  46083; [miaokai] Assembled 1st frame from stream 0.
+
+INFO    (22:49:59:137 |    0)  46083; Destroy decoder.
+INFO    (22:49:59:138 |    1)  46083; Finish init decoder.
+INFO    (22:49:59:138 |    0)  46083; [miaokai] Decoded 1st frame from stream 0.
+
+INFO    (22:49:59:143 |    5)  46083; [che] onVideoSizeChanged: cid channel44 uid 10000017 760x786 rotate 0
+INFO    (22:49:59:143 |    0)  46083; [MIO] updateRemoteRenderer for uid(10000017) with render(0x0), type(1)
+INFO    (22:49:59:143 |    0)  46083; CreateVideoReceiveTrack: uid=10000017
+INFO    (22:49:59:143 |    0)  46083; CreateAgoraDefaultRender
+INFO    (22:49:59:143 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x7ffc9db50c40
+INFO    (22:49:59:143 |    0)  46083; CreateVideoRenderer: interface=0x7ffc9db50c40
+INFO    (22:49:59:143 |    0)  46083; onRemoteFirstFrameDecoded user 10000017 resolution 760 * 786, elapsed 163059
+INFO    (22:49:59:143 |    0)  46083; doStartRemoteRender: cid channel44 uid 10000017
+INFO    (22:49:59:143 |    0)  46083; AgoraVideoOutput::Init type=100, view=0x7ffcadb7a400
+INFO    (22:49:59:143 |    0)  46083; AgoraVideoOutput::Start uid=10000017, stream_id=10000017, render_mode=1
+INFO    (22:49:59:143 |    0)  46083; setRenderListener running for stream 10000017
+INFO    (22:49:59:143 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen false
+INFO    (22:49:59:143 |    0)  46083; doStartRemoteRender success
+INFO    (22:49:59:143 |    0)  46083; [miaokai] Render 1st frame from stream 0.
+
+INFO    (22:49:59:347 |  204)  55047; [che] OnAudioFrameFrozen: cid channel44 uid 15, frozen false
+INFO    (22:49:59:448 |  101)  46083; setNetEQMinimumPlayoutDelay delay(0)
+INFO    (22:49:59:540 |   92)  46083; User 10000017's view size is changed to 640 * 480
+INFO    (22:49:59:581 |   41)  64315; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:49:59:899 |  318)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+WARN    (22:49:59:950 |   51)  71179; captured signal too small
+WARN    (22:49:59:950 |    0)  71179; audio device captured signal too small
+INFO    (22:50: 0: 38 |    0)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50: 0:324 |  286)  46083; audio cc ctrl br to be -1
+INFO    (22:50: 0:388 |   64)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 95, near_out = 95 farin = 95
+INFO    (22:50: 0:407 |   19)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 61
+INFO    (22:50: 1:259 |    0)  46083; [xla] first remote video frame uid:10000017, valid:0, drawn:163059, pub:2857, join:164969
+INFO    (22:50: 2:325 |   66)  46083; audio cc ctrl br to be -1
+INFO    (22:50: 3:266 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50: 3:407 |  141)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50: 4:326 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50: 6:327 |    1)  46083; audio cc ctrl br to be -1
+INFO    (22:50: 6:642 |  315)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50: 6:672 |   30)  64315; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50: 6:772 |  100)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50: 7:199 |    0)  64315; printFrameLog :uid:10000017,width 760, height 786,ystride:768
+INFO    (22:50: 7:389 |  190)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:50: 8:327 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:10: 10 |    0)  87955; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:10:151 |  141)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:10:327 |  176)  46083; audio cc ctrl br to be -1
+INFO    (22:50:10:328 |    1)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:50:10:328 |    0)  46083; [tactics] handle videobwe:936 fps:30 now:887407285 887427285
+INFO    (22:50:12:327 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:13:382 |   55)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:13:516 |  134)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:13:773 |  257)  64315; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50:13:830 |   57)  64315; printFrameLog :uid:10000017,width 760, height 786,ystride:768
+INFO    (22:50:14:328 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:15:361 |   33)  46083; [rs] **report stats: seq: 701, report list size 1, tx/rx: 109132/33600, cache size: 0
+INFO    (22:50:15:361 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:50:16:328 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:16:754 |  426)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:16:888 |  134)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:17:403 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:50:18:209 |    0)  46083; **CALL STATS: duration 3m0s cpu app/total 15.17/54.0 memory size app/ratio app/total 268340KB/4.24/98.73 battery 100 tx/rx: 1.107K/985 kbps 21.685M/21.402M bytes
+INFO    (22:50:18:327 |  118)  46083; audio cc ctrl br to be -1
+INFO    (22:50:18:391 |   64)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 96, near_out = 95 farin = 96
+INFO    (22:50:18:408 |   17)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 88
+INFO    (22:50:20:123 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:20:254 |  131)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:20:328 |   74)  46083; audio cc ctrl br to be -1
+INFO    (22:50:20:609 |  281)  64315; printFrameLog :uid:10000017,width 760, height 786,ystride:768
+INFO    (22:50:20:822 |  213)  64315; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50:22:328 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:23:490 |  162)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:23:624 |  134)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+WARN    (22:50:23:637 |   13)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (5455/5453)
+WARN    (22:50:23:637 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (5457/5456)
+WARN    (22:50:23:637 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (5458/5454)
+INFO    (22:50:23:699 |   62)  46083; Intra Request Received from 0
+
+INFO    (22:50:23:723 |   24)  46083; Intra Request after Quick Intra
+
+WARN    (22:50:23:730 |    7)  46083; Idr miss, internal frn wrap around, reset. prevfrn (2053), cfrn (0), maxfrn (65536)
+WARN    (22:50:24:248 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (5470/5469)
+WARN    (22:50:24:248 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (5474/5473)
+WARN    (22:50:24:248 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (5477/5475)
+INFO    (22:50:24:333 |   85)  46083; audio cc ctrl br to be -1
+INFO    (22:50:25:647 |  314)  46083; last intra frame 729 371 41 with 42 packets starting seq 688 stream 0x51 frome user 0 5120 has been cached at 887422
+WARN    (22:50:25:648 |    1)  46083; Idr miss, internal frn wrap around, reset. prevfrn (369), cfrn (0), maxfrn (65536)
+WARN    (22:50:25:659 |   11)  46083; AddFrame: too old frame, timestamp=3031898020.
+WARN    (22:50:25:660 |    1)  46083; AddFrame: too old frame, timestamp=3031904230.
+WARN    (22:50:25:700 |   40)  46083; AddFrame: too old frame, timestamp=3031909990.
+WARN    (22:50:25:941 |  241)  46083; AddFrame: too old frame, timestamp=3031921870.
+WARN    (22:50:25:942 |    1)  46083; AddFrame: too old frame, timestamp=3031927900.
+INFO    (22:50:26: 18 |    0)  46083; Intra Request issued, uid=10000017, force_low=0
+WARN    (22:50:26: 20 |    2)  46083; AddFrame: too old frame, timestamp=3031940050.
+WARN    (22:50:26: 28 |    8)  46083; AddFrame: too old frame, timestamp=3031945900.
+INFO    (22:50:26:287 |  259)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:26:334 |   47)  46083; audio cc ctrl br to be -1
+INFO    (22:50:26:637 |  303)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:26:788 |  151)  46083; AsyncRenderFrame frozen for stream 10000017
+INFO    (22:50:26:788 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen true
+INFO    (22:50:26:860 |   72)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:26:888 |   28)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:26:992 |  104)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:27:237 |    0)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:27:403 |  166)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:50:27:547 |  144)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:27:932 |  385)  64315; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50:28:227 |    0)  46083; last intra frame 925 406 41 with 42 packets starting seq 884 stream 0x51 frome user 28672 0 has been cached at 887425
+WARN    (22:50:28:228 |    1)  46083; Idr miss, internal frn wrap around, reset. prevfrn (32), cfrn (0), maxfrn (65536)
+WARN    (22:50:28:229 |    1)  46083; Idr miss, internal frn wrap around, reset. prevfrn (32), cfrn (0), maxfrn (65536)
+INFO    (22:50:28:240 |   11)  46083; AsyncRenderFrame running for stream 10000017
+INFO    (22:50:28:240 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen false
+WARN    (22:50:28:249 |    9)  46083; AddFrame: too old frame, timestamp=3032131840.
+WARN    (22:50:28:251 |    2)  46083; AddFrame: too old frame, timestamp=3032137690.
+WARN    (22:50:28:292 |   41)  46083; AddFrame: too old frame, timestamp=3032143630.
+INFO    (22:50:28:328 |   36)  46083; audio cc ctrl br to be -1
+WARN    (22:50:28:524 |  196)  46083; AddFrame: too old frame, timestamp=3032155510.
+INFO    (22:50:28:528 |    4)  46083; Intra Request issued, uid=10000017, force_low=0
+WARN    (22:50:28:529 |    1)  46083; AddFrame: too old frame, timestamp=3032162260.
+INFO    (22:50:28:799 |  270)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:29: 71 |    0)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:29:161 |   90)  46083; AsyncRenderFrame frozen for stream 10000017
+INFO    (22:50:29:161 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen true
+INFO    (22:50:29:339 |  178)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:29:669 |  330)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:30:232 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:30:328 |   96)  46083; audio cc ctrl br to be -1
+INFO    (22:50:30:370 |   42)  64315; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:30:409 |   39)  46083; last intra frame 1092 437 44 with 45 packets starting seq 1048 stream 0x51 frome user 28672 2560 has been cached at 887427
+WARN    (22:50:30:409 |    0)  46083; Idr miss, internal frn wrap around, reset. prevfrn (28), cfrn (0), maxfrn (65536)
+WARN    (22:50:30:409 |    0)  46083; Idr miss, internal frn wrap around, reset. prevfrn (28), cfrn (0), maxfrn (65536)
+INFO    (22:50:30:416 |    7)  46083; AsyncRenderFrame running for stream 10000017
+INFO    (22:50:30:416 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen false
+INFO    (22:50:30:428 |   12)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:30:689 |  261)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:30:970 |  281)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:31: 19 |    0)  46083; AsyncRenderFrame frozen for stream 10000017
+INFO    (22:50:31: 19 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen true
+INFO    (22:50:31:268 |  249)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:31:529 |  261)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:31:800 |  271)  46083; Intra Request issued, uid=10000017, force_low=0
+INFO    (22:50:32:329 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:32:330 |    1)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:50:32:330 |    0)  46083; [tactics] handle videobwe:855 fps:24 now:887429286 887449286
+INFO    (22:50:32:507 |  177)  46083; last intra frame 1249 466 41 with 42 packets starting seq 1208 stream 0x51 frome user 32764 0 has been cached at 887429
+WARN    (22:50:32:507 |    0)  46083; Idr miss, internal frn wrap around, reset. prevfrn (26), cfrn (0), maxfrn (65536)
+WARN    (22:50:32:507 |    0)  46083; Idr miss, internal frn wrap around, reset. prevfrn (26), cfrn (0), maxfrn (65536)
+INFO    (22:50:32:514 |    7)  46083; AsyncRenderFrame running for stream 10000017
+INFO    (22:50:32:514 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen false
+WARN    (22:50:32:517 |    3)  46083; AddFrame: too old frame, timestamp=3032515510.
+WARN    (22:50:32:519 |    2)  46083; AddFrame: too old frame, timestamp=3032521180.
+WARN    (22:50:32:564 |   45)  46083; AddFrame: too old frame, timestamp=3032527570.
+WARN    (22:50:32:796 |  232)  46083; AddFrame: too old frame, timestamp=3032539450.
+WARN    (22:50:32:797 |    1)  46083; AddFrame: too old frame, timestamp=3032545210.
+INFO    (22:50:32:898 |  101)  46083; [pm] peer 10000017 has disabled local video
+INFO    (22:50:32:898 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:50:32:898 |    0)  46083; reset video recevier for user 10000017
+INFO    (22:50:32:899 |    1)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:3,new:1,elapsed:34450
+INFO    (22:50:32:946 |   47)  46083; [pm] peer 10000017 is offline: quit(0)
+INFO    (22:50:32:947 |    1)  46083; [netob] cid channel44 uid 10000017 offline
+INFO    (22:50:32:947 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000017, priority: 1
+INFO    (22:50:32:947 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000017, priority: 1
+INFO    (22:50:32:947 |    0)  46083; stopRemoteVideo: uid=10000017
+INFO    (22:50:32:947 |    0)  46083; stopRemoteRenderWithUid: cid: channel44 uid: 10000017
+INFO    (22:50:32:947 |    0)  46083; AgoraVideoOutput::Stop
+WARN    (22:50:32:947 |    0)  46083; Stop: Not running
+INFO    (22:50:32:947 |    0)  46083; AgoraVideoOutput::Destroy
+INFO    (22:50:32:947 |    0)  46083; stopRemoteRenderWithUid: success uid=10000017
+INFO    (22:50:32:948 |    1)  46083; Destroy decoder.
+INFO    (22:50:32:948 |    0)  46083; Destroy decoder.
+INFO    (22:50:32:949 |    1)  46083; DestroyVideoReceiveTrack: uid=10000017
+INFO    (22:50:32:949 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x0
+INFO    (22:50:32:949 |    0)  46083; CreateVideoRenderer: interface=0x0
+INFO    (22:50:32:949 |    0)  46083; [che] onPeerOffline: uid 10000017 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:50:32:949 |    0)  46083; [che] clearPeerInMap: uid 10000017 of cid channel44 to be removed
+INFO    (22:50:32:949 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+ERROR   (22:50:32:949 |    0)  46083; onPeerAudioMuteStatus: uid 10000017 already muted
+INFO    (22:50:32:949 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000017
+INFO    (22:50:32:950 |    1)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:50:32:950 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:50:32:950 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:50:32:950 |    0)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:50:32:950 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+WARN    (22:50:33:486 |    0)  46083; [pm] stream data of peer 10000017 is earlier than quit, ignore it
+INFO    (22:50:33:597 |  111)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:33:729 |  132)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:34:328 |    0)  46083; notifyPeerCount: cnt 1
+INFO    (22:50:34:329 |    1)  46083; audio cc ctrl br to be -1
+INFO    (22:50:35:133 |    0)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50:36:330 |  197)  46083; audio cc ctrl br to be -1
+INFO    (22:50:36:408 |   78)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 90
+INFO    (22:50:36:429 |   21)  71179; Audio statistics - rec count: record count = 601 signal level: near_in = 97, near_out = 97 farin = 97
+INFO    (22:50:36:974 |  545)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:37:107 |    0)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:37:411 |  304)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:50:38:331 |    0)  46083; audio cc ctrl br to be -1
+WARN    (22:50:40:168 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (5939/5938)
+INFO    (22:50:40:331 |  163)  46083; audio cc ctrl br to be -1
+INFO    (22:50:40:342 |   11)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:40:473 |  131)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:42:282 |    0)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50:42:330 |   48)  46083; audio cc ctrl br to be -1
+INFO    (22:50:43:711 |  381)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:43:843 |  132)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:44:331 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:45:363 |   32)  46083; [rs] **report stats: seq: 811, report list size 1, tx/rx: 127153/38880, cache size: 0
+INFO    (22:50:45:363 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:50:46:332 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:47: 84 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:47:218 |  134)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:47:425 |  207)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:50:48:212 |    0)  46083; **CALL STATS: duration 3m30s cpu app/total 16.70/35.95 memory size app/ratio app/total 256516KB/4.05/97.69 battery 100 tx/rx: 1.81K/1.17K kbps 25.336M/25.352M bytes
+INFO    (22:50:48:330 |  118)  46083; audio cc ctrl br to be -1
+INFO    (22:50:49:480 |  150)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50:50:331 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:50:452 |  121)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:50:583 |  131)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:52:331 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:52:331 |    0)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:50:52:331 |    0)  46083; [tactics] handle videobwe:945 fps:30 now:887449287 887469287
+INFO    (22:50:53:621 |  290)  46083; Quick Intra Request Received and to Enc Intra now
+
+WARN    (22:50:53:628 |    7)  46083; Idr miss, internal frn wrap around, reset. prevfrn (875), cfrn (0), maxfrn (65536)
+INFO    (22:50:53:819 |  191)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:53:951 |  132)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:54:331 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:54:428 |   97)  55047; Audio statistics - play count: playout count = 602  signal level: far_in = 98
+INFO    (22:50:54:449 |   21)  71179; Audio statistics - rec count: record count = 601 signal level: near_in = 95, near_out = 93 farin = 95
+INFO    (22:50:56:334 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:56:671 |  337)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:50:57:196 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:50:57:329 |  133)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:50:57:430 |  101)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:50:58:333 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:50:59:349 |   16)  55047; [che] OnAudioFrameFrozen: cid channel44 uid 15, frozen true
+INFO    (22:51: 0:331 |    0)  46083; audio cc ctrl br to be -1
+WARN    (22:51: 0:513 |  182)  46083; Idr miss, internal frn wrap around, reset. prevfrn (1505), cfrn (0), maxfrn (65536)
+INFO    (22:51: 0:526 |   13)  46083; last intra frame 21197 3560 22 with 23 packets starting seq 21175 stream 0x51 frome user 32764 2904535552 has been cached at 887457
+WARN    (22:51: 0:564 |   38)  46083; Idr miss, internal frn wrap around, reset. prevfrn (1505), cfrn (0), maxfrn (65536)
+INFO    (22:51: 0:570 |    6)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51: 0:698 |  128)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51: 1:348 |    0)  55047; [che] OnAudioFrameFrozen: cid channel44 uid 15, frozen false
+INFO    (22:51: 2:331 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51: 3:931 |  600)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51: 3:999 |   68)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51: 4: 61 |    0)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51: 4:331 |  270)  46083; audio cc ctrl br to be -1
+WARN    (22:51: 4:658 |  327)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (6661/6660)
+INFO    (22:51: 6:332 |    0)  46083; audio cc ctrl br to be -1
+WARN    (22:51: 7: 58 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (6729/6726)
+WARN    (22:51: 7: 58 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (6733/6730)
+WARN    (22:51: 7: 58 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (6731/6728)
+WARN    (22:51: 7: 58 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (6735/6734)
+INFO    (22:51: 7:302 |  244)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51: 7:435 |  133)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51: 7:440 |    5)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:51: 8:339 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:10:333 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:10:673 |  340)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:10:804 |  131)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:11:100 |    0)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51:12:333 |  233)  46083; audio cc ctrl br to be -1
+INFO    (22:51:12:429 |   96)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 98
+INFO    (22:51:12:450 |   21)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 84, near_out = 51 farin = 84
+INFO    (22:51:14: 40 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:14:177 |  137)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:14:335 |  158)  46083; audio cc ctrl br to be -1
+INFO    (22:51:15:366 |   31)  46083; [rs] **report stats: seq: 894, report list size 1, tx/rx: 139963/42864, cache size: 0
+INFO    (22:51:15:366 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:51:16:335 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:17:410 |   75)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:17:451 |   41)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:51:17:545 |   94)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:18:219 |    0)  46083; **CALL STATS: duration 4m0s cpu app/total 15.57/44.32 memory size app/ratio app/total 252448KB/3.99/98.11 battery 100 tx/rx: 1.108K/976 kbps 29.335M/29.234M bytes
+INFO    (22:51:18:281 |   62)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51:18:336 |   55)  46083; audio cc ctrl br to be -1
+INFO    (22:51:20:336 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:20:783 |  447)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:20:918 |  135)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:22:336 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:24:153 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:24:288 |  135)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:24:336 |   48)  46083; audio cc ctrl br to be -1
+INFO    (22:51:25:323 |    0)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51:26:336 |   13)  46083; audio cc ctrl br to be -1
+INFO    (22:51:27:462 |  126)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:51:27:520 |   58)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:27:653 |  133)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:28:337 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:30:338 |    1)  46083; audio cc ctrl br to be -1
+INFO    (22:51:30:429 |   91)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 63
+INFO    (22:51:30:450 |   21)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 104, near_out = 104 farin = 104
+INFO    (22:51:30:894 |  444)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:31: 28 |    0)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+WARN    (22:51:31:953 |  925)  71179; captured signal too small
+WARN    (22:51:31:953 |    0)  71179; audio device captured signal too small
+INFO    (22:51:32:338 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:32:338 |    0)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:51:32:338 |    0)  46083; [tactics] handle videobwe:749 fps:24 now:887489292 887509292
+INFO    (22:51:32:341 |    3)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51:34:263 |    0)  72199; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:34:336 |   73)  46083; audio cc ctrl br to be -1
+INFO    (22:51:34:396 |   60)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:36:337 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:37:474 |  137)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:51:37:631 |  157)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:37:765 |  134)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:38:338 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:39:433 |   95)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51:40:338 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:40:999 |  661)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:41:140 |    0)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:42:337 |  197)  46083; audio cc ctrl br to be -1
+INFO    (22:51:44:337 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:44:370 |   33)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:44:505 |  135)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:45:368 |    0)  46083; [rs] **report stats: seq: 976, report list size 1, tx/rx: 153821/46800, cache size: 0
+INFO    (22:51:45:368 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:51:46:343 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:46:501 |  158)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51:47:480 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:51:47:742 |  262)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:47:875 |  133)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:48:224 |    0)  46083; **CALL STATS: duration 4m30s cpu app/total 17.4/31.72 memory size app/ratio app/total 249576KB/3.93/99.15 battery 100 tx/rx: 893/947 kbps 32.811M/32.567M bytes
+INFO    (22:51:48:339 |  115)  46083; audio cc ctrl br to be -1
+INFO    (22:51:48:430 |   91)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 95
+INFO    (22:51:48:451 |   21)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 78, near_out = 49 farin = 78
+INFO    (22:51:50:339 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:51:111 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:51:243 |  132)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+WARN    (22:51:51:951 |  708)  71179; captured signal too small
+WARN    (22:51:51:951 |    0)  71179; audio device captured signal too small
+INFO    (22:51:52:339 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:53:540 |  201)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:51:54:339 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:54:481 |  142)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:54:612 |  131)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:56:339 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:51:57:497 |  158)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:51:57:846 |  349)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:51:57:989 |  143)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:51:58:340 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52: 0:340 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52: 0:640 |  300)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52: 1:227 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52: 1:358 |  131)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52: 2:340 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52: 4:340 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52: 4:591 |  251)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52: 4:725 |  134)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52: 6:341 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52: 6:430 |   89)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 88
+INFO    (22:52: 6:451 |   21)  71179; Audio statistics - rec count: record count = 601 signal level: near_in = 100, near_out = 99 farin = 100
+INFO    (22:52: 7:502 |   51)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:52: 7:719 |  217)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52: 7:971 |  252)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52: 8: 94 |    0)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52: 8:340 |  246)  46083; audio cc ctrl br to be -1
+INFO    (22:52:10:340 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:11:335 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:11:466 |  131)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:12:340 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:14:344 |    4)  46083; audio cc ctrl br to be -1
+INFO    (22:52:14:705 |  361)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:14:836 |  131)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:14:848 |   12)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52:15:370 |    0)  46083; [rs] **report stats: seq: 1056, report list size 1, tx/rx: 165939/50640, cache size: 0
+INFO    (22:52:15:370 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:52:16:341 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:17:505 |  164)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:52:18: 74 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:18:206 |  132)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:18:228 |   22)  46083; **CALL STATS: duration 5m0s cpu app/total 15.25/29.50 memory size app/ratio app/total 248676KB/3.92/99.27 battery 100 tx/rx: 912/943 kbps 36.153M/35.901M bytes
+INFO    (22:52:18:343 |  115)  46083; audio cc ctrl br to be -1
+INFO    (22:52:20:341 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:21:441 |  100)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:21:573 |  132)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:21:898 |  325)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52:22:341 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:24:344 |    3)  46083; audio cc ctrl br to be -1
+INFO    (22:52:24:451 |  107)  55047; Audio statistics - play count: playout count = 602  signal level: far_in = 94
+INFO    (22:52:24:452 |    1)  71179; Audio statistics - rec count: record count = 601 signal level: near_in = 95, near_out = 96 farin = 96
+INFO    (22:52:24:813 |  361)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:24:946 |  133)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:26:342 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:27:519 |  177)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:52:28:185 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:28:314 |  129)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:28:342 |   28)  46083; audio cc ctrl br to be -1
+INFO    (22:52:29: 68 |    0)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52:30:343 |  275)  46083; audio cc ctrl br to be -1
+INFO    (22:52:31:549 |  206)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:31:681 |  132)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:32:344 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:34:344 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:34:919 |  575)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:35: 60 |    0)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:35:375 |  315)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 0
+ERROR   (22:52:35:376 |    1)  46083; onPeerAudioMuteStatus: uid 10000017 already unmuted
+INFO    (22:52:35:376 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:52:35:376 |    0)  46083; [pm] peer 10000017 is online
+INFO    (22:52:35:376 |    0)  46083; notifyPeerCount: cnt 2
+INFO    (22:52:35:376 |    0)  46083; [che] onPeerJoined: inserted uid 10000017 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:52:35:376 |    0)  46083; [pm] peer 10000017 has muted audio
+INFO    (22:52:35:376 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:52:35:376 |    0)  46083; [pm] peer 10000017 has enabled video
+INFO    (22:52:35:376 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:52:35:376 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:52:35:376 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000017,old:2,new:1,elapsed:0
+INFO    (22:52:35:376 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:0,new:2,elapsed:0
+INFO    (22:52:35:426 |   50)  46083; [pm] peer 10000017 has enabled local video
+INFO    (22:52:35:426 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 0
+INFO    (22:52:35:472 |   46)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:52:35:472 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:52:35:472 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:52:35:472 |    0)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:52:35:472 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+INFO    (22:52:35:676 |  204)  46083; onTracerFirstRemoteVideo cid channel44 uid 10000017 codec 2 elapsed 319587
+INFO    (22:52:35:676 |    0)  46083; Codec: VP8, Payload type 100, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:52:35:676 |    0)  46083; Codec: H264, Payload type 107, Height 360, Width 640, Bitrate 200,Framerate 15.
+INFO    (22:52:35:676 |    0)  46083; User 10000017 has enabled intra request mode
+INFO    (22:52:35:676 |    0)  46083; User 10000017 has enabled nasa feedback
+INFO    (22:52:35:676 |    0)  46083; uid 10000017 stream encoded by hardware encoder 0 (prev -1)
+INFO    (22:52:35:676 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:2,new:3,elapsed:300
+INFO    (22:52:36:159 |    0)  61763; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52:36:345 |  186)  46083; audio cc ctrl br to be -1
+INFO    (22:52:36:515 |  170)  46083; last intra frame 30 1 30 with 31 packets starting seq 0 stream 0x51 frome user 32764 0 has been cached at 887553
+INFO    (22:52:36:515 |    0)  46083; [miaokai] Assembled 1st frame from stream 0.
+
+INFO    (22:52:36:515 |    0)  46083; Destroy decoder.
+INFO    (22:52:36:515 |    0)  46083; Finish init decoder.
+INFO    (22:52:36:515 |    0)  46083; [miaokai] Decoded 1st frame from stream 0.
+
+INFO    (22:52:36:533 |   18)  46083; [che] onVideoSizeChanged: cid channel44 uid 10000017 1356x822 rotate 0
+INFO    (22:52:36:533 |    0)  46083; [MIO] updateRemoteRenderer for uid(10000017) with render(0x0), type(1)
+INFO    (22:52:36:534 |    1)  46083; CreateVideoReceiveTrack: uid=10000017
+INFO    (22:52:36:534 |    0)  46083; CreateAgoraDefaultRender
+INFO    (22:52:36:534 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x7ffcae5f2070
+INFO    (22:52:36:534 |    0)  46083; CreateVideoRenderer: interface=0x7ffcae5f2070
+INFO    (22:52:36:534 |    0)  46083; onRemoteFirstFrameDecoded user 10000017 resolution 1356 * 822, elapsed 320445
+INFO    (22:52:36:534 |    0)  46083; doStartRemoteRender: cid channel44 uid 10000017
+INFO    (22:52:36:534 |    0)  46083; AgoraVideoOutput::Init type=100, view=0x7ffcadad9900
+INFO    (22:52:36:534 |    0)  46083; AgoraVideoOutput::Start uid=10000017, stream_id=10000017, render_mode=1
+INFO    (22:52:36:534 |    0)  46083; setRenderListener running for stream 10000017
+INFO    (22:52:36:534 |    0)  46083; [che] onVideoFrameFrozen: cid channel44 uid 10000017, frozen false
+INFO    (22:52:36:534 |    0)  46083; doStartRemoteRender success
+INFO    (22:52:36:534 |    0)  46083; [miaokai] Render 1st frame from stream 0.
+
+INFO    (22:52:36:676 |  142)  46083; setNetEQMinimumPlayoutDelay delay(0)
+INFO    (22:52:36:901 |  225)  46083; User 10000017's view size is changed to 640 * 480
+INFO    (22:52:37:535 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:52:38:290 |    0) 130307; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:38:345 |   55)  46083; audio cc ctrl br to be -1
+INFO    (22:52:38:386 |   41)  46083; [xla] first remote video frame uid:10000017, valid:0, drawn:320445, pub:2758, join:322096
+INFO    (22:52:38:430 |   44)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:40:346 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:41:663 |  317) 130307; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:41:796 |  133)  61763; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:42:345 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:42:451 |  106)  55047; Audio statistics - play count: playout count = 600  signal level: far_in = 96
+INFO    (22:52:42:452 |    1)  71179; Audio statistics - rec count: record count = 601 signal level: near_in = 99, near_out = 99 farin = 99
+INFO    (22:52:42:586 |  134)  46083; [pm] peer 10000017 has disabled local video
+INFO    (22:52:42:586 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000017 muted 1
+INFO    (22:52:42:586 |    0)  46083; reset video recevier for user 10000017
+INFO    (22:52:42:586 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000017,old:3,new:1,elapsed:6910
+INFO    (22:52:42:635 |   49)  46083; [pm] peer 10000017 is offline: quit(0)
+INFO    (22:52:42:635 |    0)  46083; [netob] cid channel44 uid 10000017 offline
+INFO    (22:52:42:635 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000017, priority: 1
+INFO    (22:52:42:635 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000017, priority: 1
+INFO    (22:52:42:635 |    0)  46083; stopRemoteVideo: uid=10000017
+INFO    (22:52:42:635 |    0)  46083; stopRemoteRenderWithUid: cid: channel44 uid: 10000017
+INFO    (22:52:42:635 |    0)  46083; AgoraVideoOutput::Stop
+WARN    (22:52:42:635 |    0)  46083; Stop: Not running
+INFO    (22:52:42:635 |    0)  46083; AgoraVideoOutput::Destroy
+INFO    (22:52:42:635 |    0)  46083; stopRemoteRenderWithUid: success uid=10000017
+INFO    (22:52:42:636 |    1)  46083; Destroy decoder.
+INFO    (22:52:42:637 |    1)  46083; Destroy decoder.
+INFO    (22:52:42:637 |    0)  46083; DestroyVideoReceiveTrack: uid=10000017
+INFO    (22:52:42:637 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=10000017, renderer=0x0
+INFO    (22:52:42:637 |    0)  46083; CreateVideoRenderer: interface=0x0
+INFO    (22:52:42:637 |    0)  46083; [che] onPeerOffline: uid 10000017 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:52:42:637 |    0)  46083; [che] clearPeerInMap: uid 10000017 of cid channel44 to be removed
+INFO    (22:52:42:637 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000017 muted 1
+ERROR   (22:52:42:637 |    0)  46083; onPeerAudioMuteStatus: uid 10000017 already muted
+INFO    (22:52:42:637 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000017
+INFO    (22:52:42:637 |    0)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:52:42:637 |    0)    775; API call to setupRemoteVideo cid  uid 10000017
+INFO    (22:52:42:637 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:52:42:638 |    1)  46083; doStartRemoteRender: cid  uid 10000017
+ERROR   (22:52:42:638 |    0)  46083; doStartRemoteRender: No video receive track for uid=10000017
+INFO    (22:52:43:414 |    0)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+WARN    (22:52:43:746 |  332)  46083; [pm] stream data of peer 10000017 is earlier than quit, ignore it
+INFO    (22:52:44:346 |    0)  46083; notifyPeerCount: cnt 1
+INFO    (22:52:44:346 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:45: 34 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:45:166 |  132)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:45:372 |  206)  46083; [rs] **report stats: seq: 1163, report list size 1, tx/rx: 183262/55776, cache size: 0
+INFO    (22:52:45:372 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+WARN    (22:52:46: 57 |    0)  46083; Idr miss, internal frn wrap around, reset. prevfrn (1499), cfrn (0), maxfrn (65536)
+INFO    (22:52:46: 65 |    8)  46083; last intra frame 30217 5060 22 with 24 packets starting seq 30195 stream 0x51 frome user 32764 2904535552 has been cached at 887563
+WARN    (22:52:46:107 |   42)  46083; Idr miss, internal frn wrap around, reset. prevfrn (1499), cfrn (0), maxfrn (65536)
+INFO    (22:52:46:346 |  239)  46083; audio cc ctrl br to be -1
+INFO    (22:52:47:539 |  193)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:52:48:233 |    0)  46083; **CALL STATS: duration 5m30s cpu app/total 19.7/42.17 memory size app/ratio app/total 270952KB/4.26/97.56 battery 100 tx/rx: 920/1.140K kbps 39.401M/39.482M bytes
+INFO    (22:52:48:346 |  113)  46083; audio cc ctrl br to be -1
+INFO    (22:52:48:401 |   55)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:48:533 |  132)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:49:503 |    0)  46083; Quick Intra Request Received and to Enc Intra now
+
+WARN    (22:52:49:510 |    7)  46083; Idr miss, internal frn wrap around, reset. prevfrn (3403), cfrn (0), maxfrn (65536)
+INFO    (22:52:50:347 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:50:548 |  201)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52:51:778 |  230)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:51:909 |  131)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:52:348 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:54:355 |    7)  46083; audio cc ctrl br to be -1
+INFO    (22:52:55:144 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:55:283 |  139)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:56:348 |   65)  46083; audio cc ctrl br to be -1
+INFO    (22:52:57:550 |  202)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:52:57:648 |   98)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:52:58:348 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:52:58:519 |  171)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:52:58:649 |  130)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:52:59:490 |    0)  63955; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:52:59:490 |    0)  63955; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:52:59:492 |    2)  46083; [rp] {"rtc.video.mute_peer":{"uid":10000012,"mute":true}}
+INFO    (22:52:59:492 |    0)  46083; [pm] mute video peer 10000012 muted true
+INFO    (22:52:59:524 |   32)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 0
+ERROR   (22:52:59:524 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already unmuted
+INFO    (22:52:59:524 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:52:59:524 |    0)  46083; [pm] peer 10000012 is online
+INFO    (22:52:59:524 |    0)  46083; notifyPeerCount: cnt 2
+INFO    (22:52:59:524 |    0)  46083; [che] onPeerJoined: inserted uid 10000012 of cid channel44 m_validPeers[cid].size() 2
+INFO    (22:52:59:524 |    0)  46083; [pm] peer 10000012 has muted audio
+INFO    (22:52:59:524 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:52:59:524 |    0)  46083; [pm] peer 10000012 has enabled video
+INFO    (22:52:59:524 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:52:59:524 |    0)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+INFO    (22:52:59:525 |    1)  46083; [rp] subscribe audio cid:channel44 uid:10000012,old:2,new:1,elapsed:0
+INFO    (22:52:59:525 |    0)  46083; [rp] subscribe video cid:channel44 uid:10000012,old:0,new:2,elapsed:0
+INFO    (22:52:59:545 |   20)  46083; [pm] peer 10000012 has enabled local video
+INFO    (22:52:59:545 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:53: 0:348 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53: 0:451 |  103)  55047; Audio statistics - play count: playout count = 571  signal level: far_in = 64
+INFO    (22:53: 0:453 |    2)  71179; Audio statistics - rec count: record count = 570 signal level: near_in = 88, near_out = 89 farin = 88
+INFO    (22:53: 2:121 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53: 2:294 |  173)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53: 2:348 |   54)  46083; audio cc ctrl br to be -1
+INFO    (22:53: 4:347 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53: 4:921 |  574)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+WARN    (22:53: 5:426 |    0)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (10200/10199)
+INFO    (22:53: 5:501 |   75)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53: 5:680 |  179)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53: 6:350 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53: 6:815 |  465)  46083; [pm] peer 10000012 has disabled local video
+INFO    (22:53: 6:815 |    0)  46083; video setPeerVideoMuteStatus: cid channel44 uid 10000012 muted 1
+INFO    (22:53: 6:996 |  181)  46083; [pm] peer 10000012 is offline: quit(0)
+INFO    (22:53: 6:996 |    0)  46083; [netob] cid channel44 uid 10000012 offline
+INFO    (22:53: 6:996 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 10000012, priority: 1
+INFO    (22:53: 6:996 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 10000012, priority: 1
+INFO    (22:53: 6:996 |    0)  46083; stopRemoteVideo: uid=10000012
+INFO    (22:53: 6:997 |    1)  46083; [che] onPeerOffline: uid 10000012 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 2
+INFO    (22:53: 6:997 |    0)  46083; [che] clearPeerInMap: uid 10000012 of cid channel44 to be removed
+INFO    (22:53: 6:997 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 10000012 muted 1
+ERROR   (22:53: 6:997 |    0)  46083; onPeerAudioMuteStatus: uid 10000012 already muted
+INFO    (22:53: 6:997 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 10000012
+INFO    (22:53: 6:997 |    0)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:53: 6:997 |    0)    775; API call to setupRemoteVideo cid  uid 10000012
+INFO    (22:53: 6:997 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:53: 6:997 |    0)  46083; doStartRemoteRender: cid  uid 10000012
+ERROR   (22:53: 6:997 |    0)  46083; doStartRemoteRender: cannot find video_user 10000012
+INFO    (22:53: 7:562 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+WARN    (22:53: 7:765 |  203)  46083; [pm] stream data of peer 10000012 is earlier than quit, ignore it
+INFO    (22:53: 8:348 |    0)  46083; notifyPeerCount: cnt 1
+INFO    (22:53: 8:348 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53: 8:857 |  509)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53: 9: 22 |    0)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:10:349 |  327)  46083; audio cc ctrl br to be -1
+INFO    (22:53:10:349 |    0)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:53:10:349 |    0)  46083; [tactics] handle videobwe:943 fps:30 now:887587301 887607301
+INFO    (22:53:11:992 |  643)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:53:12:227 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:12:350 |  123)  46083; audio cc ctrl br to be -1
+INFO    (22:53:12:391 |   41)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:14:350 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:15:594 |  244)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:15:759 |  165)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:16:350 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:16:652 |  302)  46083; [rs] **report stats: seq: 1260, report list size 0, tx/rx: 197942/60480, cache size: 0
+INFO    (22:53:16:652 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:53:17:572 |    0)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:53:18:237 |    0)  46083; **CALL STATS: duration 6m0s cpu app/total 20.0/83.87 memory size app/ratio app/total 260372KB/4.16/95.71 battery 100 tx/rx: 1.75K/945 kbps 43.25M/42.951M bytes
+INFO    (22:53:18:351 |  114)  46083; audio cc ctrl br to be -1
+INFO    (22:53:18:472 |  121)  71179; Audio statistics - rec count: record count = 600 signal level: near_in = 92, near_out = 91 farin = 92
+INFO    (22:53:18:472 |    0)  55047; Audio statistics - play count: playout count = 602  signal level: far_in = 94
+INFO    (22:53:18:965 |  493)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:19:  1 |    0)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:53:19:138 |  137)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:20:351 |  213)  46083; audio cc ctrl br to be -1
+INFO    (22:53:22:337 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:22:352 |   15)  46083; audio cc ctrl br to be -1
+INFO    (22:53:22:500 |  148)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:24:353 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:25:710 |  357)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:25:878 |  168)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:26: 58 |    0)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:53:26:353 |  295)  46083; audio cc ctrl br to be -1
+INFO    (22:53:27:580 |  227)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:53:28:354 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:29: 77 |    0)  49619; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:29:240 |  163)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:30:362 |  122)  46083; audio cc ctrl br to be -1
+INFO    (22:53:30:363 |    1)  46083; adjustCodecFrameRates: Cannot adjust frame rate when VQC is on
+INFO    (22:53:30:363 |    0)  46083; [tactics] handle videobwe:749 fps:24 now:887607314 887627314
+INFO    (22:53:32:355 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:32:446 |   91)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:32:620 |  174)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:33: 59 |    0)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:53:34:353 |  294)  46083; audio cc ctrl br to be -1
+INFO    (22:53:35:820 |  467)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:35:986 |  166)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:36:353 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:36:492 |  139)  71179; Audio statistics - rec count: record count = 602 signal level: near_in = 93, near_out = 92 farin = 93
+INFO    (22:53:36:512 |   20)  55047; Audio statistics - play count: playout count = 602  signal level: far_in = 90
+INFO    (22:53:37:591 |   79)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:53:38:353 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:39:183 |    0)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:39:357 |  174)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:40:179 |    0)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:53:40:354 |  175)  46083; audio cc ctrl br to be -1
+INFO    (22:53:42:354 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:42:554 |  200)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:42:720 |  166)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:44:354 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:45:924 |  570)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:46: 98 |    0)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:46:354 |  256)  46083; audio cc ctrl br to be -1
+INFO    (22:53:47:248 |    0)  88371; printFrameLog :uid:15,width 640, height 480,ystride:640
+INFO    (22:53:47:612 |  364)  46083; VideoEncoderExec: UseSingleSliceParser = 0
+INFO    (22:53:48:242 |    0)  46083; **CALL STATS: duration 6m30s cpu app/total 14.90/42.71 memory size app/ratio app/total 254500KB/4.05/97.38 battery 100 tx/rx: 917/944 kbps 46.338M/46.249M bytes
+INFO    (22:53:48:360 |  118)  46083; audio cc ctrl br to be -1
+WARN    (22:53:48:745 |  385)  46083; ProcOldGoodBadPicFeedback :Received good bad info for previous frames (11480/11475)
+INFO    (22:53:48:814 |   69)  46083; Intra Request Received from 0
+
+INFO    (22:53:48:830 |   16)  46083; Intra Request after Quick Intra
+
+WARN    (22:53:48:840 |   10)  46083; Idr miss, internal frn wrap around, reset. prevfrn (1743), cfrn (0), maxfrn (65536)
+INFO    (22:53:49: 84 |    0)  46083; Intra Request Received from 0
+
+INFO    (22:53:49:298 |  214)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:49:465 |  167)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:50:356 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:52:356 |    0)  46083; audio cc ctrl br to be -1
+INFO    (22:53:52:652 |  296)  46083; [rs] **report stats: seq: 1358, report list size 0, tx/rx: 214243/65184, cache size: 0
+INFO    (22:53:52:652 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:53:52:672 |   20)  61479; printFrameLog :width 640, height 480,ystride:640,frame type:11
+INFO    (22:53:52:836 |  164)  88371; printFrameLog :uid:0,width 640, height 480,ystride:640
+INFO    (22:53:52:875 |   39)  46083; [pm] peer 15 is offline: quit(0)
+INFO    (22:53:52:875 |    0)  46083; [netob] cid channel44 uid 15 offline
+INFO    (22:53:52:875 |    0)  46083; [pm] unsetPeerLocalMuteVideoState cid: channel44, uid: 15, priority: 1
+INFO    (22:53:52:875 |    0)  46083; [pm] unsetPeerExpectedVideoStreamType cid: channel44, uid: 15, priority: 1
+INFO    (22:53:52:875 |    0)  46083; stopRemoteVideo: uid=15
+INFO    (22:53:52:875 |    0)  46083; stopRemoteRenderWithUid: cid: channel44 uid: 15
+INFO    (22:53:52:875 |    0)  46083; AgoraVideoOutput::Stop
+WARN    (22:53:52:875 |    0)  46083; Stop: Not running
+INFO    (22:53:52:875 |    0)  46083; AgoraVideoOutput::Destroy
+INFO    (22:53:52:875 |    0)  46083; stopRemoteRenderWithUid: success uid=15
+INFO    (22:53:52:877 |    2)  46083; Destroy decoder.
+INFO    (22:53:52:877 |    0)  46083; Destroy decoder.
+INFO    (22:53:52:877 |    0)  46083; DestroyVideoReceiveTrack: uid=15
+INFO    (22:53:52:877 |    0)  46083; VideoReceiveTrackImpl::UpdateRenderer, track_id=15, renderer=0x0
+INFO    (22:53:52:877 |    0)  46083; CreateVideoRenderer: interface=0x0
+INFO    (22:53:52:877 |    0)  46083; [che] onPeerOffline: uid 15 of cid channel44 STOPPED by OFFLINE and to be erased, m_validPeers[cid].size() 1
+INFO    (22:53:52:877 |    0)  46083; [che] clearPeerInMap: uid 15 of cid channel44 to be removed
+INFO    (22:53:52:877 |    0)  46083; [che] clearPeerInMap: cid channel44 have no member and to be removed
+INFO    (22:53:52:877 |    0)  46083; audio setPeerAudioMuteStatus: cid channel44 uid 15 muted 1
+INFO    (22:53:52:877 |    0)  46083; audio flushPeerNetEQBuffer: cid channel44 uid 15
+INFO    (22:53:52:878 |    1)    775; [API][rtc_engine_impl.cpp:2221][setupRemoteVideo]
+INFO    (22:53:52:878 |    0)    775; API call to setupRemoteVideo cid  uid 15
+INFO    (22:53:52:878 |    0)    775; [API][rtc_engine_impl.cpp:2240][setVideoCanvas]
+INFO    (22:53:52:879 |    1)  46083; doStartRemoteRender: cid  uid 15
+ERROR   (22:53:52:879 |    0)  46083; doStartRemoteRender: No video receive track for uid=15
+WARN    (22:53:53:386 |    0)  46083; [pm] stream data of peer 15 is earlier than quit, ignore it
+INFO    (22:53:53:691 |  305)    775; [API][rtc_engine_impl.cpp:3082][setClientRole]
+INFO    (22:53:53:691 |    0)    775; API call to setClientRole 2
+INFO    (22:53:53:691 |    0)    775; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:53:53:691 |    0)    775; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:53:53:691 |    0)  46083; [rp] {"rtc.suspend_callback_client_role_changed":false}
+INFO    (22:53:53:691 |    0)    775; doSetClientRole 2
+INFO    (22:53:53:691 |    0)    775; [API][rtc_engine_impl.cpp:2545][queryInterface]
+INFO    (22:53:53:691 |    0)    775; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:53:53:691 |    0)  46083; [rp] {"rtc.client_role":2}
+INFO    (22:53:53:691 |    0)  46083; [ch0] change client role by VOS (cid:4248702912, uid:10, ts:1610204033691,seq: 1) 2
+INFO    (22:53:53:691 |    0)    775; [API][rtc_engine_impl.cpp:573][leaveChannel]
+INFO    (22:53:53:691 |    0)    775; API call to leave channel channel44
+INFO    (22:53:53:691 |    0)    775; [API][rtc_engine_impl.cpp:2459][clearVideoWatermarks]
+INFO    (22:53:53:691 |    0)    775; [API][rtc_engine_impl.cpp:2459][clearVideoWatermarks]
+INFO    (22:53:53:691 |    0)  46083; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:53:53:691 |    0)  46083; [rp] {"che.video.watermark":{"type":0}}
+INFO    (22:53:53:691 |    0)  46083; [VPMWatermark] Watermark Disable
+INFO    (22:53:53:691 |    0)  46083; [API][rtc_engine_impl.cpp:974][setParameters]
+INFO    (22:53:53:691 |    0)  46083; [cm] emit leave channel signal
+INFO    (22:53:53:756 |   65)  46083; [rs] **report stats: seq: 1371, report list size 7, tx/rx: 216621/65472, cache size: 0
+INFO    (22:53:53:756 |    0)  46083; [rs] report server1: 61.240.228.196:8913
+INFO    (22:53:53:756 |    0)  46083; stopLocalRender
+INFO    (22:53:53:756 |    0)  46083; AgoraVideoOutput::Stop
+WARN    (22:53:53:756 |    0)  46083; Stop: Not running
+INFO    (22:53:53:756 |    0)  46083; AgoraVideoOutput::Destroy
+INFO    (22:53:53:756 |    0)  46083; stopLocalRender success
+INFO    (22:53:53:757 |    1)  46083; AgoraVideoInput::Stop
+INFO    (22:53:53:757 |    0)  46083; AgoraCameraCapture::Stop
+INFO    (22:53:53:757 |    0)  46083; AgoraVideoInput::Destroy
+INFO    (22:53:53:757 |    0)  46083; AgoraCameraCapture::Dispose
+INFO    (22:53:53:757 |    0)  46083; stopCapture: stopCapture success
+INFO    (22:53:53:757 |    0)  46083; SetStreamState: localVideoState 0, error 0
+INFO    (22:53:53:757 |    0)  46083; [rtpSender] set paced sender status 0.
+
+INFO    (22:53:53:757 |    0)  46083; stopRemoteRender
+INFO    (22:53:53:757 |    0)  46083; stopRemoteVideo: uid=10000017
+INFO    (22:53:53:757 |    0)  46083; stopRemoteVideo: uid=10
+INFO    (22:53:53:757 |    0)  46083; stopRemoteVideo: uid=15
+INFO    (22:53:53:757 |    0)  46083; [che] stopCall begins
+INFO    (22:53:53:757 |    0)  46083; stopCall in
+INFO    (22:53:53:757 |    0)  46083; StopRecording complete
+INFO    (22:53:53:757 |    0)  46083; SetLocalState: state 0 error 0
+INFO    (22:53:53:757 |    0)  46083; StopRecording complete
+INFO    (22:53:53:757 |    0)  46083; StopPlayout complete
+INFO    (22:53:53:757 |    0)  46083; setAecType: aec is set to 5
+INFO    (22:53:53:757 |    0)  46083; [che] stop call returns 0, elapsed 0
+INFO    (22:53:53:757 |    0)  46083; [time] process EngineStopCall takes 0
+INFO    (22:53:53:839 |   82)  46083; [cm] connection state changed from 3 to 1
+INFO    (22:53:53:839 |    0)  46083; **CALL STATS: duration 6m37s, tx 47.158M bytes, rx 46.997M bytes, total 94.132M bytes
+INFO    (22:53:53:840 |    1)  46083; CacheManager: save cache to storage elapsed 0
+INFO    (22:53:53:843 |    3)  46083; [ch0] vos destroyed
+INFO    (22:53:53:843 |    0)  46083; delRef of media engine, ref=0
+INFO    (22:53:53:843 |    0)  46083; [che] chat engine destroying
+INFO    (22:53:53:845 |    2)  46083; stopLocalRender
+INFO    (22:53:53:845 |    0)  46083; stopLocalRender success
+INFO    (22:53:53:845 |    0)  46083; stopRemoteRender
+INFO    (22:53:53:845 |    0)  46083; stopRemoteVideo: uid=10000017
+INFO    (22:53:53:845 |    0)  46083; stopRemoteVideo: uid=10
+INFO    (22:53:53:845 |    0)  46083; stopRemoteVideo: uid=15
+INFO    (22:53:53:845 |    0)  46083; [che] stopCall begins
+INFO    (22:53:53:845 |    0)  46083; [che] stop call returns -1, elapsed 0
+INFO    (22:53:53:845 |    0)  46083; VideoSendTrackImpl::UpdateCapturer capturer=0x0
+INFO    (22:53:53:845 |    0)  46083; CreateVideoCapturer: interface=0x0
+INFO    (22:53:53:845 |    0)  46083; VideoSendTrackImpl::UpdateRenderer, renderer=0x0
+INFO    (22:53:53:845 |    0)  46083; CreateVideoRenderer: interface=0x0
+INFO    (22:53:53:845 |    0)  46083; stopLocalRender: Cannot stop renderer -1 (not exist)
+INFO    (22:53:53:845 |    0)  46083; stopRemoteRender
+INFO    (22:53:53:845 |    0)  46083; stopRemoteVideo: uid=10000017
+INFO    (22:53:53:845 |    0)  46083; stopRemoteVideo: uid=10
+INFO    (22:53:53:845 |    0)  46083; stopRemoteVideo: uid=15
+INFO    (22:53:53:845 |    0)  46083; stopCapture: startCapture Error: No capturer for video send track
+INFO    (22:53:53:845 |    0)  46083; SetVideoEngineRef: VideoEngineRef = 0xffffffff
+WARN    (22:53:53:846 |    1)  46083; terminate: VideoEngine haven't init
+INFO    (22:53:53:846 |    0)  46083; [DEBUGG] ViERenderManager Destructor, engine_id: 0
+INFO    (22:53:53:848 |    2)  46083; Delete video user 10000017
+INFO    (22:53:53:848 |    0)  46083; Delete video user 10
+INFO    (22:53:53:848 |    0)  46083; Delete video user 15
+INFO    (22:53:53:849 |    1)  46083; AgoraCameraCapture::Dispose
+INFO    (22:53:53:849 |    0)  79927; AudioDeviceMac::Terminate, _initialized: 1, _recording: 0, _playing: 0, _loopbackrecording: 0
+ERROR   (22:53:53:850 |    1)  46083; AsyncAudioDevice destructed, counter: 0
+
+INFO    (22:53:53:851 |    1)  46083; [che] chat engine destroyed
+INFO    (22:53:53:851 |    0)  46083; ***CALL END
+INFO    (22:53:53:852 |    1)  46083; onAudioStatusChanged enable audio
+INFO    (22:53:53:852 |    0)  46083; [rp] {"che.video.watermark":{"type":0}}

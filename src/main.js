@@ -15,6 +15,7 @@ import VideoInfo from './pages/VideoInfo'
 import DatingPage from './pages/DatingPage'
 import TestPage from './pages/TestPage'
 import ZhuanjiaRoom from './pages/ZhuanjiaRoom'
+import DeviceTesting from './pages/DeviceTesting'
 import App from './App.vue'
 import SDK from './libs/sdk'
 import auth from './libs/auth'
@@ -44,7 +45,8 @@ import {
   Menu,
   Table,
   Divider,
-  Tag
+  Tag,
+  Steps
 } from 'ant-design-vue';
 
 Vue.use(Layout)
@@ -69,11 +71,13 @@ Vue.use(Menu)
 Vue.use(Table)
 Vue.use(Divider)
 Vue.use(Tag)
+Vue.use(Steps)
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name:'loading', component: Loading,  meta: { requiresAuth: true }},
   { path: '/test', name:'test', component: TestPage,  meta: { requiresAuth: true }},
+  { path: '/testing', name:'testing', component: DeviceTesting},
   { path: '/vistor', name:'vistir', component: Vistor,  meta: { requiresAuth: true }},
   { path: '/home', name:'home', component: Home,  meta: { requiresAuth: true }},
   { path: '/room/:id', name: 'room', component: Room },

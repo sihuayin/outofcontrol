@@ -10,14 +10,13 @@
               <a-button @click="prepareShare" slot="extra" type="primary" ghost v-if="!shareDisplayId">共享屏幕</a-button>
               <a-button @click="stopShare" slot="extra" type="danger" ghost v-else>停止共享</a-button>
               <a-modal
-                title="Title"
+                title="共享内容"
                 width="100%"
                 :visible="!!shareDisplayId"
-                :destroyOnClose="true"
                 @ok="stopShare"
                 @cancel="stopShare"
               >
-              <ScreenWindow :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
+              <ScreenWindow v-if="shareDisplayId > 0" :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
               </a-modal>
               
             </a-card>
@@ -40,7 +39,6 @@
           </a-col>
         </a-row>
       </a-layout-content>
-      <a-layout-footer>{{members}}</a-layout-footer>
     </a-layout>
 </template>
 
@@ -170,9 +168,7 @@ export default {
       })
 
       rtcEngine.on('user-published', ({uid}) => {
-        if (uid === SHARE_ID && this.shareDisplayId) { // 共享屏幕
-          return
-        } else if (uid == SHARE_ID) {
+        if (uid >= SHARE_ID) {
           this.setDisplayInfo(uid)
         } else {
           this.addMember({
@@ -183,8 +179,7 @@ export default {
       })
 
       rtcEngine.on('user-unpublished', ({uid}) => {
-        if (uid === SHARE_ID) {
-          this.localShare = false
+        if (uid >= SHARE_ID) {
           this.setDisplayInfo(0)
           return
         }
@@ -268,6 +263,7 @@ export default {
       })
     },
     stopShare() {
+      this.localShare = false
       this.$sdk.stopScreenShare()
       this.setDisplayInfo(0)
     },
