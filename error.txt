@@ -5470,3 +5470,34 @@ INFO    (14:45: 9: 27 |    1)  52743; Set playout device on Mac: index = 0, name
 INFO    (14:45: 9: 28 |    1)  52743;  Output device: Apple Inc. Built-in Output
 INFO    (14:45: 9: 28 |    0)  52743; Set recording device on Mac: index = 0, name = default (Built-in Microphone), id = 41
 INFO    (14:45: 9: 29 |    1)  52743;  Input device: Apple Inc. Built-in Microphone
+Local Date: Sun Jan 10 20:19:44 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (20:19:44:231 |  101)  83459; [ap/u] **responsed from 35.178.208.187:25000, CDS(8).
+INFO    (20:19:44:232 |    1)  83459; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (20:19:44:302 |   70)  83459; [ap/u] **responsed from 52.52.84.170:1080, CDS(8).
+INFO    (20:19:44:302 |    0)  83459; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+INFO    (20:19:49: 74 |    0)  83459; [rs] **report stats: seq: 28, report list size 4, tx/rx: 4034/1152, cache size: 0
+INFO    (20:19:49: 74 |    0)  83459; [rs] report server1: 111.47.238.230:8913
+Local Date: Sun Jan 10 20:23:24 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (20:23:24:448 |   18)  84483; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+INFO    (20:23:29:193 |    0)  84483; [rs] **report stats: seq: 24, report list size 0, tx/rx: 3585/1152, cache size: 0
+INFO    (20:23:29:193 |    0)  84483; [rs] report server1: 182.18.83.166:8913
+Local Date: Sun Jan 10 20:32:38 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (20:32:38:153 |    2)  46083; [ap/u] **responsed from 106.14.12.130:8000, TDS(64).
+INFO    (20:32:38:153 |    0)  46083; [ap] onAPTdsRes success with config: {"_store xdump-3.1":["A",{"rtc.enable_xdump":true,"rtc.enable_xdump_file":true,"rtc.enable_xdump_upload":true},{"retention":"15d","store":true}]}, size: 1
+INFO    (20:32:38:154 |    1)  46083; CacheManager: save cache to storage elapsed 1
+INFO    (20:32:38:154 |    0)  46083; [rp-tds-_store xdump-3.1-A] {"rtc.enable_xdump":true,"rtc.enable_xdump_file":true,"rtc.enable_xdump_upload":true}
+INFO    (20:32:38:264 |  110)  46083; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (20:32:38:347 |   83)  46083; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+Local Date: Sun Jan 10 20:33:33 2021
+Build info: Sep 28 2020 18:25:01 r
+
+INFO    (20:33:33:736 |  114)  83971; [ap/u] **responsed from 35.178.208.187:25000, TDS(64).
+INFO    (20:33:33:784 |   48)  83971; [ap/u] **responsed from 52.52.84.170:1080, TDS(64).
+INFO    (20:33:38:579 |    0)  83971; [rs] **report stats: seq: 24, report list size 24, tx/rx: 3585/0, cache size: 0
+INFO    (20:33:38:579 |    0)  83971; [rs] report server1: 120.226.185.228:8913
