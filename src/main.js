@@ -46,7 +46,9 @@ import {
   Table,
   Divider,
   Tag,
-  Steps
+  Steps,
+  Progress,
+  Slider
 } from 'ant-design-vue';
 
 Vue.use(Layout)
@@ -72,6 +74,8 @@ Vue.use(Table)
 Vue.use(Divider)
 Vue.use(Tag)
 Vue.use(Steps)
+Vue.use(Progress)
+Vue.use(Slider)
 Vue.use(VueRouter)
 
 const routes = [

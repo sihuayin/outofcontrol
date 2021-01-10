@@ -7,7 +7,6 @@
     </a-steps>
     <div class="steps-content">
       <component :is="steps[current].com" />
-      {{ steps[current].content }}
     </div>
     <div class="steps-action">
       <a-button v-if="current < steps.length - 1" type="primary" @click="next">
@@ -16,7 +15,7 @@
       <a-button
         v-if="current == steps.length - 1"
         type="primary"
-        @click="$message.success('Processing complete!')"
+        @click="$router.go(-1)"
       >
         完成
       </a-button>
@@ -31,12 +30,16 @@
 import { mapState, mapActions } from 'vuex'
 import SecondHeader from '../components/SecondHeader'
 import CameraTesting from '../components/CameraTesting'
+import MicphoneTest from '../components/MicphoneTest'
+import SoundTest from '../components/SoundTest'
 
 export default {
   name: 'DeviceTesting',
   components: {
     SecondHeader,
-    CameraTesting
+    CameraTesting,
+    MicphoneTest,
+    SoundTest
   },
   data() {
     return {
@@ -49,10 +52,12 @@ export default {
         },
         {
           title: 'Second',
+          com: 'MicphoneTest',
           content: 'Second-content',
         },
         {
           title: 'Last',
+          com: 'SoundTest',
           content: 'Last-content',
         },
       ],

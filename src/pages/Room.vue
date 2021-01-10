@@ -263,9 +263,11 @@ export default {
       })
     },
     stopShare() {
-      this.localShare = false
-      this.$sdk.stopScreenShare()
-      this.setDisplayInfo(0)
+      if (this.localShare) {
+        this.localShare = false
+        this.$sdk.stopScreenShare()
+        this.setDisplayInfo(0)
+      }
     },
     handUp() {
       const message = {
