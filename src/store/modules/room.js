@@ -95,13 +95,13 @@ const mutations = {
       }
     },
     addHand(state, member) {
-      let mem = state.members.find(m => m.id === member.id)
+      let mem = state.hands.find(h => h.id === member.id)
       if (!mem) {
-        state.members.push(member)
+        state.hands.push(member)
       }
     },
     removeHand(state, member) {
-      state.members.filter(m => m.id !== member.id)
+      state.hands = state.hands.filter(m => m.id !== member.id)
     },
     clear(state) {
       state.members = []

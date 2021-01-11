@@ -1,5 +1,6 @@
 <template>
     <a-card :title="name" size="small">
+        <a-button slot="extra" v-if="closeAble" @click="$emit('close', uid)">关闭</a-button>
         <div :id="'user_'+uid" class="video_container"></div>
     </a-card>
     
@@ -11,7 +12,11 @@ export default {
     name: 'VistorWindow',
     props: {
         uid: Number,
-        name: String
+        name: String,
+        closeAble: {
+            type: Boolean,
+            default: false
+        }
     },
     mounted() {
         const dom = document.querySelector(`#user_${this.uid}`)

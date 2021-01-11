@@ -5,7 +5,7 @@
       <a slot="actions" @click="goLive(item.id)">加入</a>
       <a-list-item-meta
         description="test"
-        title="sssssss"
+        :title="item.name"
       >
 
       </a-list-item-meta>
@@ -17,6 +17,11 @@
 <script>
 export default {
   name: 'Hands',
-  props: ['hands']
+  props: ['hands'],
+  methods: {
+    goLive(id) {
+      this.$emit('select', id)
+    }
+  }
 }
 </script>

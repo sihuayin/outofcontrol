@@ -27,9 +27,9 @@
             <a-card title="专家" size="small" v-else>
               <div :style="{width: '300px',  height: '230px', overflow: 'hidden'}">未加入</div>
             </a-card>
-            <VistorWindow v-if="vistor && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
+            <VistorWindow :closeAble="roomInfo.type === 'some'" @close="handleClose" v-if="vistor && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
             
-            <Hands v-if="showHands" :hands="hands"/>
+            <Hands v-if="showHands" :hands="hands" @select="handleSelect" />
             <a-modal v-model="visible" title="共享屏幕" @ok="visible=false">
               <ShareWindow :items="items" @display="chooseDisplay" />
             </a-modal>
@@ -51,6 +51,7 @@ import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
 import config, {SHARE_ID} from '../config/config'
+import { setTimeout } from 'timers';
 // import path from 'path'
 // import os from 'os'
 
@@ -102,6 +103,12 @@ export default {
     const [channel, bus] = this.rtm.createObserverChannel(channelName)
     this.bus = bus
 
+    // setTimeout(() => {
+    //   this.addHand({
+    //     id: 10
+    //   })
+    // }, 2000)
+
     bus.on('ChannelMessage', ({
             message
         }) => {
@@ -111,12 +118,9 @@ export default {
           this.addMember(msgData.data)
         } else if (msgData.type === 'handUp') { // 接收到举手信息
           if (msgData.data && msgData.data.id) {
-            if (auth.isZhuanjia()) {
-              // todo 添加到举手列表
-              this.addHand({
-                id: msgData.data.id
-              })
-            }
+            this.addHand({
+              id: msgData.data.id
+            })
           }
         }
       } catch(e) {
@@ -209,6 +213,7 @@ export default {
       'addMember',
       'setDisplayInfo',
       'addHand',
+      'removeHand',
       'clear'
     ]),
     prepareShare () {
@@ -238,6 +243,38 @@ export default {
       this.localShare = false
       this.$sdk.stopScreenShare()
       this.setDisplayInfo(0)
+    },
+    async handleSelect(id) {
+      console.log('id', id)
+      const message = {
+        type: 'selectOne',
+        data: {
+          id
+        }
+      }
+      await this.rtm.sendChannelMessage(this.channelName, {
+        messageType: 'TEXT',
+        text: JSON.stringify(message)
+      }, {})
+      this.removeHand({
+        id
+      })
+    },
+    handleClose(uid) {
+      const message = {
+        type: 'selectOne',
+        data: {
+          id: 0
+        }
+      }
+      this.rtm.sendChannelMessage(this.channelName, {
+        messageType: 'TEXT',
+        text: JSON.stringify(message)
+      }, {})
+      this.addMember({
+        id: uid,
+        rtc: false
+      })
     }
   }
 }

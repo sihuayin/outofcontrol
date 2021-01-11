@@ -230,6 +230,10 @@ export default {
     }
     this.$sdk.leave()
     this.rtm.destroyRtm()
+    if (this.shareDisplayId > 0) {
+      this.$sdk.stopScreenShare()
+      this.setDisplayInfo(0)
+    }
     this.clear()
   },
   methods: {
@@ -273,7 +277,8 @@ export default {
       const message = {
         type: 'handUp',
         data: {
-          id: auth.id
+          id: auth.id,
+          name: auth.name
         }
       }
       this.rtm.sendChannelMessage(this.channelName, {
