@@ -16,7 +16,7 @@ Mock.mock(/\/login/, 'post', function() {
     data: {
       'id': 1,
       'token': 'sxx',
-      'name': 'dingidng',
+      'name': 'dingiqqdng',
       'role': 'yisheng',
       'roleid': 8
     }
