@@ -12,12 +12,15 @@
               <a-modal
                 title="共享内容"
                 width="100%"
-                :visible="!!shareDisplayId"
-                :destroyOnClose="true"
-                @ok="stopShare"
-                @cancel="stopShare"
+                :visible="shareDisplayId > 0"
+                :closable="false"
               >
-                <ScreenWindow :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
+              <template slot="footer">
+                <a-button @click="stopShare">
+                  关闭
+                </a-button>
+              </template>
+                <ScreenWindow v-if="shareDisplayId > 0" :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
               </a-modal>
             </a-card>
             
@@ -51,7 +54,6 @@ import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
 import config, {SHARE_ID} from '../config/config'
-import { setTimeout } from 'timers';
 // import path from 'path'
 // import os from 'os'
 
@@ -77,12 +79,12 @@ export default {
   computed: {
     ...mapState({
       hands: state => state.room.hands,
-      roomInfo: state => state.room.roomInfo,
-      shareDisplayId: state => state.room.shareDisplayId
+      roomInfo: state => state.room.roomInfo
     }),
     ...mapGetters('room', {
       specialist: 'specialist',
-      vistor: 'vistor'
+      vistor: 'vistor',
+      shareDisplayId: 'shareDisplayId'
     }),
     showHands() {
       return !this.vistor
@@ -158,20 +160,14 @@ export default {
       })
 
       rtcEngine.on('user-published', ({uid}) => {
-        if (uid >= SHARE_ID) {
-          this.setDisplayInfo(uid)
-          return
-        } else {
-          this.addMember({
-            id: uid,
-            rtc: true
-          })
-        }
+        this.addMember({
+          id: uid,
+          rtc: true
+        })
       })
 
       rtcEngine.on('user-unpublished', ({uid}) => {
-        if (uid >= SHARE_ID) {
-          this.setDisplayInfo(0)
+        if (this.localShare && uid > SHARE_ID) {
           return
         }
           this.addMember({
@@ -207,6 +203,7 @@ export default {
     this.$sdk.leave()
     this.rtm.destroyRtm()
     this.clear()
+    this.$sdk.stopScreenShare()
   },
   methods: {
     ...mapActions('room', [
@@ -226,23 +223,37 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
-    chooseDisplay(windowId) {
+    async chooseDisplay(windowId) {
       console.log('开始', windowId)
-      this.$sdk.prepareScreenShare(null, this.channelName, '')
-      .then(uid => {
-        console.log('准备完成', uid, windowId)
-        this.$sdk.startScreenShare(windowId)
+      try {
         this.localShare = true
+        const uid = await this.$sdk.prepareScreenShare(null, this.channelName, '')
+        await this.$sdk.startScreenShare(windowId)
+        if (!this.shareDisplayId) {
+          this.addMember({
+            id: uid,
+            rtc: true
+          })
+        }
         this.visible = false
-      })
-      .catch(err => {
-        console.log(err)
-      })
+      } catch (e) {
+        this.$message.error(e.message)
+      }
     },
-    stopShare() {
-      this.localShare = false
-      this.$sdk.stopScreenShare()
-      this.setDisplayInfo(0)
+    async stopShare() {
+      if (this.localShare) {
+        this.localShare = false
+        var start = new Date()
+        console.log('开始关闭', (new Date).getTime())
+        await this.$sdk.stopScreenShare()
+        console.log('关闭jieshu', (new Date()).getTime() - start.getTime())
+        if (this.shareDisplayId) {
+          this.addMember({
+            id: this.shareDisplayId,
+            rtc: false
+          })
+        }
+      }
     },
     async handleSelect(id) {
       console.log('id', id)
