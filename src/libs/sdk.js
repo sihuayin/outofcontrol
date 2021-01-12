@@ -1,6 +1,6 @@
 import AgoraRtcEngine from 'agora-electron-sdk'
 import { EventEmitter } from 'events';
-import { wait, readImage } from './util'
+import { wait, CustomBtoa } from './util'
 import os from 'os'
 import path from 'path';
 import { SHARE_ID } from '../config/config'
@@ -347,18 +347,14 @@ class SDK {
     }
   }
   
-  getShareWindows() {
+  async getShareWindows() {
     let list = this.client.getScreenWindowsInfo();
-    return Promise.all(list.map(item => readImage(item.image))).then(imageList => {
-      return list.map((item, index) => {
-        return {
-          ownerName: item.ownerName,
-          name: item.name,
-          windowId: item.windowId,
-          image: imageList[index],
-        }
-      })
-    })
+    return list.map((it) => ({
+      ownerName: it.ownerName,
+      name: it.name,
+      windowId: it.windowId,
+      image: CustomBtoa(it.image),
+    }))
   }
 
   async prepareScreenShare(token, channelName, info) {

@@ -1,12 +1,8 @@
 <template>
    <a-row :gutter="16">
-      <a-col :span="8" v-for="(i, index) in items" :key="index">
+      <a-col :span="6" v-for="(i, index) in items" :key="index">
         <a-card :title="i.name" :bordered="false">
-          <img
-            slot="cover"
-            alt="example"
-            :src="i.image"
-          />
+          <div :style="{width: '100%', height: '240px', backgroundImage: `url(data:image/png;base64,${i.image})` }"></div>
           <template slot="actions" class="ant-card-actions">
              <a-button type="primary" @click="showPreview(i.windowId)">
               选择

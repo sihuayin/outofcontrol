@@ -33,7 +33,7 @@
             <VistorWindow :closeAble="roomInfo.type === 'some'" @close="handleClose" v-if="vistor && vistor.rtc" :uid="vistor.id" :name="vistor.name" />
             
             <Hands v-if="showHands" :hands="hands" @select="handleSelect" />
-            <a-modal v-model="visible" title="共享屏幕" @ok="visible=false">
+            <a-modal v-model="visible" title="共享屏幕" @ok="visible=false" width="70%">
               <ShareWindow :items="items" @display="chooseDisplay" />
             </a-modal>
             

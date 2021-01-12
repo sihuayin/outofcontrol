@@ -1,6 +1,17 @@
 export const wait = (ms) => new Promise((_, reject) => setTimeout(reject, ms, new Error(`Timeout after ${ms} ms`)))
 
-
+export const readImage = (target) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = (e) => {
+      resolve(e.currentTarget.result)
+    }
+    reader.onerror = (e) => {
+      reject(e)
+    }
+    reader.readAsDataURL(new Blob([target.buffer], {type: "image/png"}))
+  })
+}
 export function CustomBtoa(input) {
   let keyStr =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
@@ -30,17 +41,4 @@ export function CustomBtoa(input) {
       keyStr.charAt(enc4);
   }
   return output;
-}
-
-export const readImage = (target) => {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onloadend = (e) => {
-      resolve(e.currentTarget.result)
-    }
-    reader.onerror = (e) => {
-      reject(e)
-    }
-    reader.readAsDataURL(new Blob([target.buffer], {type: "image/png"}))
-  })
 }
