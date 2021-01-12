@@ -12,10 +12,14 @@
               <a-modal
                 title="共享内容"
                 width="100%"
-                :visible="!!shareDisplayId"
-                @ok="stopShare"
-                @cancel="stopShare"
+                :visible="shareDisplayId > 0"
+                :closable="false"
               >
+              <template slot="footer">
+                <a-button @click="stopShare">
+                  关闭
+                </a-button>
+              </template>
               <ScreenWindow v-if="shareDisplayId > 0" :uid="shareDisplayId" :role="localShare ? 'localVideoSource' : 'remoteVideoSource'"/>
               </a-modal>
               
@@ -51,7 +55,7 @@ import ScreenWindow from '../components/ScreenWindow'
 import { mapState, mapActions, mapGetters } from 'vuex'
 import auth from '../libs/auth'
 import Rtm from '../libs/rtm'
-import config, {SHARE_ID} from '../config/config'
+import config, { SHARE_ID } from '../config/config'
 // import path from 'path'
 // import os from 'os'
 
@@ -70,18 +74,19 @@ export default {
       localVideoSource: 0,
       channelName: '',
       localShare: false,
+      sharePanel: false,
       bus: null
     }
   },
   computed: {
     ...mapState({
       roomInfo: state => state.room.roomInfo,
-      shareDisplayId: state => state.room.shareDisplayId,
       members: state => state.room.members
     }),
     ...mapGetters('room', {
       specialist: 'specialist',
-      vistor: 'vistor'
+      vistor: 'vistor',
+      shareDisplayId: 'shareDisplayId'
     }),
     canHandUp() {
       console.log('参与值对比', this.specialist, this.roomInfo)
@@ -149,7 +154,7 @@ export default {
         messageType: 'TEXT',
         text: JSON.stringify(message)
       }, {})
-    }, 200)
+    }, 20)
     // let ret = await this.rtm.sendChannelMessage(channelName, {
     //   messageType: 'TEXT',
     //   text: JSON.stringify(message)
@@ -159,7 +164,7 @@ export default {
     this.$nextTick(() => {
       let rtcEngine = this.$sdk
       const role = this.roomInfo.type === 'one' ? 1 : 2
-      console.log('身份', role)
+
       rtcEngine.client.setClientRole(role)
       // rtcEngine.client.setChannelProfile(1)
 
@@ -168,25 +173,21 @@ export default {
       })
 
       rtcEngine.on('user-published', ({uid}) => {
-        if (uid >= SHARE_ID) {
-          this.setDisplayInfo(uid)
-        } else {
-          this.addMember({
-            id: uid,
-            rtc: true
-          })
-        }
+        this.addMember({
+          id: uid,
+          rtc: true
+        })
       })
 
       rtcEngine.on('user-unpublished', ({uid}) => {
-        if (uid >= SHARE_ID) {
-          this.setDisplayInfo(0)
+        if (this.localShare && uid > SHARE_ID) {
           return
         }
         this.addMember({
           id: uid,
           rtc: false
         })
+
       })
 
       rtcEngine.on('joined-channel', ({ uid }) => {
@@ -230,47 +231,56 @@ export default {
     }
     this.$sdk.leave()
     this.rtm.destroyRtm()
-    if (this.shareDisplayId > 0) {
-      this.$sdk.stopScreenShare()
-      this.setDisplayInfo(0)
-    }
     this.clear()
+
+    this.$sdk.stopScreenShare()
   },
   methods: {
     ...mapActions('room', [
-      'setDisplayInfo',
       'addMember',
       'clear'
     ]),
     prepareShare () {
       this.visible = true
       this.$sdk.getShareWindows().then(arr => {
-        console.log(arr)
+        console.log('windows',arr)
         this.items = arr
       })
     },
     goBack() {
       this.$router.go(-1)
     },
-    chooseDisplay(windowId) {
+    async chooseDisplay(windowId) {
       console.log('开始', windowId)
-      this.$sdk.prepareScreenShare(null, this.channelName, '')
-      .then(uid => {
-        console.log('准备完成', uid, windowId)
-        this.$sdk.startScreenShare(windowId)
-        // this.setDisplayInfo(uid)
-        this.visible = false
+      try {
         this.localShare = true
-      })
-      .catch(err => {
-        console.log(err)
-      })
+        const uid = await this.$sdk.prepareScreenShare(null, this.channelName, '')
+        await this.$sdk.startScreenShare(windowId)
+        if (!this.shareDisplayId) {
+          this.addMember({
+            id: uid,
+            rtc: true
+          })
+        }
+        this.visible = false
+      } catch (e) {
+        this.$message.error(e.message)
+      }
     },
-    stopShare() {
+    async stopShare() {
+      console.log('关闭', this.localShare, this.shareDisplayId)
       if (this.localShare) {
         this.localShare = false
-        this.$sdk.stopScreenShare()
-        this.setDisplayInfo(0)
+        var start = new Date()
+        console.log('开始关闭', (new Date).getTime())
+        await this.$sdk.stopScreenShare()
+        console.log('关闭jieshu', (new Date()).getTime() - start.getTime())
+        if (this.shareDisplayId) {
+          this.addMember({
+            id: this.shareDisplayId,
+            rtc: false
+          })
+        }
       }
     },
     handUp() {

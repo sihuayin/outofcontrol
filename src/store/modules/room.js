@@ -1,13 +1,12 @@
 // import {doLogin} from '../../api/loginApi'
 import {videoJoin} from '../../api/specialistApi'
-
+import {SHARE_ID} from '../../config/config'
 
 const state = () => ({
   roomInfo: {
     id: 0,
     type: 'one'
   },
-  shareDisplayId: 0,
   members: [],
   hands: []
 })
@@ -19,6 +18,13 @@ const getters = {
   },
   vistor: (state) => {
     return state.members.find(m => m.roleId === 4 && m.rtc)
+  },
+  shareDisplayId: (state) => {
+    const member = state.members.find(m => m.id > SHARE_ID)
+    if (member && member.rtc) {
+      return member.id
+    }
+    return 0
   }
 }
 
@@ -53,10 +59,6 @@ const actions = {
     commit('setRoomInfo', info)
   },
 
-  setDisplayInfo({ commit }, info) {
-    commit('setDisplayInfo', info)
-  },
-
   clear({commit}) {
     commit('clear')
   }
@@ -69,9 +71,7 @@ const mutations = {
       state.roomInfo.id = data.id || state.roomInfo.id
       state.roomInfo.type = data.type || state.roomInfo.type
     },
-    setDisplayInfo(state, info) {
-      state.shareDisplayId = info
-    },
+
     addMember(state, member) {
       if (member.roleid) {
         member.roleId = member.roleid
@@ -109,7 +109,6 @@ const mutations = {
         id: 0,
         type: 'one'
       }
-      state.shareDisplayId = 0
       state.hands = []
     }
 }

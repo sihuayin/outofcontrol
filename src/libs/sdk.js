@@ -99,21 +99,19 @@ class SDK {
 
     this.client.on('remoteVideoStateChanged', (uid, state, reason) => {
       console.log('remoteVideoStateChanged ', reason, uid)
-      // if (reason === 5) {
-      //   this.fire('user-unpublished', {
-      //     uid,
-      //     mediaType: 'video',
-      //   })
-      // }
+      if (reason === 5) {
+        this.fire('user-unpublished', {
+          uid,
+          mediaType: 'video',
+        })
+      }
 
-      // if (reason === 6) {
-      //   this.fire('user-published', {
-      //     user: {
-      //       uid,
-      //     },
-      //     mediaType: 'video',
-      //   })
-      // }
+      if (reason === 6) {
+        this.fire('user-published', {
+          uid,
+          mediaType: 'video',
+        })
+      }
     })
 
     this.client.on('remoteAudioStateChanged', (uid, state, reason) => {
@@ -349,9 +347,9 @@ class SDK {
     }
   }
   
-  async getShareWindows() {
+  getShareWindows() {
     let list = this.client.getScreenWindowsInfo();
-    return await Promise.all(list.map(item => readImage(item.image))).then(imageList => {
+    return Promise.all(list.map(item => readImage(item.image))).then(imageList => {
       return list.map((item, index) => {
         return {
           ownerName: item.ownerName,
@@ -380,6 +378,7 @@ class SDK {
       try {
         rtcEngine.videoSourceInitialize(this.appId);
         let logpath = path.resolve(os.homedir(), "./agorascreenshare.log")
+        console.log('logpath.', logpath)
         rtcEngine.videoSourceSetLogFile(logpath)
         rtcEngine.videoSourceSetChannelProfile(1);
         rtcEngine.videoSourceEnableWebSdkInteroperability(true)
