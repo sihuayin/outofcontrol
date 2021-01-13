@@ -1,4 +1,4 @@
-import {getDocterDatings, addDocterDating} from '../../api/docterApi'
+import {getDocterDatings, addDocterDating, getDocterLessons} from '../../api/docterApi'
 import moment from 'moment'
 
 // initial state
@@ -10,7 +10,13 @@ const state = () => ({
   datingPageSize: 10,
   datingLoading: false,
 
-  addDating: false
+  addDating: false,
+
+  lessons: [],
+  lessonPage: 1,
+  lessonPageSize: 10,
+  lessonTotal: 0,
+  lessonLoading: false
 })
 
 // getters
@@ -36,6 +42,18 @@ const actions = {
     }
     commit('setAddDating', false)
     return result.message
+  },
+  async getDocterLesson({ commit }, { page, pageSize = 10}) {
+    this.lessonLoading = true
+    try {
+      const data = await getDocterLessons({page, pageSize})
+
+      if (data.success) {
+        commit('docterLessons', data.data)
+      }
+    } catch(e) {
+      this.lessonLoading = false
+    }
   }
 }
 
@@ -50,6 +68,13 @@ const mutations = {
   },
   setAddDating (state, isAdding) {
     state.addDating = isAdding
+  },
+  docterLessons (state, data) {
+    state.lessons = data.data;
+    state.lessonPage = data.page;
+    state.lessonTotal = data.total;
+    state.lessonPageSize = data.pageSize;
+    state.datingLoading = false
   }
 }
 

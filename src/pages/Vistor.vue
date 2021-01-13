@@ -18,7 +18,7 @@
         </a-card>
           <a-card hoverable>
             <template slot="actions" class="ant-card-actions">
-              <a-button type="dashed" disabled @click="goVideoList">
+              <a-button type="dashed"  @click="goVideoList">
                 进入
               </a-button>
             </template>
