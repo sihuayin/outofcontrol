@@ -7,8 +7,10 @@
           <a-col flex="auto" class="full-height">
 
             <a-card title="共享内容" class="full-height">
-              <a-button @click="prepareShare" slot="extra" type="primary" ghost v-if="!shareDisplayId">共享屏幕</a-button>
-              <a-button @click="stopShare" slot="extra" type="danger" ghost v-else>停止共享</a-button>
+              <template v-if="canIShare">
+                <a-button @click="prepareShare" slot="extra" type="primary" ghost v-if="!shareDisplayId">共享屏幕</a-button>
+                <a-button @click="stopShare" slot="extra" type="danger" ghost v-else>停止共享</a-button>
+              </template>
               <a-modal
                 title="共享内容"
                 width="100%"
@@ -36,6 +38,7 @@
             <a-card title="参与" size="small" v-if="canHandUp">
               <a-button @click="handUp" type="primary" ghost><a-icon type="video-camera" />举手</a-button>
             </a-card>
+            
             <a-modal v-model="visible" title="共享屏幕" @ok="visible=false">
               <ShareWindow :items="items" @display="chooseDisplay" />
             </a-modal>
@@ -91,6 +94,14 @@ export default {
     canHandUp() {
       console.log('参与值对比', this.specialist, this.roomInfo)
       return !this.vistor && this.roomInfo.type === 'some'
+    },
+    canIShare() {
+      if (this.roomInfo.type === 'one') {
+        return true
+      } else if (this.roomInfo.type === 'some' && this.vistor && this.vistor.id === auth.id) {
+        return true
+      }
+      return false
     }
   },
   async mounted () {
@@ -268,13 +279,10 @@ export default {
       }
     },
     async stopShare() {
-      console.log('关闭', this.localShare, this.shareDisplayId)
       if (this.localShare) {
         this.localShare = false
         var start = new Date()
-        console.log('开始关闭', (new Date).getTime())
         await this.$sdk.stopScreenShare()
-        console.log('关闭jieshu', (new Date()).getTime() - start.getTime())
         if (this.shareDisplayId) {
           this.addMember({
             id: this.shareDisplayId,

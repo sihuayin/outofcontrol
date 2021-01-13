@@ -3,29 +3,53 @@
     <SecondHeader />
     <a-layout-content :style="{marginTop: '20px'}">
       <div class="video-container" >
-        <video width="620" controls
-          poster="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg" >
-          <source
-            src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
-            type="video/mp4">
-          <source
-            src="https://archive.org/download/ElephantsDream/ed_hd.ogv"
-            type="video/ogg">
-          <source
-            src="https://archive.org/download/ElephantsDream/ed_hd.avi"
-            type="video/avi">
-          Your browser doesn't support HTML5 video tag.
-        </video>
+        <template v-if="type === 'image'">
+          <viewer :images="images">
+            <img v-for="src in images" :src="src" :key="src">
+          </viewer>
+        </template>
+        <template v-else>
+          <video width="620" controls>
+            <source
+              :src="video"
+              type="video/mp4">
+          </video>
+        </template>
       </div>
+
     </a-layout-content>
   </a-layout>
 </template>
 <script>
 import SecondHeader from '../components/SecondHeader'
+import 'viewerjs/dist/viewer.css'
+import Viewer from 'v-viewer/src/component.vue'
+
 export default {
   name: 'VideoInfo',
   components: {
-    SecondHeader
+    SecondHeader,
+    Viewer
+  },
+  data() {
+    return {
+      type: '',
+      images: [],
+      video: ''
+    }
+  },
+  created() {
+    const {item} = this.$route.query
+    if (item) {
+      if (!item.mimetype) {
+        this.type = 'image'
+        this.images = [item.url]
+      } else {
+        this.type = 'video'
+        this.video = item.url
+      }
+    }
+  
   }
 }
 </script>

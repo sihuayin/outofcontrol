@@ -3,30 +3,37 @@
     
     <SecondHeader />
     <a-layout-content :style="{marginTop: '20px'}">
-      <a-list item-layout="vertical" size="large" :pagination="pagination" :data-source="lessons">
+      <a-list :loading="lessonLoading" :grid="{ gutter: 16, column: 4 }" :pagination="{total: lessonTotal, pageSize: lessonPageSize, onChange}" :data-source="lessons">
         <a-list-item slot="renderItem" key="item.docid" slot-scope="item">
-          <template  slot="actions">
-            <a-button @click="$router.push('/videoinfo')">观看</a-button>
-          </template>
-          <img
-            slot="extra"
+          <a-card :title="item.doctitle" hoverable>
+            <img
+            slot="cover"
             width="272"
             alt="logo"
             :src="item.url"
             v-if="!item.mimetype"
           />
           <img
-            slot="extra"
+           slot="cover"
             width="272"
             alt="logo"
             src="../assets/video.png"
             v-else
           />
-          <a-list-item-meta :description="item.doctitle">
-            <a slot="title" :href="item.href">{{ item.fullname }}</a>
-          </a-list-item-meta>
-          {{ item.docdesc }}
+            
+            <a-card-meta title="Europe Street beat">
+            <template slot="description">
+              {{ item.docdesc }}
+            </template>
+          </a-card-meta>
+          <template slot="actions" class="ant-card-actions">
+            <a-button type="primary" ghost @click="$router.push({name: 'videoinfo', query: {item}})">
+              查看
+            </a-button>
+          </template>
+          </a-card>
         </a-list-item>
+        
   </a-list>
     </a-layout-content>
   </a-layout>
@@ -42,20 +49,10 @@ export default {
   }, 
   computed: mapState({
     lessons: state => state.docter.lessons,
-    lessonPage: state=> state.docter.lessonPage,
+    lessonPageSize: state=> state.docter.lessonPageSize,
     lessonTotal: state => state.docter.lessonTotal,
     lessonLoading: state => state.docter.lessonLoading
   }),
-  data() {
-    return {
-      pagination: {
-        onChange: page => {
-          console.log(page);
-        },
-        pageSize: 3,
-      }
-    };
-  },
   mounted() {
     this.getDocterLesson({
       page: 1,
@@ -66,6 +63,12 @@ export default {
     ...mapActions('docter', [
       'getDocterLesson'
     ]),
+    onChange(page) {
+      this.getDocterLesson({
+        page,
+        pageSize: 10
+      })
+    }
   }
 }
 </script>
