@@ -281,7 +281,6 @@ export default {
     async stopShare() {
       if (this.localShare) {
         this.localShare = false
-        var start = new Date()
         await this.$sdk.stopScreenShare()
         if (this.shareDisplayId) {
           this.addMember({

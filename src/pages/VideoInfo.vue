@@ -2,21 +2,25 @@
   <a-layout class="main">
     <SecondHeader />
     <a-layout-content :style="{marginTop: '20px'}">
-      <div class="video-container" >
-        <template v-if="type === 'image'">
-          <viewer :images="images">
+      <a-card hoverable style="width: 100%">
+        <template v-if="type === 'image'" slot="cover">
+          <viewer :images="images" style="max-height: 500px">
             <img v-for="src in images" :src="src" :key="src">
           </viewer>
         </template>
-        <template v-else>
-          <video width="620" controls>
+        <template v-else slot="cover">
+          <video width="620" controls style="max-height: 500px">
             <source
               :src="video"
               type="video/mp4">
           </video>
         </template>
-      </div>
-
+        <a-card-meta :title="item.fullname">
+          <template slot="description">
+            {{item.doctitle}}
+          </template>
+        </a-card-meta>
+      </a-card>
     </a-layout-content>
   </a-layout>
 </template>
@@ -35,7 +39,8 @@ export default {
     return {
       type: '',
       images: [],
-      video: ''
+      video: '',
+      item: {}
     }
   },
   created() {
@@ -48,6 +53,7 @@ export default {
         this.type = 'video'
         this.video = item.url
       }
+      this.item = item
     }
   
   }
