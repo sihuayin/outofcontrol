@@ -21,6 +21,9 @@ export default {
         }
         rtcEngine.client.setupViewContentMode('videosource', 1);
         rtcEngine.client.setupViewContentMode(String(this.uid), 1);
+    },
+    beforeDestroy() {
+        this.role !== 'localVideoSource' && this.$sdk.client.muteRemoteVideoStream(parseInt(this.uid), true)
     }
 }
 </script>

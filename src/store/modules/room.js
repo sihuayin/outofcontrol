@@ -39,7 +39,9 @@ const actions = {
   addMember ({ commit }, member) {
     commit('addMember', member)
   },
-
+  removeMember ({ commit }, member) {
+    commit('removeMember', member)
+  },
 
   joinVideo({ commit }, id) {
     commit('setRoomInfo', {})
@@ -93,6 +95,9 @@ const mutations = {
       } else {
         state.members.push(data)
       }
+    },
+    removeMember(state, member) {
+      state.members = state.members.filter(m => m.id !== member.id)
     },
     addHand(state, member) {
       let mem = state.hands.find(h => h.id === member.id)

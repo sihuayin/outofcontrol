@@ -90,7 +90,7 @@ class SDK {
     })
 
     this.client.on('networkquality', (...args) => {
-      console.log("network-quality, uid: ", args[0], " downlinkNetworkQuality: ", args[1], " uplinkNetworkQuality ", args[2])
+      // console.log("network-quality, uid: ", args[0], " downlinkNetworkQuality: ", args[1], " uplinkNetworkQuality ", args[2])
       this.fire('network-quality', {
         downlinkNetworkQuality: args[1],
         uplinkNetworkQuality: args[2]
@@ -114,8 +114,8 @@ class SDK {
       }
     })
 
-    this.client.on('remoteAudioStateChanged', (uid, state, reason) => {
-      console.log('remoteAudioStateChanged ', reason, uid)
+    // this.client.on('remoteAudioStateChanged', (uid, state, reason) => {
+      // console.log('remoteAudioStateChanged ', reason, uid)
 
       // remote user disable audio
       // if (reason === 5) {
@@ -124,7 +124,7 @@ class SDK {
       //     mediaType: 'audio',
       //   })
       // }
-    })
+    // })
 
     this.client.on('joinedchannel', (channel, uid) => {
       console.info('joinedchannel', channel, uid)

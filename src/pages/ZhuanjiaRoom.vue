@@ -170,10 +170,9 @@ export default {
         if (this.localShare && uid > SHARE_ID) {
           return
         }
-          this.addMember({
-            id: uid,
-            rtc: false
-          })
+        this.removeMember({
+          id: uid
+        })
       })
 
       rtcEngine.on('joined-channel', ({ uid }) => {
@@ -211,9 +210,14 @@ export default {
       'setDisplayInfo',
       'addHand',
       'removeHand',
+      'removeMember',
       'clear'
     ]),
     prepareShare () {
+      if (this.shareDisplayId > 0) {
+        this.$message.info('正在共享目录')
+        return
+      }
       this.visible = true
       this.$sdk.getShareWindows().then(arr => {
         console.log(arr)
@@ -242,15 +246,10 @@ export default {
     },
     async stopShare() {
       if (this.localShare) {
-        this.localShare = false
-        var start = new Date()
-        console.log('开始关闭', (new Date).getTime())
         await this.$sdk.stopScreenShare()
-        console.log('关闭jieshu', (new Date()).getTime() - start.getTime())
         if (this.shareDisplayId) {
-          this.addMember({
-            id: this.shareDisplayId,
-            rtc: false
+          this.removeMember({
+            id: this.shareDisplayId
           })
         }
       }
@@ -282,9 +281,8 @@ export default {
         messageType: 'TEXT',
         text: JSON.stringify(message)
       }, {})
-      this.addMember({
-        id: uid,
-        rtc: false
+      this.removeMember({
+        id: uid
       })
     }
   }

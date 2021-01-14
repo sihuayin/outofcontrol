@@ -194,9 +194,8 @@ export default {
         if (this.localShare && uid > SHARE_ID) {
           return
         }
-        this.addMember({
-          id: uid,
-          rtc: false
+        this.removeMember({
+          id: uid
         })
 
       })
@@ -249,9 +248,14 @@ export default {
   methods: {
     ...mapActions('room', [
       'addMember',
-      'clear'
+      'clear',
+      'removeMember'
     ]),
     prepareShare () {
+      if (this.shareDisplayId > 0) {
+        this.$message.info('正在共享目录')
+        return
+      }
       this.visible = true
       this.$sdk.getShareWindows().then(arr => {
         console.log('windows',arr)
@@ -283,9 +287,8 @@ export default {
         this.localShare = false
         await this.$sdk.stopScreenShare()
         if (this.shareDisplayId) {
-          this.addMember({
-            id: this.shareDisplayId,
-            rtc: false
+          this.removeMember({
+            id: this.shareDisplayId
           })
         }
       }
