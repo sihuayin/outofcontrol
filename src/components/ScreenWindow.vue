@@ -16,6 +16,7 @@ export default {
         if (this.role === 'localVideoSource') {
             dom && rtcEngine.client.setupLocalVideoSource(dom)
         } else {
+            rtcEngine.client.muteRemoteVideoStream(parseInt(this.uid), false)
             dom && rtcEngine.client.subscribe(this.uid, dom)
 
         }
