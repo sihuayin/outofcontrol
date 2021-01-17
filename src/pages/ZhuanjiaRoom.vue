@@ -246,6 +246,7 @@ export default {
     },
     async stopShare() {
       if (this.localShare) {
+        this.localShare = false
         await this.$sdk.stopScreenShare()
         if (this.shareDisplayId) {
           this.removeMember({
