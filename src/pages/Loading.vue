@@ -1,7 +1,19 @@
 <template>
   <div class="loading-container">
     <a-spin size="large" v-if="check"/>
-    <a-progress :percent="percentage" status="active" v-if="dialogVisible"/>
+    <a-modal
+      v-model="dialogVisible"
+      title="更新"
+      @ok="handleOk"
+    >
+    <template slot="footer">
+        <a-button key="submit" type="primary" @click="handleOk">
+          Submit
+        </a-button>
+      </template>
+      <a-progress :percent="percentage" status="active" v-if="dialogVisible"/>
+    </a-modal>
+    
   </div>
 </template>
 <script>
@@ -16,8 +28,12 @@ export default {
       percentage: 0
     }
   },
+  methods: {
+    handleOk(){}
+  },
   mounted() {
     ipcRenderer.on("message", (event, arg) => {
+      console.log('receive message', arg)
       if ("update-available" == arg.cmd) {
         //显示升级对话框
         this.dialogVisible = true;
