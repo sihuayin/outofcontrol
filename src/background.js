@@ -145,7 +145,7 @@ function createWindow() {
     app.quit()
   })
 
-  let feedUrl = "http://xxxx/test/version/";
+  let feedUrl = "http://127.0.0.1:5500/dist_electron/";
   //检测版本更新
   updateHandle(win,feedUrl);
 
